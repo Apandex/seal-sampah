@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pelaporan-masalah', function () {
+    return view('user/pelaporan-masalah');
+});
+
 //User Pesan Angkut
 Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
