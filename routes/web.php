@@ -21,3 +21,8 @@ Route::get('/', function () {
 Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
 });
+
+//User Riwayat Pesan Angkut
+Route::get('/riwayat-pengangkutan', function () {
+    return view('user/riwayat-pengangkutan');
+});
