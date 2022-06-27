@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//User Pesan Angkut
+Route::get('/pesan-pengangkutan', function () {
+    return view('user/pesan-pengangkutan');
+});
