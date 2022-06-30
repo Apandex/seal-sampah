@@ -25,6 +25,10 @@ Route::get('/pelaporan-masalah', function () {
     return view('user/pelaporan-masalah');
 });
 
+Route::get('/dashboard-user', function () {
+    return view('user/dashboard');
+});
+
 //User Pesan Angkut
 Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
