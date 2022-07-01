@@ -110,7 +110,7 @@
                                             <td>22 Februari 2020</td>
                                             <td>12:00</td>
                                             <td>
-                                                <div class="badge badge-danger">Diundur</div>
+                                                <div class="badge badge-danger">DIUNDUR</div>
                                             </td>
                                             <td>Bapak Homo Sapiens</td>
                                             <!-- <td><a href="#" class="btn btn-danger">Jadwal Ulang</a></td> -->
@@ -122,7 +122,7 @@
                                             <td>22 Februari 2021</td>
                                             <td>21:00</td>
                                             <td>
-                                                <div class="badge badge-success">Dijadwalkan</div>
+                                                <div class="badge badge-success">DIJADWALKAN</div>
                                             </td>
                                             <td>Bapak Homo Sapiens</td>
                                         </tr>
@@ -133,7 +133,7 @@
                                             <td>31 Februari 2222</td>
                                             <td>00:00</td>
                                             <td>
-                                                <div class="badge badge-warning">Diproses</div>
+                                                <div class="badge badge-warning">DIPROSES</div>
                                             </td>
                                             <td>Bapak Homo Sapiens</td>
                                         </tr>
