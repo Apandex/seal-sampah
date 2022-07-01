@@ -34,3 +34,8 @@ Route::get('/pesan-pengangkutan', function () {
 Route::get('/riwayat-pengangkutan', function () {
     return view('user/riwayat-pengangkutan');
 });
+
+//Admin pelaporan masalah
+Route::get('/admin-pelaporan-masalah', function () {
+    return view ('admin/admin-pelaporan-masalah');
+});
