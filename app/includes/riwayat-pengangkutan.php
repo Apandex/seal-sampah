@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Ecommerce Dashboard &mdash; Stisla</title>
+  <title>Riwayat Pengangkutan</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -61,7 +61,6 @@
                   <li class="nav-item dropdown active">
                       <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
                       <ul class="dropdown-menu">
-                          <li><a class="nav-link" href="layout-default.html">Status</a></li>
                           <li class="active"><a class="nav-link" href="layout-transparent.html">Riwayat</a></li>
                           <li><a class="nav-link" href="layout-top-navigation.html">Pesan</a></li>
                       </ul>
@@ -128,60 +127,41 @@
                     <div class="card-body p-0">
                     <div class="table-responsive table-invoice">
                         <table class="table table-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                            <th>Last Activity</th>
-                            <th>Type</th>
-                            <th>Banyak</th>
-                        </tr>
-                        <tr>
-                            <td><a href="#">58011</a></td>
-                            <td class="font-weight-600">Abby</td>
-                            <td class="font-weight-600">Adams</td>
-                            <td class="font-weight-600">abby@anywhere.com</td>
-                            <td>April 21, 2011 at 9:12PM<br/>(6 jam yang lalu)</td>
-                            <td><div class="badge badge-success">Human</div></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">58012</a></td>
-                            <td class="font-weight-600">Barbara</td>
-                            <td class="font-weight-600">Bradley</td>
-                            <td class="font-weight-600">barbara@anywhere.com</td>
-                            <td>April 21, 2011 at 9:12PM<br/>(6 jam yang lalu)</td>
-                            <td><div class="badge badge-success">Human</div></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">58013</a></td>
-                            <td class="font-weight-600">Cassie</td>
-                            <td class="font-weight-600">Cohen</td>
-                            <td class="font-weight-600">cassie@anywhere.com</td>
-                            <td>April 21, 2011 at 10:06PM<br/>(7 jam yang lalu)</td>
-                            <td><div class="badge badge-success">Human</div></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">58014</a></td>
-                            <td class="font-weight-600">Dana</td>
-                            <td class="font-weight-600">Donnely</td>
-                            <td class="font-weight-600">dana@anywhere.com</td>
-                            <td class="text-warning">tidak pernah masuk<br/></td>
-                            <td><div class="badge badge-primary">Robot</div></td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td><a href="#">58015</a></td>
-                            <td class="font-weight-600">Edith</td>
-                            <td class="font-weight-600">Eastman</td>
-                            <td class="font-weight-600">edith@anywhere.com</td>
-                            <td class="text-warning">tidak pernah masuk<br/></td>
-                            <td><div class="badge badge-primary">Robot</div></td>
-                            <td>1</td>
-                        </tr>
+                            <thead>
+                                <tr>
+                                    <th class="text-center">
+                                        #
+                                    </th>
+                                    <th>Tanggal Pengangkutan</th>
+                                    <th>Waktu</th>
+                                    <th>Status</th>
+                                    <th>Atas Nama</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>22 Februari 2020</td>
+                                    <td>12:00</td>
+                                    <td>
+                                        <div class="badge badge-danger">BATAL</div>
+                                    </td>
+                                    <td>Bapak Homo Sapiens</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>22 Februari 2021</td>
+                                    <td>21:00</td>
+                                    <td>
+                                        <div class="badge badge-success">BERHASIL</div>
+                                    </td>
+                                    <td>Bapak Homo Sapiens</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     </div>
@@ -191,12 +171,9 @@
       </div>
       <footer class="main-footer">
         <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+            Copyright &copy; 2022 <div class="bullet"></div> All Rights Reserved
         </div>
-        <div class="footer-right">
-          2.3.0
-        </div>
-      </footer>
+    </footer>
     </div>
   </div>
 
