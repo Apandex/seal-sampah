@@ -64,7 +64,6 @@
                         <li class="nav-item dropdown active">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="layout-default.html">Status</a></li>
                                 <li><a class="nav-link" href="layout-transparent.html">Riwayat</a></li>
                                 <li class="active"><a class="nav-link" href="layout-top-navigation.html">Pesan</a></li>
                             </ul>
