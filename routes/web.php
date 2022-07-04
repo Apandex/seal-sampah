@@ -29,17 +29,22 @@ Route::get('/dashboard-user', function () {
     return view('user/dashboard');
 });
 
+//Admin Dashboard
+Route::get('/Admin', function () {
+    return view('admin/dashboard');
+});
+
 //User Pesan Angkut
 Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
 });
 
-//User Riwayat Pesan Angkut
-Route::get('/riwayat-pengangkutan', function () {
-    return view('user/riwayat-pengangkutan');
+//Admin Riwayat Pesan Angkut
+Route::get('/Admin/Riwayat', function () {
+    return view('admin/riwayat');
 });
 
 //Admin pelaporan masalah
 Route::get('/admin-pelaporan-masalah', function () {
-    return view ('admin/admin-pelaporan-masalah');
+    return view('admin/admin-pelaporan-masalah');
 });
