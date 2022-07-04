@@ -4,17 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Forms &rsaquo; Editor &mdash; Stisla</title>
+  <title>Pelaporan Masalah</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="../node_modules/summernote/dist/summernote-bs4.css">
-  <link rel="stylesheet" href="../node_modules/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="../node_modules/codemirror/theme/duotone-dark.css">
-  <link rel="stylesheet" href="../node_modules/selectric/public/selectric.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.19/summernote-bs4.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/theme/duotone-dark.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectric@1.13.0/public/selectric.css">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -62,7 +62,6 @@
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="layout-default.html">Status</a></li>
                 <li><a class="nav-link" href="layout-transparent.html">Riwayat</a></li>
                 <li><a class="nav-link" href="layout-top-navigation.html">Pesan</a></li>
               </ul>
@@ -117,12 +116,9 @@
         </section>
       </div>
       <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-        </div>
-        <div class="footer-right">
-          2.3.0
-        </div>
+          <div class="footer-left">
+              Copyright &copy; 2022 <div class="bullet"></div> All Rights Reserved
+          </div>
       </footer>
     </div>
   </div>
