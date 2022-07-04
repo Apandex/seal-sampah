@@ -56,3 +56,18 @@ Route::get('/Admin/Riwayat', function () {
 Route::get('/Admin/lapor-masalah', function () {
     return view('admin/laporan-masalah');
 });
+
+//Admin table user
+Route::get('/Admin/Pengguna', function () {
+    return view('admin/table-pengguna');
+});
+
+//Admin regis user
+Route::get('/Admin/Registrasi', function () {
+    return view('admin/registrasi-pengguna');
+});
+
+//Admin regis user
+Route::get('/Admin/Edit-User', function () {
+    return view('admin/edit-pengguna');
+});
