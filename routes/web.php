@@ -84,3 +84,7 @@ Route::get('/Owner/Registrasi', function () {
 Route::get('/Owner/Edit-Admin', function () {
     return view('owner/edit-admin');
 });
+//Admin permintaan pengangkutan
+Route::get('/Admin/permintaan-pengangkutan', function () {
+    return view('admin/permintaan-pengangkutan');
+});
