@@ -30,7 +30,7 @@
 
             <div class="card card-primary">
               <div class="card-header">
-                <h4>Registrasi User</h4>
+                <h4>Edit Data User</h4>
               </div>
 
               <div class="card-body">
@@ -82,8 +82,8 @@
                 </div>
 
                 <div class="form-group">
-                  <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
-                    Register
+                  <button type="submit" id="confirmEditUser" class="btn btn-primary btn-lg btn-block">
+                    Confirm
                   </button>
                 </div>
                 </form>

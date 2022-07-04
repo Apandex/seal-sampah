@@ -37,7 +37,52 @@ $("#confirmEditUser").click(function () {
     });
 });
 
-$("#confirmDelete").click(function () {
+$("#confirmRegisAdmin").click(function () {
+    swal({
+        title: "Apakah data sudah benar?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((Delete) => {
+        if (Delete) {
+            swal("Akun Telah Dibuat!", {
+                icon: "success",
+            });
+        }
+    });
+});
+
+$("#confirmEditAdmin").click(function () {
+    swal({
+        title: "Apakah data sudah benar?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((Delete) => {
+        if (Delete) {
+            swal("Data Akun Telah Diubah!", {
+                icon: "success",
+            });
+        }
+    });
+});
+
+$("#confirmDeleteAdmin").click(function () {
+    swal({
+        title: "Hapus akun Admin?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    }).then((Delete) => {
+        if (Delete) {
+            swal("Akun Telah Terhapus!", {
+                icon: "success",
+            });
+        }
+    });
+});
+
+$("#confirmDeleteUser").click(function () {
     swal({
         title: "Hapus akun Pengguna?",
         icon: "warning",

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Pepes &mdash; Admin</title>
+  <title>Pepes &mdash; Owner</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,7 +30,7 @@
 
             <div class="card card-primary">
               <div class="card-header">
-                <h4>Registrasi User</h4>
+                <h4>Edit Data Admin</h4>
               </div>
 
               <div class="card-body">
@@ -44,29 +44,8 @@
                   <input id="number" type="number" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="kelurahan">Kelurahan</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>Tebet Barat</option>
-                    <option>Tebet Timur</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="rw">RW</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="rt">RT</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
+                  <label for="email">Email</label>
+                  <input id="number" type="email" class="form-control">
                 </div>
                 <div class="form-group">
                   <label for="alamat">Alamat</label>
@@ -77,13 +56,13 @@
                   <input id="password" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
+                  <label for="ulang_kata_sandi">Ulang Kata Sandi</label>
                   <input id="repassword" type="text" class="form-control">
                 </div>
 
                 <div class="form-group">
-                  <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
-                    Register
+                  <button type="submit" id="confirmEditAdmin" class="btn btn-primary btn-lg btn-block">
+                    Confirm
                   </button>
                 </div>
                 </form>

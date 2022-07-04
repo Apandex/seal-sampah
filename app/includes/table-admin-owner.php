@@ -64,7 +64,7 @@
                 <li><a class="nav-link" href="layout-top-navigation.html">Pesan</a></li>
               </ul>
             </li>
-            <li class="active"><a class="nav-link" href="blank.html"><i class="fas fa-users"></i> <span>Pengguna</span></a></li>
+            <li class="active"><a class="nav-link" href="blank.html"><i class="fas fa-users"></i> <span>Admin</span></a></li>
             <li><a class="nav-link" href="blank.html"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
           </ul>
 
@@ -84,7 +84,7 @@
               <div style="font-size: 1rem;">
                 <i class="fa fa-users" style="padding:0.5rem 0.9rem"></i>
               </div>
-              <h1>Administrasi Pengguna</h1>
+              <h1>Administrasi Admin</h1>
             </div>
           </div>
 
@@ -94,7 +94,7 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="card-header-action">
-                      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Pengguna</a>
+                      <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Admin</a>
                     </div>
                   </div>
                   <div class="card-body">
@@ -107,9 +107,7 @@
                             </th>
                             <th>Nama</th>
                             <th>No. Telp</th>
-                            <th>Kelurahan</th>
-                            <th>RW</th>
-                            <th>RT</th>
+                            <th>Email</th>
                             <th>Alamat</th>
                             <th>Aksi</th>
                           </tr>
@@ -120,12 +118,10 @@
                             <td>Alsi</td>
                             <td>085155154599</td>
                             <td>Menteng Dalam</td>
-                            <td>07</td>
-                            <td>01</td>
-                            <td>Jl. Prof. DR. Soepomo No.231</td>
+                            <td>syahrulhusna@gmail.com</td>
                             <td colspan="2">
                               <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i> </button>
-                              <button class="btn btn-danger" id="confirmDeleteUser"><i class="fas fa-trash"></i></button>
+                              <button class="btn btn-danger" id="confirmDeleteAdmin"><i class="fas fa-trash"></i></button>
                             </td>
                           </tr>
                         </tbody>

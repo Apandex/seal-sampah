@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Pepes &mdash; Admin</title>
+  <title>Pepes &mdash; Owner</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,64 +30,39 @@
 
             <div class="card card-primary">
               <div class="card-header">
-                <h4>Edit Data User</h4>
+                <h4>Registrasi Admin</h4>
               </div>
 
               <div class="card-body">
                 <!-- <form method="POST"> -->
                 <div class="form-group">
-                  <label for="first_name">Nama</label>
+                  <label for="nama">Nama</label>
                   <input id="nama" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="last_name">No. Telp</label>
+                  <label for="no_telp">No. Telp</label>
                   <input id="number" type="number" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="last_name">Kelurahan</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>Tebet Barat</option>
-                    <option>Tebet Timur</option>
-                  </select>
+                  <label for="email">Email</label>
+                  <input id="number" type="email" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="last_name">RW</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="last_name">RT</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="last_name">Alamat</label>
+                  <label for="alamat">Alamat</label>
                   <input id="alamat" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="last_name">Kata Sandi</label>
+                  <label for="kata_sandi">Kata Sandi</label>
                   <input id="password" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                  <label for="last_name">Ulang Kata Sandi</label>
+                  <label for="ulang_kata_sandi">Ulang Kata Sandi</label>
                   <input id="repassword" type="text" class="form-control">
                 </div>
 
-                <div class="row">
-
-                </div>
-
                 <div class="form-group">
-                  <button type="submit" id="confirmEditUser" class="btn btn-primary btn-lg btn-block">
-                    Confirm
+                  <button type="submit" id="confirmRegisAdmin" class="btn btn-primary btn-lg btn-block">
+                    Register
                   </button>
                 </div>
                 </form>
