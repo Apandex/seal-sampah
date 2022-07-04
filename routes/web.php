@@ -44,6 +44,11 @@ Route::get('/Admin/Riwayat', function () {
     return view('admin/riwayat');
 });
 
+//Admin  Riwayat Pesan Angkut
+Route::get('/Admin/Riwayat', function () {
+    return view('admin/riwayat');
+});
+
 //Admin pelaporan masalah
 Route::get('/admin-pelaporan-masalah', function () {
     return view('admin/admin-pelaporan-masalah');
