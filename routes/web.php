@@ -56,3 +56,8 @@ Route::get('/Admin/Riwayat', function () {
 Route::get('/Admin/lapor-masalah', function () {
     return view('admin/laporan-masalah');
 });
+
+//Admin permintaan pengangkutan
+Route::get('/Admin/permintaan-pengangkutan', function () {
+    return view('admin/permintaan-pengangkutan');
+});
