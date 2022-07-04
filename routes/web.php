@@ -21,17 +21,14 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/pelaporan-masalah', function () {
-    return view('user/pelaporan-masalah');
-});
-
+//User Dashboard
 Route::get('/dashboard-user', function () {
     return view('user/dashboard');
 });
 
-//Admin Dashboard
-Route::get('/Admin', function () {
-    return view('admin/dashboard');
+//User Laporan Masalah
+Route::get('/lapor-masalah', function () {
+    return view('user/laporan-masalah');
 });
 
 //User Pesan Angkut
@@ -39,17 +36,23 @@ Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
 });
 
-//Admin Riwayat Pesan Angkut
-Route::get('/Admin/Riwayat', function () {
-    return view('admin/riwayat');
+//User Pesan Angkut
+Route::get('/riwayat-pengangkutan', function () {
+    return view('user/riwayat-pengangkutan');
 });
 
-//Admin  Riwayat Pesan Angkut
+
+//Admin Dashboard
+Route::get('/Admin', function () {
+    return view('admin/dashboard');
+});
+
+//Admin Riwayat Pesan Angkut
 Route::get('/Admin/Riwayat', function () {
-    return view('admin/riwayat');
+    return view('admin/riwayat-pengangkutan');
 });
 
 //Admin pelaporan masalah
-Route::get('/admin-pelaporan-masalah', function () {
-    return view('admin/admin-pelaporan-masalah');
+Route::get('/Admin/lapor-masalah', function () {
+    return view('admin/laporan-masalah');
 });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>General Dashboard &mdash; Stisla</title>
+    <title>Pepes</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -44,10 +44,10 @@
             <div class="main-sidebar sidebar-style-2">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">Sampah</a>
+                        <a href="index.html">Pepes</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">SM</a>
+                        <a href="index.html">P</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
@@ -81,67 +81,67 @@
                         </div>
                     </div>
                     <div class="section-body">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Status Pengangkutan</h4>
-                            <div class="card-header-action">
-                                <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Pesan Pengangkutan</a>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Status Pengangkutan</h4>
+                                <div class="card-header-action">
+                                    <a href="#" class="btn btn-primary"><i class="fas fa-plus"></i> Pesan Pengangkutan</a>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    #
+                                                </th>
+                                                <th>Tanggal Pengangkutan</th>
+                                                <th>Waktu</th>
+                                                <th>Status</th>
+                                                <th>Atas Nama</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>22 Februari 2020</td>
+                                                <td>12:00</td>
+                                                <td>
+                                                    <div class="badge badge-danger">DIUNDUR</div>
+                                                </td>
+                                                <td>Bapak Homo Sapiens</td>
+                                                <!-- <td><a href="#" class="btn btn-danger">Jadwal Ulang</a></td> -->
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>22 Februari 2021</td>
+                                                <td>21:00</td>
+                                                <td>
+                                                    <div class="badge badge-success">DIJADWALKAN</div>
+                                                </td>
+                                                <td>Bapak Homo Sapiens</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    3
+                                                </td>
+                                                <td>31 Februari 2222</td>
+                                                <td>00:00</td>
+                                                <td>
+                                                    <div class="badge badge-warning">DIPROSES</div>
+                                                </td>
+                                                <td>Bapak Homo Sapiens</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-body p-0">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center">
-                                                #
-                                            </th>
-                                            <th>Tanggal Pengangkutan</th>
-                                            <th>Waktu</th>
-                                            <th>Status</th>
-                                            <th>Atas Nama</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>22 Februari 2020</td>
-                                            <td>12:00</td>
-                                            <td>
-                                                <div class="badge badge-danger">DIUNDUR</div>
-                                            </td>
-                                            <td>Bapak Homo Sapiens</td>
-                                            <!-- <td><a href="#" class="btn btn-danger">Jadwal Ulang</a></td> -->
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>22 Februari 2021</td>
-                                            <td>21:00</td>
-                                            <td>
-                                                <div class="badge badge-success">DIJADWALKAN</div>
-                                            </td>
-                                            <td>Bapak Homo Sapiens</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>31 Februari 2222</td>
-                                            <td>00:00</td>
-                                            <td>
-                                                <div class="badge badge-warning">DIPROSES</div>
-                                            </td>
-                                            <td>Bapak Homo Sapiens</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
             <footer class="main-footer">
