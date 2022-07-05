@@ -81,7 +81,18 @@
                         </div>
                     </div>
                     <div class="section-body">
-                        <div class="card">
+                        <div class="alert alert-danger alert-dismissible show faden">
+                            <div class="alert-body">
+                                <button class="close" data-dismiss="alert">
+                                    <span>×</span>
+                                </button>
+                                <a href="#tolak_tbl"><div class="alert-title">Ada 1 Permintaan Ditolak</div></a>
+                                Silahkan ajukan ulang dengan mengganti tanggal dan waktu pengangkutan
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-body">
+                        <div class="card" id="status_tbl">
                             <div class="card-header">
                                 <h4>Status Pengangkutan</h4>
                                 <div class="card-header-action">
@@ -110,7 +121,7 @@
                                                 <td>22 Februari 2020</td>
                                                 <td>12:00</td>
                                                 <td>
-                                                    <div class="badge badge-danger">DIUNDUR</div>
+                                                    <div class="badge badge-success">DIJADWALKAN</div>
                                                 </td>
                                                 <td>Bapak Homo Sapiens</td>
                                                 <!-- <td><a href="#" class="btn btn-danger">Jadwal Ulang</a></td> -->
@@ -136,6 +147,49 @@
                                                     <div class="badge badge-warning">DIPROSES</div>
                                                 </td>
                                                 <td>Bapak Homo Sapiens</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" id="tolak_tbl">
+                            <div class="card-header">
+                                <h4 class="text-danger">Permintaan Ditolak</h4>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    #
+                                                </th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th>Atas Nama</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>22 Februari 2020</td>
+                                                <td>12:00</td>
+                                                <td>Bapak Homo Sapiens</td>
+                                                <td><button class="btn btn-danger">Ubah</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td>22 Februari 2021</td>
+                                                <td>21:00</td>
+                                                <td>Bapak Homo Sapiens</td>
+                                                <td><button class="btn btn-danger">Ubah</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
