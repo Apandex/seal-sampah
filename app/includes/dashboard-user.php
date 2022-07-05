@@ -75,9 +75,9 @@
                     <div class="section-header">
                         <div class="row">
                             <div style="font-size: 1rem;">
-                                <i class="fa fa-map-marker-alt fa-lg" style="padding:0.5rem 0.9rem"></i>
+                                <i class="fa fa-home fa-lg" style="padding:0.5rem 0.9rem"></i>
                             </div>
-                            <h1>Jl. Jalan di pinggir kali</h1>
+                            <h1>Selamat datang, x</h1>
                         </div>
                     </div>
                     <div class="section-body">
