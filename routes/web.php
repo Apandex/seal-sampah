@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -87,4 +88,8 @@ Route::get('/Owner/Edit-Admin', function () {
 //Admin permintaan pengangkutan
 Route::get('/Admin/permintaan-pengangkutan', function () {
     return view('admin/permintaan-pengangkutan');
+});
+//Admin - Status Pengangkutan
+Route::get('/Admin/status-pengangkutan', function () {
+    return view('admin/status-pengangkutan');
 });
