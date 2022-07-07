@@ -82,7 +82,11 @@ $("#confirmDeleteAdmin").click(function () {
     });
 });
 
-$("#confirmDeleteUser").click(function () {
+$("#editUser").click(function () {
+    location.href = "/Admin/Edit-User";
+});
+
+$("#deleteUser").click(function () {
     swal({
         title: "Hapus akun Pengguna?",
         icon: "warning",

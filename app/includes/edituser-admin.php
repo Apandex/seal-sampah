@@ -31,6 +31,9 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h4>Edit Data User</h4>
+                <div class="card-header-action">
+                  <a href="/Admin/Pengguna" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                </div>
               </div>
 
               <div class="card-body">

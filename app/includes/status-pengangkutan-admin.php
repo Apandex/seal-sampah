@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Status Pengangkutan</title>
+    <title>Pepes &mdash; Admin</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -52,7 +52,7 @@
                             </ul>
                         </li>
                         <li><a class="nav-link" href="/Admin/Pengguna"><i class="fas fa-plus "></i> <span>Pengguna</span></a></li>
-                        <li><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+                        <li><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a></li>
                     </ul>
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -68,11 +68,6 @@
                 <section class="section">
                     <div class="section-header">
                         <h1>Status Pengangkutan</h1>
-                        <div class="section-header-breadcrumb">
-                            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                            <div class="breadcrumb-item"><a href="#">Pengangkutan</a></div>
-                            <div class="breadcrumb-item">Status</div>
-                        </div>
                     </div>
                     <div class="section-body">
                         <div class="card">

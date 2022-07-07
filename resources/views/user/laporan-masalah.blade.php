@@ -1,1 +1,1 @@
-<?php include(app_path() . '/includes/pelaporan-masalah.php');
+<?php include(app_path() . '/includes/lapor-masalah.php');

@@ -27,9 +27,14 @@ Route::get('/dashboard-user', function () {
     return view('user/dashboard');
 });
 
-//User Laporan Masalah
+//User Lapor Masalah
 Route::get('/lapor-masalah', function () {
     return view('user/laporan-masalah');
+});
+
+//User Laporan Masalah
+Route::get('/riwayat-lapor', function () {
+    return view('user/riwayat-lapor');
 });
 
 //User Pesan Angkut

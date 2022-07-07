@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Riwayat Pengangkutan</title>
+    <title>PEPES</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -44,14 +44,21 @@
                         <li class="menu-header">Dashboard</li>
                         <li><a class="nav-link" href="/dashboard-user"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
                         <li class="nav-item dropdown active">
-                            <a href="#" class="nav-link has-dropdown " data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a class="nav-link" href="/riwayat-pengangkutan">Riwayat</a></li>
-                                <li><a class="nav-link" href="/pesan-pengangkutan">Pesan</a></li>
+                                <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat Pengangkutan</a></li>
+                                <li class="active"><a class="nav-link" href="/pesan-pengangkutan">Pesan Pengangkutan</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="/lapor-masalah"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/riwayat-lapor">Riwayat Lapor</a></li>
+                                <li><a class="nav-link" href="/lapor-masalah">Lapor Masalah</a></li>
+                            </ul>
+                        </li>
                     </ul>
+
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                         <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
@@ -66,11 +73,6 @@
                 <section class="section">
                     <div class="section-header">
                         <h1>Riwayat Pengangkutan</h1>
-                        <div class="section-header-breadcrumb">
-                            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                            <div class="breadcrumb-item"><a href="#">Pengangkutan</a></div>
-                            <div class="breadcrumb-item">Riwayat</div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-12">

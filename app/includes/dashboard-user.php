@@ -43,12 +43,19 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat</a></li>
-                                <li><a class="nav-link" href="/pesan-pengangkutan">Pesan</a></li>
+                                <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat Pengangkutan</a></li>
+                                <li><a class="nav-link" href="/pesan-pengangkutan">Pesan Pengangkutan</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link" href="/lapor-masalah"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="/riwayat-lapor">Riwayat Lapor</a></li>
+                                <li><a class="nav-link" href="/lapor-masalah">Lapor Masalah</a></li>
+                            </ul>
+                        </li>
                     </ul>
+
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                         <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">

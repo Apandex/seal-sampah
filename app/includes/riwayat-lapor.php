@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Pepes &mdash; Admin</title>
+  <title>PEPES</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -33,24 +33,29 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="/Admin">Pepes</a>
+            <a href="/dashboard-user">Pepes</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="/Admin">P</a>
+            <a href="/dashboard-user">P</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li><a class="nav-link" href="/Admin"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
+            <li><a class="nav-link" href="/dashboard-user"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
             <li class="nav-item dropdown">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="/Admin/Permintaan-Pengangkutan">Permintaan</a></li>
-                <li><a class="nav-link" href="/Admin/Status-Pengangkutan">Status</a></li>
-                <li><a class="nav-link" href="/Admin/Riwayat">Riwayat</a></li>
+                <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat Pengangkutan</a></li>
+                <li><a class="nav-link" href="/pesan-pengangkutan">Pesan Pengangkutan</a></li>
               </ul>
             </li>
-            <li><a class="nav-link" href="/Admin/Pengguna"><i class="fas fa-plus "></i> <span>Pengguna</span></a></li>
-            <li class="active"><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a></li>
+            <li class="nav-item dropdown active">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a>
+              <ul class="dropdown-menu ">
+                <li class="active"><a class="nav-link" href="/riwayat-lapor">Riwayat Lapor</a>
+                </li>
+                <li><a class="nav-link" href="/lapor-masalah">Lapor Masalah</a></li>
+              </ul>
+            </li>
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -89,7 +94,7 @@
                             <th>Kelurahan</th>
                             <th>Alamat</th>
                             <th>Masalah</th>
-                            <th>Aksi</th>
+                            <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -100,10 +105,8 @@
                             <td>Menteng Dalam</td>
                             <td>Jl. Prof. DR. Soepomo No.231</td>
                             <td>Banyak</td>
-                            <td colspan="2">
-                              <button class="btn btn-primary" id="confirmReport"><i class="fas fa-check"></i> </button>
-                              <button class="btn btn-warning" id="editReport"><i class="fas fa-pencil-alt"></i> </button>
-                              <button class="btn btn-danger" id="deleteReport"><i class="fas fa-trash"></i></button>
+                            <td>
+                              <div class="badge badge-warning">DIPROSES</div>
                             </td>
                           </tr>
                         </tbody>
@@ -115,7 +118,6 @@
             </div>
           </div>
       </div>
-
     </div>
     <footer class="main-footer">
       <div class="footer-left">

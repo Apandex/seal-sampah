@@ -50,7 +50,7 @@
               </ul>
             </li>
             <li class="active"><a class="nav-link" href="/Admin/Pengguna"><i class="fas fa-plus "></i> <span>Pengguna</span></a></li>
-            <li><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+            <li><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a></li>
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
@@ -109,8 +109,8 @@
                             <td>01</td>
                             <td>Jl. Prof. DR. Soepomo No.231</td>
                             <td colspan="2">
-                              <button class="btn btn-warning"><i class="fas fa-pencil-alt"></i> </button>
-                              <button class="btn btn-danger" id="confirmDeleteUser"><i class="fas fa-trash"></i></button>
+                              <button class="btn btn-warning" id="editUser"><i class="fas fa-pencil-alt"></i> </button>
+                              <button class="btn btn-danger" id="deleteUser"><i class="fas fa-trash"></i></button>
                             </td>
                           </tr>
                         </tbody>
