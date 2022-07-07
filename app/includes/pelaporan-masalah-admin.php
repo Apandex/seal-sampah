@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -25,65 +26,56 @@
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
-          <form class="form-inline mr-auto">
-              <ul class="navbar-nav mr-3">
-                  <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-              </ul>
-          </form>
-          <ul class="navbar-nav navbar-right">
-              <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                      <img alt="image" src="../../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                      <div class="d-sm-none d-lg-inline-block">Hi, ADMIN</div>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right">
-                      <a href="features-profile.html" class="dropdown-item has-icon">
-                          <i class="far fa-user"></i> Profile
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a href="#" class="dropdown-item has-icon text-danger">
-                          <i class="fas fa-sign-out-alt"></i> Logout
-                      </a>
-                  </div>
-              </li>
+        <form class="form-inline mr-auto">
+          <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
           </ul>
+        </form>
       </nav>
       <div class="main-sidebar sidebar-style-2">
-          <aside id="sidebar-wrapper">
-              <div class="sidebar-brand">
-                  <a href="index.html">PEPES</a>
-              </div>
-              <div class="sidebar-brand sidebar-brand-sm">
-                  <a href="index.html">PS</a>
-              </div>
-              <ul class="sidebar-menu">
-                  <li class="menu-header">Dashboard</li>
-                  <li><a class="nav-link" href="blank.html"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
-                  <li><a class="nav-link" href="blank.html"><i class="fas fa-clipboard "></i> <span>Permintaan Pengangkutan</span></a></li>
-                  <li><a class="nav-link" href="blank.html"><i class="fas fa-history "></i> <span>Riwayat</span></a></li>
-                  <li><a class="nav-link" href="blank.html"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="/Admin">Pepes</a>
+          </div>
+          <div class="sidebar-brand sidebar-brand-sm">
+            <a href="/Admin">P</a>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li><a class="nav-link" href="/Admin"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="/Admin/Permintaan-Pengangkutan">Permintaan</a></li>
+                <li><a class="nav-link" href="/Admin/Status-Pengangkutan">Status</a></li>
+                <li><a class="nav-link" href="/Admin/Riwayat">Riwayat</a></li>
               </ul>
+            </li>
+            <li><a class="nav-link" href="/Admin/Pengguna"><i class="fas fa-plus "></i> <span>Pengguna</span></a></li>
+            <li class="active"><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Pelaporan Masalah</span></a></li>
+          </ul>
 
-              <div class="mt-6 mb-6 p-3 hide-sidebar-mini">
-                  <a href="https://getstisla.com/docs" class="btn btn-danger btn-lg btn-block btn-icon-split">
-                      <i class="fas fa-rocket"></i> Logout
-                  </a>
-              </div>
-          </aside>
+          <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+            <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
+              <i class="fas fa-rocket"></i> Logout
+            </a>
+          </div>
+        </aside>
       </div>
 
       <!-- Main Content -->
       <div class="main-content">
-      <section class="section">
-            <div class="section-header">
-                <h1>Laporan Masalah</h1>
-                <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Permintaan</a></div>
-                    <div class="breadcrumb-item"><a href="#">Riwayat</a></div>
-                    <div class="breadcrumb-item">Laporan</div>
-                </div>
+        <section class="section">
+          <div class="section-header">
+            <h1>Laporan Masalah</h1>
+            <div class="section-header-breadcrumb">
+              <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+              <div class="breadcrumb-item"><a href="#">Permintaan</a></div>
+              <div class="breadcrumb-item"><a href="#">Riwayat</a></div>
+              <div class="breadcrumb-item">Laporan</div>
             </div>
-      <div class="row">
+          </div>
+          <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
@@ -108,104 +100,104 @@
                         <td class="font-weight-600">Kusnadi</td>
                         <td class="font-weight-600">Kusnadi</td>
                         <td class="font-weight-600">Kusnadi</td>
-                        <td>                        
-                        <div class ="dropdown d-inline">
-                          <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
-                          <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Kategori</li>
-                        <li><a href="#" class="dropdown-item">Proses</a></li>
-                        <li><a href="#" class="dropdown-item">Sedang</a></li>
-                          </ul>
-                        </div>
-                    </td>
-                      </ul>
-                        </div>
-                      </tr>
-                      <tr>
-                        <td><a href="#">LR-48574</a></td>
-                        <td class="font-weight-600">Hasan Basri</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
                         <td>
-                        <div class ="dropdown d-inline">
-                          <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
-                          <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Kategori</li>
-                        <li><a href="#" class="dropdown-item">Proses</a></li>
-                        <li><a href="#" class="dropdown-item">Sedang</a></li>
-                          </ul>
-                        </div>
+                          <div class="dropdown d-inline">
+                            <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
+                            <ul class="dropdown-menu dropdown-menu-sm">
+                              <li class="dropdown-title">Kategori</li>
+                              <li><a href="#" class="dropdown-item">Proses</a></li>
+                              <li><a href="#" class="dropdown-item">Sedang</a></li>
+                            </ul>
+                          </div>
                         </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">LR-76824</a></td>
-                        <td class="font-weight-600">Muhamad Nuruzzaki</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td>
-                        <div class ="dropdown d-inline">
-                          <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
-                          <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Kategori</li>
-                        <li><a href="#" class="dropdown-item">Proses</a></li>
-                        <li><a href="#" class="dropdown-item">Sedang</a></li>
-                          </ul>
-                        </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">LR-84990</a></td>
-                        <td class="font-weight-600">Agung Ardiansyah</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td>
-                        <div class ="dropdown d-inline">
-                          <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
-                          <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Kategori</li>
-                        <li><a href="#" class="dropdown-item">Proses</a></li>
-                        <li><a href="#" class="dropdown-item">Sedang</a></li>
-                          </ul>
-                        </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">LR-87320</a></td>
-                        <td class="font-weight-600">Ardian Rahardiansyah</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td class="font-weight-600">Kusnadi</td>
-                        <td>
-                        <div class ="dropdown d-inline">
-                          <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
-                          <ul class="dropdown-menu dropdown-menu-sm">
-                        <li class="dropdown-title">Kategori</li>
-                        <li><a href="#" class="dropdown-item">Proses</a></li>
-                        <li><a href="#" class="dropdown-item">Sedang</a></li>
-                          </ul>
-                        </div>
-                        </td>
-                      </tr>
-                    </table>
+                        </ul>
                   </div>
+                  </tr>
+                  <tr>
+                    <td><a href="#">LR-48574</a></td>
+                    <td class="font-weight-600">Hasan Basri</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td>
+                      <div class="dropdown d-inline">
+                        <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
+                        <ul class="dropdown-menu dropdown-menu-sm">
+                          <li class="dropdown-title">Kategori</li>
+                          <li><a href="#" class="dropdown-item">Proses</a></li>
+                          <li><a href="#" class="dropdown-item">Sedang</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">LR-76824</a></td>
+                    <td class="font-weight-600">Muhamad Nuruzzaki</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td>
+                      <div class="dropdown d-inline">
+                        <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
+                        <ul class="dropdown-menu dropdown-menu-sm">
+                          <li class="dropdown-title">Kategori</li>
+                          <li><a href="#" class="dropdown-item">Proses</a></li>
+                          <li><a href="#" class="dropdown-item">Sedang</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">LR-84990</a></td>
+                    <td class="font-weight-600">Agung Ardiansyah</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td>
+                      <div class="dropdown d-inline">
+                        <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
+                        <ul class="dropdown-menu dropdown-menu-sm">
+                          <li class="dropdown-title">Kategori</li>
+                          <li><a href="#" class="dropdown-item">Proses</a></li>
+                          <li><a href="#" class="dropdown-item">Sedang</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">LR-87320</a></td>
+                    <td class="font-weight-600">Ardian Rahardiansyah</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td class="font-weight-600">Kusnadi</td>
+                    <td>
+                      <div class="dropdown d-inline">
+                        <a class="font-weight-600 dropdown-toggle" data-toggle="dropdown" href="#" id="detail-proses">Belum di Proses</a>
+                        <ul class="dropdown-menu dropdown-menu-sm">
+                          <li class="dropdown-title">Kategori</li>
+                          <li><a href="#" class="dropdown-item">Proses</a></li>
+                          <li><a href="#" class="dropdown-item">Sedang</a></li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
-      </section>
       </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
-        </div>
-        <div class="footer-right">
-          2.3.0
-        </div>
-      </footer>
+      </section>
     </div>
+    <footer class="main-footer">
+      <div class="footer-left">
+        Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+      </div>
+      <div class="footer-right">
+        2.3.0
+      </div>
+    </footer>
+  </div>
   </div>
 
   <!-- General JS Scripts -->
@@ -229,4 +221,5 @@
 
   <!-- Page Specific JS File -->
 </body>
+
 </html>

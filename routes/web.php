@@ -73,23 +73,11 @@ Route::get('/Admin/Edit-User', function () {
     return view('admin/edit-pengguna');
 });
 
-//AdminSuper table admin
-Route::get('/Owner/Pengguna', function () {
-    return view('owner/table-admin');
-});
-//AdminSuper table admin
-Route::get('/Owner/Registrasi', function () {
-    return view('owner/registrasi-admin');
-});
-//AdminSuper table admin
-Route::get('/Owner/Edit-Admin', function () {
-    return view('owner/edit-admin');
-});
 //Admin permintaan pengangkutan
-Route::get('/Admin/permintaan-pengangkutan', function () {
+Route::get('/Admin/Permintaan-Pengangkutan', function () {
     return view('admin/permintaan-pengangkutan');
 });
 //Admin - Status Pengangkutan
-Route::get('/Admin/status-pengangkutan', function () {
+Route::get('/Admin/Status-Pengangkutan', function () {
     return view('admin/status-pengangkutan');
 });

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Riwayat Pengangkutan</title>
+    <title>Permintaan Pengangkutan</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -46,9 +46,9 @@
                         <li class="nav-item dropdown active">
                             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
                             <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/Admin/Permintaan-Pengangkutan">Permintaan</a></li>
+                                <li class="active"><a class="nav-link" href="/Admin/Permintaan-Pengangkutan">Permintaan</a></li>
                                 <li><a class="nav-link" href="/Admin/Status-Pengangkutan">Status</a></li>
-                                <li class="active"><a class="nav-link" href="/Admin/Riwayat">Riwayat</a></li>
+                                <li><a class="nav-link" href="/Admin/Riwayat">Riwayat</a></li>
                             </ul>
                         </li>
                         <li><a class="nav-link" href="/Admin/Pengguna"><i class="fas fa-plus "></i> <span>Pengguna</span></a></li>
@@ -67,49 +67,50 @@
             <div class="main-content">
                 <section class="section">
                     <div class="section-header">
-                        <h1>Riwayat Pengangkutan</h1>
+                        <h1>Permintaan Pengangkutan</h1>
+                        <div class="section-header-breadcrumb">
+                            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+                            <div class="breadcrumb-item"><a href="#">Pengangkutan</a></div>
+                            <div class="breadcrumb-item">Permintaan</div>
+                        </div>
                     </div>
                     <div class="section-body">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Riwayat</h4>
+                                <h4>Permintaan</h4>
                             </div>
                             <div class="card-body p-0">
                                 <div class="table-responsive table-invoice">
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">
-                                                    ID
-                                                </th>
+                                                <th>ID</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>
-                                                <th>Tanggal Pengangkutan</th>
-                                                <th>Waktu Pengangkutan</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>X</td>
-                                                <td>Jl. Bla</td>
-                                                <td>
-                                                    Senin, 1 Januari 2022
-                                                </td>
-                                                <td>10:15 WIB</td>
+                                                <td>131231</td>
+                                                <td>Adi Budi</td>
+                                                <td>Jl. Jalan ke Mangga Dua</td>
+                                                <td>12 Februari 2022</td>
+                                                <td>07:00</td>
+                                                <td><button class="btn btn-success" onclick="terima_btn()">Terima</button></td>
+                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Tolak</button></td>
                                             </tr>
                                             <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>X</td>
-                                                <td>Jl. Bla</td>
-                                                <td>
-                                                    Senin, 1 Januari 2022
-                                                </td>
-                                                <td>10:15 WIB</td>
+                                                <td>131231</td>
+                                                <td>Adi Budi</td>
+                                                <td>Jl. Jalan ke Mangga Dua</td>
+                                                <td>12 Februari 2022</td>
+                                                <td>07:00</td>
+                                                <td><button class="btn btn-success" onclick="terima_btn()">Terima</button></td>
+                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Tolak</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -136,16 +137,17 @@
     <script src="../assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/1.0.4/js/chocolat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <script src="../assets/js/page/forms-advanced-forms.js"></script>
+    <script src="../assets/js/page/admin-permintaan-pengangkutan.js"></script>
+
 </body>
 
 </html>
