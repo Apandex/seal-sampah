@@ -89,7 +89,8 @@
                             <th>Kelurahan</th>
                             <th>Alamat</th>
                             <th>Masalah</th>
-                            <th>Aksi</th>
+                            <th></th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -100,10 +101,11 @@
                             <td>Menteng Dalam</td>
                             <td>Jl. Prof. DR. Soepomo No.231</td>
                             <td>Banyak</td>
-                            <td colspan="2">
-                              <button class="btn btn-primary" id="confirmReport"><i class="fas fa-check"></i> </button>
-                              <button class="btn btn-warning" id="editReport"><i class="fas fa-pencil-alt"></i> </button>
-                              <button class="btn btn-danger" id="deleteReport"><i class="fas fa-trash"></i></button>
+                            <td>
+                              <button class="btn btn-primary" id="confirmReport">Terima</button>
+                            </td>
+                            <td>
+                              <button class="btn btn-danger" id="deleteReport">Tolak</button>
                             </td>
                           </tr>
                         </tbody>

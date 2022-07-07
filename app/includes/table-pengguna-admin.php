@@ -96,7 +96,8 @@
                             <th>RW</th>
                             <th>RT</th>
                             <th>Alamat</th>
-                            <th>Aksi</th>
+                            <th></th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -108,9 +109,11 @@
                             <td>07</td>
                             <td>01</td>
                             <td>Jl. Prof. DR. Soepomo No.231</td>
-                            <td colspan="2">
-                              <button class="btn btn-warning" id="editUser"><i class="fas fa-pencil-alt"></i> </button>
-                              <button class="btn btn-danger" id="deleteUser"><i class="fas fa-trash"></i></button>
+                            <td>
+                              <button class="btn btn-warning" id="editUser">Edit</button>
+                            </td>
+                            <td>
+                              <button class="btn btn-danger" id="deleteUser">Delete</button>
                             </td>
                           </tr>
                         </tbody>
