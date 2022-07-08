@@ -12,7 +12,7 @@
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -110,9 +110,9 @@
                                 <h4>Riwayat</h4>
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive table-invoice">
+                                <div class="table-responsive">
                                     <table class="table table-striped tabelRiwayat" id="table-1">
-                                        <<thead>
+                                        <thead>
                                             <tr>
                                                 <th class="text-center no">
                                                     #
@@ -181,7 +181,7 @@
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
-    <!-- <script src="../assets/js/page/modules-datatables.js"></script> -->
+    <script src="../assets/js/page/modules-datatables.js"></script>
     <script src="../assets/js/page/riwayat-pengangkutan.js"></script>
 </body>
 

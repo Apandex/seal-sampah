@@ -38,9 +38,9 @@ $("[data-checkboxes]").each(function () {
     });
 });
 
-$("#table-1").dataTable({
-    columnDefs: [{ sortable: false, targets: [2, 3] }],
-});
+// $("#table-1").dataTable({
+//     columnDefs: [{ sortable: false, targets: [2, 3] }],
+// });
 
 $("#table-2").dataTable({
     columnDefs: [{ sortable: false, targets: [0, 2, 3] }],
