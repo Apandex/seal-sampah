@@ -11,10 +11,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jqvmap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -84,8 +82,8 @@
                                     <div class="card-header">
                                         <h4>Pengangkutan Berhasil</h4>
                                     </div>
-                                    <div class="card-body">
-                                        59
+                                    <div class="card-body" id="banyakBerhasil">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -99,8 +97,8 @@
                                     <div class="card-header">
                                         <h4>Pengangkutan Dibatal</h4>
                                     </div>
-                                    <div class="card-body">
-                                        59
+                                    <div class="card-body" id="banyakBatal">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -111,12 +109,12 @@
                             <div class="card-header">
                                 <h4>Riwayat</h4>
                             </div>
-                            <div class="card-body p-0">
+                            <div class="card-body">
                                 <div class="table-responsive table-invoice">
-                                    <table class="table table-striped">
-                                        <thead>
+                                    <table class="table table-striped tabelRiwayat" id="table-1">
+                                        <<thead>
                                             <tr>
-                                                <th class="text-center">
+                                                <th class="text-center no">
                                                     #
                                                 </th>
                                                 <th>Tanggal Pengangkutan</th>
@@ -125,7 +123,7 @@
                                                 <th>Atas Nama</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <!-- <tbody>
                                             <tr>
                                                 <td>
                                                     1
@@ -148,7 +146,7 @@
                                                 </td>
                                                 <td>Bapak Homo Sapiens</td>
                                             </tr>
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
@@ -174,12 +172,17 @@
 
     <!-- JS Libraies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/1.0.4/js/chocolat.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https:////cdn.datatables.net/select/1.3.3/js/select.bootstrap4.js"></script>
 
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
+    <!-- <script src="../assets/js/page/modules-datatables.js"></script> -->
+    <script src="../assets/js/page/riwayat-pengangkutan.js"></script>
 </body>
 
 </html>
