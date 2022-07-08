@@ -634,5 +634,6 @@ $('.tabelRiwayat').dataTable({
         { data: 'status' },
         { data: 'name' },
     ], 
+    autoWidth: false,
 },
 )
