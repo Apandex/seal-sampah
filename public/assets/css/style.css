@@ -1740,6 +1740,33 @@ h6 .badge {
     color: #fff !important;
 }
 
+.btn-green,
+.btn-green.disabled {
+    box-shadow: 0 2px 6px #808080;
+    background-color: #20AE6D;
+    border-color: #00BFA5;
+    color: #fff;
+}
+.btn-green:focus,
+.btn-green:hover,
+.btn-green:active,
+.btn-green.disabled:hover,
+.btn-green.disabled:focus,
+.btn-green.disabled:active {
+    background-color: #388E3C !important;
+    color: #fff !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus,
+.btn-outline-danger:active,
+.btn-outline-danger.disabled:hover,
+.btn-outline-danger.disabled:focus,
+.btn-outline-danger.disabled:active {
+    background-color: #fb160a !important;
+    color: #fff !important;
+}
+
 .btn-dark,
 .btn-dark.disabled {
     box-shadow: 0 2px 6px #728394;
@@ -2154,6 +2181,26 @@ h6 .badge {
     height: 115px;
     background-color: #66b862;
     z-index: -1;
+}
+
+.navbar-lp {
+    content: " ";
+    position: flex;
+    top: 0;
+    bottom: 50px;
+    width: 100%;
+    height: 115px;
+    background-color: #FEFEFEFE;
+    z-index: -1;
+    align-items: center;
+}
+
+.navbar-cust {
+    background-color: #FEFEFEFE;
+    height: 70px;
+    position: absolute;
+    z-index: 890;
+    background-color: transparent;
 }
 
 .navbar {
@@ -2691,6 +2738,7 @@ ul.nav-tabs li.nav-item a.nav-link.active i {
     --danger: #fc544b;
     --light: #e3eaef;
     --dark: #191d21;
+    --green: #00BFA5;
 }
 
 body,
