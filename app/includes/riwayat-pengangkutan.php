@@ -12,7 +12,7 @@
 
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
-  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -123,7 +123,7 @@
                                                 <th>Atas Nama</th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody>
+                                        <tbody>
                                             <tr>
                                                 <td>
                                                     1
@@ -146,7 +146,7 @@
                                                 </td>
                                                 <td>Bapak Homo Sapiens</td>
                                             </tr>
-                                        </tbody> -->
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -182,7 +182,7 @@
 
     <!-- Page Specific JS File -->
     <script src="../assets/js/page/modules-datatables.js"></script>
-    <script src="../assets/js/page/riwayat-pengangkutan.js"></script>
+    <!-- <script src="../assets/js/page/riwayat-pengangkutan.js"></script> -->
 </body>
 
 </html>
