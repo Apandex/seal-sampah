@@ -153,6 +153,7 @@
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/modules-datatables.js"></script>
+  <!-- <script src="../assets/js/page/riwayat-lapor.js"></script> -->
 </body>
 
 </html>
