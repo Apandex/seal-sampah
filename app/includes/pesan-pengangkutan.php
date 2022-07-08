@@ -82,7 +82,7 @@
                         <p class="section-lead">BLA</p> -->
 
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-sm-12 col-md-6" id="pesan">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4>Pesan</h4>
@@ -113,7 +113,44 @@
                                         <div class="form-group row mb-4">
                                             <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                             <div class="col-sm-12 col-md-7">
-                                                <button class="btn btn-primary">Publish</button>
+                                                <button class="btn btn-primary" onclick="pesan">Publish</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6" id="edit">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Reschedule</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Sampah</label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <select class="form-control selectric" disabled>
+                                                    <option>Organik</option>
+                                                    <option>Anorganik</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <input type="text" class="form-control datepicker" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <input type="text" class="form-control timepicker" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-4">
+                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                            <div class="col-sm-12 col-md-7">
+                                                <button class="btn btn-primary" onclick="edit" disabled>Publish</button>
                                             </div>
                                         </div>
                                     </div>
