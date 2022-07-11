@@ -14,35 +14,42 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+<style>
+  .card{
+    padding: 2rem;
+  }
+  .header-card{
+    padding-bottom: 0.5rem;
+  }
+</style>
 <body>
     <div id="app">
-        <div class="navbar-lp"></div>
-        <nav class="navbar-cust navbar-lp navbar-expand-lg">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="nav-collapse mx-auto">
-            <ul class="navbar-nav mr-auto my-auto">
-              <li class="mt-4 mx-5">
-                <a href="#">
-                  <img class="img-fluid rounded-circle rounded" width="60" height="60" src="assets/img/logo-pepes.png" alt="">
-                </a>
-              </li>
-              <li class="nav-item mt-4">
-                <a class="nav-link text-black-50 font-weight-bolder" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item mt-4">
-                <a class="nav-link text-black-50 font-weight-bolder" href="#Eksplorasi">Ekplorasi</a>
-              </li>
-              <li class="nav-item mt-4">
-                <a class="nav-link text-black-50 font-weight-bolder" href="#FAQ">FAQ</a>
-              </li>
-            </ul>
-          <div class="mt-4 mr-5">
-            <button type="button" class="btn btn-green btn-lg">Masuk</button>
+      <div class="main-wrapper">
+        <div class="container-fluid" style="background-color:white">
+          <nav class="navbar-expand-lg">
+            <div class="nav-collapse mx-auto">
+              <ul class="navbar-nav mr-auto my-auto">
+                <li class="mt-3 mb-3 mx-5">
+                  <a href="#">
+                    <img class="img-fluid rounded-circle rounded" width="60" height="60" src="assets/img/logo-pepes.png" alt="">
+                  </a>
+                </li>
+                <li class="nav-item mt-4">
+                  <a class="nav-link text-black-50 font-weight-bolder" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item mt-4">
+                  <a class="nav-link text-black-50 font-weight-bolder" href="#Eksplorasi">Ekplorasi</a>
+                </li>
+                <li class="nav-item mt-4">
+                  <a class="nav-link text-black-50 font-weight-bolder" href="#FAQ">FAQ</a>
+                </li>
+              </ul>
+            <div class="mt-4 mr-5">
+              <button type="button" class="btn btn-green btn-lg">Masuk</button>
+            </div>
           </div>
+          </nav>
         </div>
-        </nav>
         <!-- Main Content -->
       <div class="container-fluid">
       <section class="section">
@@ -82,7 +89,7 @@
           <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;" id="Eksplorasi">
             <div class="card-body row g-0 align-items-start">
               <div class="col-md-8 my-auto">
-                <h2 class="text-black-50">
+                <h2 class="text-black-50 header-card">
                   Penjadwalan
                 </h2>
                 <p class="font-weight-normal">
@@ -98,7 +105,7 @@
           <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
             <div class="card-body row g-0 align-items-start">
               <div class="col-md-8 my-auto">
-                <h2 class="text-black-50">
+                <h2 class="text-black-50 header-card">
                   Jadwal Pengangkutan
                 </h2>
                 <p class="font-weight-normal">
@@ -114,7 +121,7 @@
           <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
             <div class="card-body row g-0 align-items-start">
               <div class="col-md-8 my-auto">
-                <h2 class="text-black-50">
+                <h2 class="text-black-50 header-card">
                   Riwayat Pengangkutan
                 </h2>
                 <p class="font-weight-normal">
@@ -127,14 +134,15 @@
             </div>
           </div>
           <!-- End Card -->
-  
+        </section>
           <!-- Accordion -->
-          <div class="mt-5 mx-auto" style="max-width: 1300px;" id="FAQ">
+        <section>
+        <div class="mt-5 mx-auto" style="max-width: 1300px;" id="FAQ">
             <h2 class="mx-auto text-center text-success">
               FAQ
             </h5>
             <div id="accordion">
-              <div class="card">
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -149,7 +157,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card">
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -163,7 +171,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card">
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -178,9 +186,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
           <!-- End Accordion -->
-        {{-- </section> --}}
+        </section>
       </div>
       <footer class="main-footer">
         <div class="footer-left">
@@ -190,6 +198,7 @@
           <!-- 2.3.0 -->
         </div>
       </footer>
+    </div>
     </div>
   
     <!-- General JS Scripts -->
@@ -201,11 +210,7 @@
     <script src="../assets/js/stisla.js"></script>
   
     <!-- JS Libraies -->
-    <script src="../node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
-    <script src="../node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="../node_modules/summernote/dist/summernote-bs4.js"></script>
-    <script src="../node_modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/1.0.4/js/chocolat.js"></script>
   
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
