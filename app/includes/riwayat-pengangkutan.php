@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tablePengangkutanUser()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -59,8 +59,8 @@
 
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Logout
+                        <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
+                            <i class="fas fa-rocket"></i> Keluar
                         </a>
                     </div>
                 </aside>
@@ -83,7 +83,7 @@
                                         <h4>Pengangkutan Berhasil</h4>
                                     </div>
                                     <div class="card-body" id="banyakBerhasil">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
                                         <h4>Pengangkutan Dibatal</h4>
                                     </div>
                                     <div class="card-body" id="banyakBatal">
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -111,41 +111,18 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped tabelRiwayat" id="table-1">
+                                    <table class="table table-striped tabelRiwayat" id="table-pengangkutanuser">
                                         <thead>
                                             <tr>
                                                 <th class="text-center no">
-                                                    #
+                                                    ID
                                                 </th>
-                                                <th>Tanggal Pengangkutan</th>
+                                                <th>Tanggal</th>
                                                 <th>Waktu</th>
                                                 <th>Status</th>
-                                                <th>Atas Nama</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>22 Februari 2020</td>
-                                                <td>12:00</td>
-                                                <td>
-                                                    <div class="badge badge-danger">BATAL</div>
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>22 Februari 2021</td>
-                                                <td>21:00</td>
-                                                <td>
-                                                    <div class="badge badge-success">BERHASIL</div>
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -182,6 +159,7 @@
 
     <!-- Page Specific JS File -->
     <script src="../assets/js/page/modules-datatables.js"></script>
+    <script src="../assets/js/api-alsi.js"></script>
     <!-- <script src="../assets/js/page/riwayat-pengangkutan.js"></script> -->
 </body>
 
