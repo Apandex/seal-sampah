@@ -16,6 +16,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+
 </head>
 
 <body>
@@ -34,10 +35,10 @@
               </div>
 
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <form id="form_login" enctype="multipart/form-data" onsubmit="login();return false" action="#" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="email">ID</label>
-                    <input id="id" type="input" class="form-control" name="email" tabindex="1" required autofocus>
+                    <input id="login_email" type="input" class="form-control" name="email" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Please fill in your ID
                     </div>
@@ -47,7 +48,7 @@
                     <div class="d-block">
                       <label for="password" class="control-label">Password</label>
                     </div>
-                    <input id="password" type="password" class="form-control" name="password" tabindex="2" required>
+                    <input id="login_password" type="password" class="form-control" name="password" tabindex="2" required>
                     <div class="invalid-feedback">
                       please fill in your password
                     </div>
@@ -84,6 +85,8 @@
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
+  <script src="../assets/js/api-alsi.js"></script>
+
 
   <!-- Page Specific JS File -->
 </body>
