@@ -21,15 +21,19 @@
   .header-card{
     padding-bottom: 0.5rem;
   }
+  .navibar{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+  }
 </style>
 <body>
     <div id="app">
       <div class="main-wrapper">
         <div class="container-fluid" style="background-color:white">
-          <nav class="navbar-expand-lg">
-            <div class="nav-collapse mx-auto">
-              <ul class="navbar-nav mr-auto my-auto">
-                <li class="mt-3 mb-3 mx-5">
+          <nav class="navbar-expand-lg mx-auto navibar" style="max-width: 1140px;">
+              <ul class="navibar mr-auto my-auto" style="margin-left:-2.5rem ;">
+                <li class="mt-3 mb-3 mr-3">
                   <a href="#">
                     <img class="img-fluid rounded-circle rounded" width="60" height="60" src="assets/img/logo-pepes.png" alt="">
                   </a>
@@ -44,10 +48,9 @@
                   <a class="nav-link text-black-50 font-weight-bolder" href="#FAQ">FAQ</a>
                 </li>
               </ul>
-            <div class="mt-4 mr-5">
-              <button type="button" class="btn btn-green btn-lg">Masuk</button>
+            <div class="mt-4">
+              <a href="/login" class="btn btn-green btn-lg">Masuk</a>
             </div>
-          </div>
           </nav>
         </div>
         <!-- Main Content -->
@@ -190,12 +193,9 @@
           <!-- End Accordion -->
         </section>
       </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          <!-- Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> -->
-        </div>
-        <div class="footer-right">
-          <!-- 2.3.0 -->
+      <footer>  
+        <div class="simple-footer">
+          Copyright &copy; 2022 <div class="bullet"></div> All Rights Reserved
         </div>
       </footer>
     </div>
