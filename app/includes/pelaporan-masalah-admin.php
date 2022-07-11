@@ -102,10 +102,10 @@
                             <td>Jl. Prof. DR. Soepomo No.231</td>
                             <td>Banyak</td>
                             <td>
-                              <button class="btn btn-primary" id="confirmReport">Terima</button>
+                              <button class="btn btn-warning" id="confirmReport">Diproses</button>
                             </td>
                             <td>
-                              <button class="btn btn-danger" id="deleteReport">Tolak</button>
+                              <button class="btn btn-success" id="deleteReport">Selesai</button>
                             </td>
                           </tr>
                         </tbody>
