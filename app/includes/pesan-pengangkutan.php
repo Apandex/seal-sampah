@@ -63,8 +63,8 @@
 
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Logout
+                        <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
+                            <i class="fas fa-rocket"></i> Keluar
                         </a>
                     </div>
                 </aside>
@@ -88,38 +88,41 @@
                                         <h4>Pesan</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Sampah</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <select class="form-control selectric">
-                                                    <option>Organik</option>
-                                                    <option>Anorganik</option>
-                                                </select>
+                                        <form enctype="multipart/form-data" onsubmit="newPengangkutan();return false">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Sampah</label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <select class="form-control selectric">
+                                                        <option>Organik</option>
+                                                        <option>Anorganik</option>
+                                                        <option>Lain-Lain</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <input type="text" class="form-control datepicker">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input id="Tanggal_angkut" type="date" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <input type="text" class="form-control timepicker">
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <input id="jam_angkut" type="time" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <button class="btn btn-primary" onclick="pesan">Publish</button>
+                                            <div class="form-group row mb-4">
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <button type="submit" class="btn btn-primary">Pesan</button>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-6" id="edit">
+                            <!-- <div class="col-sm-12 col-md-6" id="edit">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4>Reschedule</h4>
@@ -155,7 +158,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </section>
@@ -191,6 +194,7 @@
 
     <!-- Page Specific JS File -->
     <script src="../assets/js/page/forms-advanced-forms.js"></script>
+    <script src="../assets/js/api-alsi.js"></script>
 </body>
 
 </html>

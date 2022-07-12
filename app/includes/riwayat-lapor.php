@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tableLaporanUser()">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -59,8 +59,8 @@
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
-              <i class="fas fa-rocket"></i> Logout
+            <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
+              <i class="fas fa-rocket"></i> Keluar
             </a>
           </div>
         </aside>
@@ -83,32 +83,17 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped" id="table-1">
+                      <table class="table table-striped" id="table-laporanmasalahuser">
                         <thead>
                           <tr>
                             <th class="text-center">
                               ID
                             </th>
-                            <th>Nama</th>
-                            <th>No. Telp</th>
-                            <th>Kelurahan</th>
-                            <th>Alamat</th>
-                            <th>Masalah</th>
+                            <th>Laporan</th>
                             <th>Status</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Alsi</td>
-                            <td>085155154599</td>
-                            <td>Menteng Dalam</td>
-                            <td>Jl. Prof. DR. Soepomo No.231</td>
-                            <td>Banyak</td>
-                            <td>
-                              <div class="badge badge-warning">DIPROSES</div>
-                            </td>
-                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -153,6 +138,7 @@
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/modules-datatables.js"></script>
+  <script src="../assets/js/api-alsi.js"></script>
   <!-- <script src="../assets/js/page/riwayat-lapor.js"></script> -->
 </body>
 

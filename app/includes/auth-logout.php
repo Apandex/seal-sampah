@@ -19,8 +19,8 @@
 
 </head>
 
-<body>
-  <div id="app">
+<body onload="logout()">
+  <!-- <div id="app">
     <section class="section">
       <div class="container mt-5">
         <div class="row">
@@ -70,7 +70,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </div> -->
 
   <!-- General JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
