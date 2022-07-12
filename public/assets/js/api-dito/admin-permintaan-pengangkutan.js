@@ -17,9 +17,6 @@ function terima_btn(){
         $.ajax({
           method: "PUT",
           url: url,
-          // data:{
-          //   'status':
-          // },
           headers: {
               Authorization: token,
           },
@@ -79,23 +76,6 @@ function tolak_btn(){
   })
 };
 
-function nolak(data){
-  swal({
-    title: 'Apakah anda yakin?',
-    text: 'Proses ini tidak bisa diubah kembali seperti awal',
-    icon: 'warning',
-    buttons: true,
-  })
-  .then((willDelete) => {
-    if (willDelete) {
-    swal('Penolakan Berhasil', {
-      icon: 'success',
-    });
-    } else {
-    swal('Proses dibatalkan');
-    }
-  });
-}
 
 function tablePermintaanPengangkutan() {
   let tokenSession = sessionStorage.getItem("token");

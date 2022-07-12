@@ -86,26 +86,6 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody>
-                                            <tr>
-                                                <td>131231</td>
-                                                <td>Adi Budi</td>
-                                                <td>Jl. Jalan ke Mangga Dua</td>
-                                                <td>12 Februari 2022</td>
-                                                <td>07:00</td>
-                                                <td><button class="btn btn-success" onclick="terima_btn()">Terima</button></td>
-                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Tolak</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>131231</td>
-                                                <td>Adi Budi</td>
-                                                <td>Jl. Jalan ke Mangga Dua</td>
-                                                <td>12 Februari 2022</td>
-                                                <td>07:00</td>
-                                                <td><button class="btn btn-success" onclick="terima_btn()">Terima</button></td>
-                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Tolak</button></td>
-                                            </tr>
-                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
@@ -141,7 +121,6 @@
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
-    <!-- <script src="../assets/js/page/modules-datatables.js"></script> -->
     <script src="../assets/js/api-dito/admin-permintaan-pengangkutan.js"></script>
 
 </body>
