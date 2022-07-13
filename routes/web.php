@@ -45,6 +45,10 @@ Route::get('/pesan-pengangkutan', function () {
     return view('user/pesan-pengangkutan');
 });
 
+Route::get('/penjadwalan-ulang-pengangkutan', function () {
+    return view('user/penjadwalan-ulang-pengangkutan');
+});
+
 //User Pesan Angkut
 Route::get('/riwayat-pengangkutan', function () {
     return view('user/riwayat-pengangkutan');
