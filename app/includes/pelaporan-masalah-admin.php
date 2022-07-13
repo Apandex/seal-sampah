@@ -84,12 +84,13 @@
                             <th class="text-center">
                               ID
                             </th>
+                            <th>Tanggal</th>
                             <th>Nama</th>
                             <th>No. Telp</th>
                             <th>Kelurahan</th>
                             <th>Alamat</th>
-                            <th>Tanggal</th>
                             <th>Masalah</th>
+                            <th>Status</th>
                             <th>Aksi</th>
                           </tr>
                         </thead>
