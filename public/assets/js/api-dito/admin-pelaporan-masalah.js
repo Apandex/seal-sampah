@@ -1,7 +1,7 @@
 "use strict";
 
-function terima_btn(){
-  $("#tablePermintaanPengangkutan").on('click', '#btnTerima', function() {
+function selesai_btn(){
+  $("#tablePelaporanMasalah").on('click', '#btnSelesai', function() {
     var id = $(this).closest("tr").find("td:eq(0)").text();
     swal({
       title: 'Apakah anda yakin?',
@@ -13,7 +13,7 @@ function terima_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/adminterimaorder/"+id
+        const url = "https://pepeseal.klubaderai.com/api/adminselesailaporan/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -21,7 +21,6 @@ function terima_btn(){
               Authorization: token,
           },
           success: function (response){
-              console.log(response)
               swal('Pengangkutan akan dilaksanakan', {
                 icon: 'success',
               });
@@ -38,8 +37,8 @@ function terima_btn(){
   })
 }
 
-function tolak_btn(){
-  $("#tablePermintaanPengangkutan").on('click', '#btnTolak', function() {
+function proses_btn(){
+  $("#tablePelaporanMasalah").on('click', '#btnProses', function() {
     var id = $(this).closest("tr").find("td:eq(0)").text();
     swal({
       title: 'Apakah anda yakin?',
@@ -51,7 +50,7 @@ function tolak_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/admintolakorder/"+id
+        // const url = "https://pepeseal.klubaderai.com/api/admintolakorder/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -59,8 +58,7 @@ function tolak_btn(){
               Authorization: token,
           },
           success: function (response){
-              console.log(response)
-              swal('Penolakan Berhasil', {
+              swal('Masalah segera diproses', {
                 icon: 'success',
               });
           },
@@ -77,10 +75,10 @@ function tolak_btn(){
 };
 
 
-function tablePermintaanPengangkutan() {
+function tablePelaporanMasalah() {
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
-  const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanadmin"
+  const url = "https://pepeseal.klubaderai.com/api/getlaporanmasalahadmin"
   $(document).ready(function () {
       $.ajax({
           method: "GET",
@@ -89,10 +87,10 @@ function tablePermintaanPengangkutan() {
               Authorization: token,
           },
           success: function (response) {
-              var dataAPI = response.pengangkutan;
-              console.log(dataAPI);
-              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Pending")
-              $("#tablePermintaanPengangkutan").DataTable({
+              var dataAPI = response.laporan;
+              console.log(dataAPI)
+              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Pending" )
+              $("#tablePelaporanMasalah").DataTable({
                   data: dataAPI,
                   responsive: true,
                   pageLength: 10,
@@ -100,33 +98,63 @@ function tablePermintaanPengangkutan() {
                   order: [[0, "desc"]],
                   columnDefs: [
                     {
-                      targets:[5],
-                      render: function(){
-                          const btnTerima = '<button class="btn btn-success mx-1" id="btnTerima" onclick="terima_btn()">Terima</button>'
-                          const btnTolak = '<button class="btn btn-danger mx-1" id="btnTolak" onclick="tolak_btn()">Tolak</button>'   
-                          return btnTolak + btnTerima
+                      targets:[1],
+                      render: function (data) {;
+                        var date = new Date(data)
+                        return date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear()
                       }
-                    },],
+                    },
+                    {
+                      targets:[7],
+                      render: function (data) {
+                        if (data.status == "Terima") {
+                          return '<div class="badge badge-success">Sedang Diproses</div>'
+                      } else {
+                          return '<div class="badge badge-warning">Menunggu</div>'
+                      }
+                      }
+                    },
+                    {
+                      targets:[8],
+                      render: function (data) {
+                        if (data.status == "Terima") {
+                          return '<button class="btn btn-success mx-1" id="btnSelesai" onclick="selesai_btn()">Selesai</button>'
+                      } else {
+                          return '<button class="btn btn-warning mx-1" id="btnProses" onclick="proses_btn()">Proses</button>' 
+                      }}
+                    }],
                   columns: [
                       {
                           data: "id",
                       },
                       {
+                        data: "created_at",
+                        orderable: false,
+                      },
+                      {
+                          data: ""
+                      },
+                      {
                           data: ""
                       },
                       {
                           data: ""
                       },
                       {
-                          data: "Tanggal_angkut",
+                          data: ""
+                      },
+                      {
+                          data: "laporan",
                           orderable: false,
                       },
                       {
-                          data: "jam_angkut",
+                          data: "status",
                           orderable: false,
-                      },{
-                          width: "9rem"
                       },
+                      {
+                          data: "status",
+                          orderable: false,
+                      }
                   ],
               },);
           },
