@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tableStatusPengangkutan()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive table-invoice">
-                                    <table class="table table-striped" id="table-1">
+                                    <table class="table table-striped" id="tableStatusPengangkutan">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -84,10 +84,9 @@
                                                 <th>Waktu</th>
                                                 <th>Status</th>
                                                 <th></th>
-                                                <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <!-- <tbody>
                                             <tr>
                                                 <td>131231</td>
                                                 <td>Adi Budi</td>
@@ -124,7 +123,7 @@
                                                 <td></td>
                                                 <td></td>
                                             </tr>
-                                        </tbody>
+                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
@@ -160,8 +159,7 @@
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../assets/js/page/modules-datatables.js"></script>
-    <script src="../assets/js/page/admin-status-pengangkutan.js"></script>
+    <script src="../assets/js/api-dito/admin-status-pengangkutan.js"></script>
 
 </body>
 
