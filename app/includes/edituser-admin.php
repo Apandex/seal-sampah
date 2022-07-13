@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="showPengguna()">
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -120,6 +120,7 @@
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/auth-register.js"></script>
+  <script src="../assets/js/api-alsi.js"></script>
 </body>
 
 </html>

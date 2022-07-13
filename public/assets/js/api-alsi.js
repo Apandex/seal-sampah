@@ -284,3 +284,98 @@ function newReschedule() {
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 }
+
+function tablePengguna() {
+    var myArray = [];
+    const url = "https://pepeseal.klubaderai.com/api/users";
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                dataAPI = response.data;
+                console.log(dataAPI);
+                // console.log(dataAPI);
+                $("#table-pengguna").DataTable({
+                    data: dataAPI,
+                    responsive: true,
+                    pageLength: 10,
+                    autoWidth: false,
+                    order: [[0, "asc"]],
+                    columns: [
+                        {
+                            data: "id",
+                            orderable: false,
+                        },
+                        {
+                            data: "name",
+                            orderable: false,
+                        },
+                        {
+                            data: "email",
+                            orderable: false,
+                        },
+                        {
+                            data: "no_telp",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.Kelurahan",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.RW",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.RT",
+                            orderable: false,
+                        },
+                        {
+                            render: function (id) {
+                                return '<button class="btn btn-warning" id="btnEditPengguna" onclick="editPengguna()"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>';
+                            },
+                            orderable: false,
+                        },
+                    ],
+                });
+            },
+            error: function (response) {
+                hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function editPengguna() {
+    $("#table-pengguna").on("click", "#btnEditPengguna", function () {
+        var id = $(this).closest("tr").find("td:eq(0)").text();
+        sessionStorage.setItem("id-pengguna", id);
+        location.href = "/Admin/Edit-User";
+    });
+}
+
+function showPengguna() {
+    sessionStorage.getItem("id-pengguna");
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+    };
+
+    fetch("https://pepeseal.klubaderai.com/api/users/89", requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+            var data = JSON.parse(result);
+            console.log(data);
+        })
+        .catch((error) => console.log("error", error));
+}
