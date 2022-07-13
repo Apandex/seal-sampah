@@ -100,6 +100,16 @@ function tablePermintaanPengangkutan() {
                   order: [[0, "desc"]],
                   columnDefs: [
                     {
+                      targets:[2],
+                      render: function (data) {
+                        if (!data.Alamat) {
+                          return "-"
+                        } else {
+                          return data.Alamat
+                        }
+                      }
+                    },
+                    {
                       targets:[5],
                       render: function(){
                           const btnTerima = '<button class="btn btn-success mx-1" id="btnTerima" onclick="terima_btn()">Terima</button>'
@@ -117,7 +127,6 @@ function tablePermintaanPengangkutan() {
                       },
                       {
                           data: "user",
-                          render: {_:"Alamat"}
                       },
                       {
                           data: "Tanggal_angkut",

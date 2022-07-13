@@ -73,19 +73,26 @@ function tablePelaporanMasalah() {
                       }
                     },
                     {
-                      targets:[7],
+                      targets: [5],
                       render: function (data) {
-                        if (data.status == "Terima") {
-                          return '<div class="badge badge-warning">Dalam Proses</div>'
+                        if (!data.Alamat) {
+                          return "-"
+                        } else {
+                          return data.Alamat
+                        }
                       }
+                    },
+                    {
+                      targets:[7],
+                      render: function () {
+                          return '<div class="badge badge-warning">Dalam Proses</div>'
                       }
                     },
                     {
                       targets:[8],
-                      render: function (data) {
-                        if (data.status == "Terima") {
+                      render: function () {
                           return '<button class="btn btn-success mx-1" id="btnSelesai" onclick="selesai_btn()">Selesai</button>' 
-                      }}
+                      }
                     }],
                   columns: [
                       {
@@ -108,20 +115,11 @@ function tablePelaporanMasalah() {
                       },
                       {
                           data: "user",
-                          render:{_:"Alamat"},
                       },
                       {
                         data: "laporan",
                         orderable: false,
                       },
-                      {
-                          data: "status",
-                          orderable: false,
-                      },
-                      {
-                          data: "status",
-                          orderable: false,
-                      }
                   ],
               },);
           },
