@@ -13,7 +13,7 @@ function tableStatusPengangkutan() {
             },
             success: function (response) {
                 var dataAPI = response.pengangkutan;
-                dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak" || dataAPI.status.status == "Pending" || dataAPI.status.status == "Reschedule")
+                // dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak" || dataAPI.status.status == "Pending" || dataAPI.status.status == "Reschedule")
                 $("#tableStatusPengangkutan").DataTable({
                     data: dataAPI,
                     responsive: true,
@@ -78,6 +78,7 @@ function tableStatusPengangkutan() {
             },
             success: function (response) {
                 var dataAPI = response.pengangkutan;
+                console.log(dataAPI);
                 dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima")
                 $("#tableOnProgress").DataTable({
                     data: dataAPI,
@@ -86,14 +87,14 @@ function tableStatusPengangkutan() {
                     autoWidth: false,
                     order: [[0, "desc"]],
                     columnDefs: [
-                      {
-                        targets:[5],
-                        render: function (data) {
-                          if (data.status == "Terima") {
-                            return '<div class="badge badge-success">On Progress</div>'
-                        }
-                        }
-                      }],
+                        {
+                            targets:[5],
+                            render: function (data) {
+                              if (data.status == "Terima") {
+                                return '<div class="badge badge-success">Akan Diangkut</div>'
+                            }
+                            }
+                          },],
                     columns: [
                         {
                             data: "id",
