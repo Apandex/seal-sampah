@@ -91,7 +91,7 @@ function tablePermintaanPengangkutan() {
           success: function (response) {
               var dataAPI = response.pengangkutan;
               console.log(dataAPI);
-              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Pending")
+              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Pending" || dataAPI.status.status == "reschedule_pending")
               $("#tablePermintaanPengangkutan").DataTable({
                   data: dataAPI,
                   responsive: true,
@@ -112,10 +112,12 @@ function tablePermintaanPengangkutan() {
                           data: "id",
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render: {_: "name"}
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render: {_:"Alamat"}
                       },
                       {
                           data: "Tanggal_angkut",
