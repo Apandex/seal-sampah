@@ -93,6 +93,18 @@ function tablePengangkutanUser() {
                             data: "id",
                         },
                         {
+                            data: "user.name",
+                        },
+                        {
+                            data: "user.no_telp",
+                        },
+                        {
+                            data: "user.kodealamat",
+                        },
+                        {
+                            data: "user.Alamat",
+                        },
+                        {
                             data: "Tanggal_angkut",
                             orderable: false,
                         },
@@ -135,7 +147,8 @@ function tableLaporanUser() {
                     order: [[0, "desc"]],
                     columns: [
                         {
-                            data: "id",
+                            data: "user.name",
+                            orderable: false,
                         },
                         {
                             data: "laporan",
@@ -197,6 +210,168 @@ function newLaporan() {
     };
 
     fetch("https://pepeseal.klubaderai.com/api/newlaporan", requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+            var data = JSON.parse(result);
+            console.log(data);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function searchPesanan() {
+    var id = document.getElementById("id").value;
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/viewpengangkutanuser/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => {
+            var data = JSON.parse(result);
+            document.getElementById("id").disabled = true;
+
+            var uid = document.getElementById("uid");
+            var ta = document.getElementById("Tanggal_angkut");
+            var ja = document.getElementById("jam_angkut");
+            var s = document.getElementById("status");
+
+            uid.value = data.pengangkutan.id_user;
+            ta.value = data.pengangkutan.Tanggal_angkut;
+            ja.value = data.pengangkutan.jam_angkut;
+            s.value = data.pengangkutan.status.status;
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function newReschedule() {
+    var id = document.getElementById("id").value;
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    var urlencoded = new URLSearchParams();
+
+    urlencoded.append(
+        "Tanggal_angkut",
+        document.getElementById("Tanggal_angkut_baru").value
+    );
+    urlencoded.append(
+        "jam_angkut",
+        document.getElementById("jam_angkut_baru").value
+    );
+
+    var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/updatepengangkutan/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+}
+
+function tablePengguna() {
+    var myArray = [];
+    const url = "https://pepeseal.klubaderai.com/api/users";
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                dataAPI = response.data;
+                console.log(dataAPI);
+                // console.log(dataAPI);
+                $("#table-pengguna").DataTable({
+                    data: dataAPI,
+                    responsive: true,
+                    pageLength: 10,
+                    autoWidth: false,
+                    order: [[0, "asc"]],
+                    columns: [
+                        {
+                            data: "id",
+                            orderable: false,
+                        },
+                        {
+                            data: "name",
+                            orderable: false,
+                        },
+                        {
+                            data: "email",
+                            orderable: false,
+                        },
+                        {
+                            data: "no_telp",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.Kelurahan",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.RW",
+                            orderable: false,
+                        },
+                        {
+                            data: "kodealamat.RT",
+                            orderable: false,
+                        },
+                        {
+                            render: function (id) {
+                                return '<button class="btn btn-warning" id="btnEditPengguna" onclick="editPengguna()"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>';
+                            },
+                            orderable: false,
+                        },
+                    ],
+                });
+            },
+            error: function (response) {
+                hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function editPengguna() {
+    $("#table-pengguna").on("click", "#btnEditPengguna", function () {
+        var id = $(this).closest("tr").find("td:eq(0)").text();
+        sessionStorage.setItem("id-pengguna", id);
+        location.href = "/Admin/Edit-User";
+    });
+}
+
+function showPengguna() {
+    sessionStorage.getItem("id-pengguna");
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+    };
+
+    fetch("https://pepeseal.klubaderai.com/api/users/89", requestOptions)
         .then((response) => response.text())
         .then((result) => {
             var data = JSON.parse(result);
