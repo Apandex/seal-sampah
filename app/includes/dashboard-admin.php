@@ -13,14 +13,14 @@
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.bootstrap4.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css"> -->
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tableStatusPengangkutan(), tableOnProgress()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -143,8 +143,8 @@
                                         <h4>Last Request</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped" id="table-1">
+                                        <div class="table-responsive table-invoice">
+                                            <table class="table table-striped" id="tableStatusPengangkutan">
                                                 <thead>
                                                     <tr>
                                                         <th class="text-center">
@@ -152,16 +152,19 @@
                                                         </th>
                                                         <th>Nama</th>
                                                         <th>Alamat</th>
+                                                        <th>Tanggal</th>
+                                                        <th>Waktu</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td>
                                                             1
                                                         </td>
                                                         <td>Bapak Homo Sapiens</td>
                                                         <td>Jl. Bla</td>
-                                                    </tr>
+                                                    </tr> -->
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -174,8 +177,8 @@
                                         <h4>On Progress</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped" id="table-2">
+                                        <div class="table-responsive table-invoice">
+                                            <table class="table table-striped" id="tableOnProgress">
                                                 <thead>
                                                     <tr>
                                                         <th class="text-center">
@@ -183,9 +186,12 @@
                                                         </th>
                                                         <th>Nama</th>
                                                         <th>Alamat</th>
+                                                        <th>Tanggal</th>
+                                                        <th>Waktu</th>
+                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <!-- <tbody>
                                                     <tr>
                                                         <td>
                                                             1
@@ -193,7 +199,7 @@
                                                         <td>Bapak Homo Sapiens</td>
                                                         <td>Jl. Bla</td>
                                                     </tr>
-                                                </tbody>
+                                                </tbody> -->
                                             </table>
                                         </div>
                                     </div>
@@ -230,8 +236,9 @@
     <script src="../assets/js/custom.js"></script>
 
     <!-- Page Specific JS File -->
-    <script src="../assets/js/page/modules-datatables.js"></script>
-    <script src="../assets/js/page/index-0.js"></script>
+    <!-- <script src="../assets/js/page/modules-datatables.js"></script>
+    <script src="../assets/js/page/index-0.js"></script> -->
+    <script src="../assets/js/api-wildan/admin-dashboard.js"></script>
 </body>
 
 </html>
