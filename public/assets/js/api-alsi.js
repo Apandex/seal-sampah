@@ -66,7 +66,10 @@ function logout() {
 
     fetch("https://pepeseal.klubaderai.com/api/logout", requestOptions)
         .then((response) => response.text())
-        .then((result) => console.log(result))
+        .then((result) => {
+            sessionStorage.clear();
+            location.href = "/";
+        })
         .catch((error) => console.log("error", error));
 }
 
