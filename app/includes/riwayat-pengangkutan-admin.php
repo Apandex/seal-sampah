@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tablePengangkutanUser()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped" id="table-1">
+                                    <table class="table table-striped" id="tablepengangkutanadmin">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
@@ -87,28 +87,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>X</td>
-                                                <td>Jl. Bla</td>
-                                                <td>
-                                                    Senin, 1 Januari 2022
-                                                </td>
-                                                <td>10:15 WIB</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>X</td>
-                                                <td>Jl. Bla</td>
-                                                <td>
-                                                    Senin, 1 Januari 2022
-                                                </td>
-                                                <td>10:15 WIB</td>
-                                            </tr>
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -142,6 +121,7 @@
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>
     <script src="../assets/js/custom.js"></script>
+    <script src="../assets/js/api-felix.js"></script>
 
     <!-- Page Specific JS File -->
     <script src="../assets/js/page/modules-datatables.js"></script>
