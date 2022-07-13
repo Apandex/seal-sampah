@@ -87,7 +87,7 @@
                         <thead>
                           <tr>
                             <th class="text-center">
-                              ID
+                              Nama
                             </th>
                             <th>Laporan</th>
                             <th>Status</th>

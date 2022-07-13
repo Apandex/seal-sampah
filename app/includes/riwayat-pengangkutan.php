@@ -117,6 +117,10 @@
                                                 <th class="text-center no">
                                                     ID
                                                 </th>
+                                                <th>Nama</th>
+                                                <th>No. Telp</th>
+                                                <th>Kelurahan</th>
+                                                <th>Alamat</th>
                                                 <th>Tanggal</th>
                                                 <th>Waktu</th>
                                                 <th>Status</th>

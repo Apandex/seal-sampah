@@ -93,6 +93,18 @@ function tablePengangkutanUser() {
                             data: "id",
                         },
                         {
+                            data: "user.name",
+                        },
+                        {
+                            data: "user.no_telp",
+                        },
+                        {
+                            data: "user.kodealamat",
+                        },
+                        {
+                            data: "user.Alamat",
+                        },
+                        {
                             data: "Tanggal_angkut",
                             orderable: false,
                         },
@@ -135,7 +147,8 @@ function tableLaporanUser() {
                     order: [[0, "desc"]],
                     columns: [
                         {
-                            data: "id",
+                            data: "user.name",
+                            orderable: false,
                         },
                         {
                             data: "laporan",
@@ -202,5 +215,72 @@ function newLaporan() {
             var data = JSON.parse(result);
             console.log(data);
         })
+        .catch((error) => console.log("error", error));
+}
+
+function searchPesanan() {
+    var id = document.getElementById("id").value;
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/viewpengangkutanuser/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => {
+            var data = JSON.parse(result);
+            document.getElementById("id").disabled = true;
+
+            var uid = document.getElementById("uid");
+            var ta = document.getElementById("Tanggal_angkut");
+            var ja = document.getElementById("jam_angkut");
+            var s = document.getElementById("status");
+
+            uid.value = data.pengangkutan.id_user;
+            ta.value = data.pengangkutan.Tanggal_angkut;
+            ja.value = data.pengangkutan.jam_angkut;
+            s.value = data.pengangkutan.status.status;
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function newReschedule() {
+    var id = document.getElementById("id").value;
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    var urlencoded = new URLSearchParams();
+
+    urlencoded.append(
+        "Tanggal_angkut",
+        document.getElementById("Tanggal_angkut_baru").value
+    );
+    urlencoded.append(
+        "jam_angkut",
+        document.getElementById("jam_angkut_baru").value
+    );
+
+    var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/updatepengangkutan/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 }
