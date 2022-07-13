@@ -87,29 +87,7 @@ function tablePelaporanMasalah() {
               Authorization: token,
           },
           success: function (response) {
-              // var dataAPI = response.laporan;
-              var dataAPI = [
-                {
-                    "id": 1,
-                    "id_user": "89",
-                    "laporan": "jelek banget wifinya",
-                    "status": {
-                        "status": "Pending"
-                    },
-                    "created_at": "2022-07-08T17:59:19.000000Z",
-                    "updated_at": "2022-07-08T18:13:26.000000Z"
-                },
-                {
-                    "id": 2,
-                    "id_user": "89",
-                    "laporan": "<p>a</p>",
-                    "status": {
-                        "status": "Terima"
-                    },
-                    "created_at": "2022-07-11T18:23:52.000000Z",
-                    "updated_at": "2022-07-13T04:24:54.000000Z"
-                }
-            ]
+              var dataAPI = response.laporan;
               console.log(dataAPI)
               dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Pending" )
               $("#tablePelaporanMasalah").DataTable({
