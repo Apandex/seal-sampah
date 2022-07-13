@@ -54,7 +54,7 @@
                     </ul>
 
                     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
+                        <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
                             <i class="fas fa-rocket"></i> Logout
                         </a>
                     </div>
