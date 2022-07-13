@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
 </head>
 
-<body>
+<body onload="tablePengguna()">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -84,38 +84,22 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped" id="table-1">
+                      <table class="table table-striped" id="table-pengguna">
                         <thead>
                           <tr>
                             <th class="text-center">
                               ID
                             </th>
                             <th>Nama</th>
+                            <th>Email</th>
                             <th>No. Telp</th>
                             <th>Kelurahan</th>
                             <th>RW</th>
                             <th>RT</th>
-                            <th>Alamat</th>
-                            <th></th>
                             <th></th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Alsi</td>
-                            <td>085155154599</td>
-                            <td>Menteng Dalam</td>
-                            <td>07</td>
-                            <td>01</td>
-                            <td>Jl. Prof. DR. Soepomo No.231</td>
-                            <td>
-                              <button class="btn btn-warning" id="editUser">Edit</button>
-                            </td>
-                            <td>
-                              <button class="btn btn-danger" id="deleteUser">Delete</button>
-                            </td>
-                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -157,6 +141,7 @@
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/modules-datatables.js"></script>
+  <script src="../assets/js/api-alsi.js"></script>
 </body>
 
 </html>
