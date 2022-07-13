@@ -37,44 +37,6 @@ function selesai_btn(){
   })
 }
 
-function proses_btn(){
-  $("#tablePelaporanMasalah").on('click', '#btnProses', function() {
-    var id = $(this).closest("tr").find("td:eq(0)").text();
-    swal({
-      title: 'Apakah anda yakin?',
-      text: 'Proses ini tidak bisa diubah kembali seperti awal',
-      icon: 'warning',
-      buttons: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        let tokenSession = sessionStorage.getItem("token");
-        let token = "Bearer" + " " + tokenSession;
-        // const url = "https://pepeseal.klubaderai.com/api/admintolakorder/"+id
-        $.ajax({
-          method: "PUT",
-          url: url,
-          headers: {
-              Authorization: token,
-          },
-          success: function (response){
-              swal('Masalah segera diproses', {
-                icon: 'success',
-              });
-          },
-          error: function (response) {
-              var hasil = response.responseJSON.message;
-              alert(hasil);
-          },
-      });
-      } else {
-      swal('Proses dibatalkan');
-      }
-    });
-  })
-};
-
-
 function tablePelaporanMasalah() {
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
@@ -89,7 +51,7 @@ function tablePelaporanMasalah() {
           success: function (response) {
               var dataAPI = response.laporan;
               console.log(dataAPI)
-              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Pending" )
+              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima")
               $("#tablePelaporanMasalah").DataTable({
                   data: dataAPI,
                   responsive: true,
@@ -105,12 +67,16 @@ function tablePelaporanMasalah() {
                       }
                     },
                     {
+                      targets:[4],
+                      render: function (data) {
+                        return data.kodealamat.Kelurahan
+                      }
+                    },
+                    {
                       targets:[7],
                       render: function (data) {
                         if (data.status == "Terima") {
-                          return '<div class="badge badge-success">Sedang Diproses</div>'
-                      } else {
-                          return '<div class="badge badge-warning">Menunggu</div>'
+                          return '<div class="badge badge-warning">Dalam Proses</div>'
                       }
                       }
                     },
@@ -118,9 +84,7 @@ function tablePelaporanMasalah() {
                       targets:[8],
                       render: function (data) {
                         if (data.status == "Terima") {
-                          return '<button class="btn btn-success mx-1" id="btnSelesai" onclick="selesai_btn()">Selesai</button>'
-                      } else {
-                          return '<button class="btn btn-warning mx-1" id="btnProses" onclick="proses_btn()">Proses</button>' 
+                          return '<button class="btn btn-success mx-1" id="btnSelesai" onclick="selesai_btn()">Selesai</button>' 
                       }}
                     }],
                   columns: [
@@ -132,20 +96,23 @@ function tablePelaporanMasalah() {
                         orderable: false,
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render:{_:"name"},
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render:{_:"no_telp"},
                       },
                       {
-                          data: ""
+                          data: "user",
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render:{_:"Alamat"},
                       },
                       {
-                          data: "laporan",
-                          orderable: false,
+                        data: "laporan",
+                        orderable: false,
                       },
                       {
                           data: "status",
