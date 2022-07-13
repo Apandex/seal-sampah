@@ -82,8 +82,7 @@
                                                 <th>Alamat</th>
                                                 <th>Tanggal</th>
                                                 <th>Waktu</th>
-                                                <th></th>
-                                                <th></th>
+                                                <th class="text-center">Aksi</th>
                                             </tr>
                                         </thead>
                                     </table>

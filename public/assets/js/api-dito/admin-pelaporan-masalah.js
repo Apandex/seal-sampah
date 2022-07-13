@@ -21,7 +21,6 @@ function selesai_btn(){
               Authorization: token,
           },
           success: function (response){
-              console.log(response)
               swal('Pengangkutan akan dilaksanakan', {
                 icon: 'success',
               });
@@ -59,7 +58,6 @@ function proses_btn(){
               Authorization: token,
           },
           success: function (response){
-              console.log(response)
               swal('Masalah segera diproses', {
                 icon: 'success',
               });
@@ -81,7 +79,7 @@ function tablePelaporanMasalah() {
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
   const url = "https://pepeseal.klubaderai.com/api/getlaporanmasalahadmin"
-  console.log(token + url)
+  console.log(token)
   $(document).ready(function () {
       $.ajax({
           method: "GET",
@@ -92,7 +90,6 @@ function tablePelaporanMasalah() {
           success: function (response) {
               var dataAPI = response.laporan;
               dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Pending" )
-              console.log(dataAPI);
               $("#tablePelaporanMasalah").DataTable({
                   data: dataAPI,
                   responsive: true,
