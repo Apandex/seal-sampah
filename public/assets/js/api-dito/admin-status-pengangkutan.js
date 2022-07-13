@@ -13,7 +13,7 @@ function selesai_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        // const url = "https://pepeseal.klubaderai.com/api/adminterimaorder/"+id
+        const url = "https://pepeseal.klubaderai.com/api/adminselesaiorder/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -37,42 +37,6 @@ function selesai_btn(){
   })
 }
 
-function undur_btn(){
-  $("#tableStatusPengangkutan").on('click', '#btnUndur', function() {
-    var id = $(this).closest("tr").find("td:eq(0)").text();
-    swal({
-      title: 'Apakah anda yakin?',
-      text: 'Proses ini tidak bisa diubah kembali seperti awal',
-      icon: 'warning',
-      buttons: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        let tokenSession = sessionStorage.getItem("token");
-        let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/admintolakorder/"+id
-        $.ajax({
-          method: "PUT",
-          url: url,
-          headers: {
-              Authorization: token,
-          },
-          success: function (response){
-              swal('Pengunduran Berhasil', {
-                icon: 'success',
-              });
-          },
-          error: function (response) {
-              var hasil = response.responseJSON.message;
-              alert(hasil);
-          },
-      });
-      } else {
-      swal('Proses dibatalkan');
-      }
-    });
-  })
-};
 
 function tableStatusPengangkutan() {
   let tokenSession = sessionStorage.getItem("token");
@@ -118,10 +82,12 @@ function tableStatusPengangkutan() {
                           data: "id",
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render: {_: "name"}
                       },
                       {
-                          data: ""
+                          data: "user",
+                          render: {_:"Alamat"}
                       },
                       {
                           data: "Tanggal_angkut",
