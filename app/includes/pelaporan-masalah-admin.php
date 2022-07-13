@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="tablePelaporanMasalah()">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -54,7 +54,7 @@
           </ul>
 
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-            <a href="/" class="btn btn-danger btn-lg btn-block btn-icon-split">
+            <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
               <i class="fas fa-rocket"></i> Logout
             </a>
           </div>
@@ -78,7 +78,7 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped" id="table-1">
+                      <table class="table table-striped" id="tablePelaporanMasalah">
                         <thead>
                           <tr>
                             <th class="text-center">
@@ -88,27 +88,11 @@
                             <th>No. Telp</th>
                             <th>Kelurahan</th>
                             <th>Alamat</th>
+                            <th>Tanggal</th>
                             <th>Masalah</th>
-                            <th></th>
-                            <th></th>
+                            <th>Aksi</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Alsi</td>
-                            <td>085155154599</td>
-                            <td>Menteng Dalam</td>
-                            <td>Jl. Prof. DR. Soepomo No.231</td>
-                            <td>Banyak</td>
-                            <td>
-                              <button class="btn btn-warning" id="confirmReport">Diproses</button>
-                            </td>
-                            <td>
-                              <button class="btn btn-success" id="deleteReport">Selesai</button>
-                            </td>
-                          </tr>
-                        </tbody>
                       </table>
                     </div>
                   </div>
@@ -152,7 +136,7 @@
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
-  <script src="../assets/js/page/modules-datatables.js"></script>
+  <script src="../assets/js/api-dito/admin-pelaporan-masalah.js"></script>
 </body>
 
 </html>
