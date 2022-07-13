@@ -102,15 +102,11 @@ function tablePermintaanPengangkutan() {
                     {
                       targets:[5],
                       render: function(){
-                          return '<button class="btn btn-success" id="btnTerima" onclick="terima_btn()">Terima</button>'
+                          const btnTerima = '<button class="btn btn-success mx-1" id="btnTerima" onclick="terima_btn()">Terima</button>'
+                          const btnTolak = '<button class="btn btn-danger mx-1" id="btnTolak" onclick="tolak_btn()">Tolak</button>'   
+                          return btnTolak + btnTerima
                       }
-                    },
-                    {
-                      targets:[6],
-                      render: function(){
-                          return '<button class="btn btn-danger" id="btnTolak" onclick="tolak_btn()">Tolak</button>'
-                      }
-                    }],
+                    },],
                   columns: [
                       {
                           data: "id",
@@ -128,6 +124,8 @@ function tablePermintaanPengangkutan() {
                       {
                           data: "jam_angkut",
                           orderable: false,
+                      },{
+                          width: "9rem"
                       },
                   ],
               },);
