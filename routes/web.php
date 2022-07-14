@@ -75,6 +75,11 @@ Route::get('/Admin/Pengguna', function () {
     return view('admin/table-pengguna');
 });
 
+//Admin table alamat
+Route::get('/Admin/Alamat', function () {
+    return view('admin/table-alamat');
+});
+
 //Admin regis user
 Route::get('/Admin/Registrasi', function () {
     return view('admin/registrasi-pengguna');

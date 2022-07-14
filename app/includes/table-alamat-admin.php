@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
 </head>
 
-<body onload="tablePengguna()">
+<body onload="tableAlamat()">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>
@@ -52,8 +52,9 @@
             <li class="nav-item dropdown active">
               <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-plus"></i> <span>Administrasi</span></a>
               <ul class="dropdown-menu">
-                <li class="active"><a class="nav-link" href="/Admin/Pengguna">Pengguna</a></li>
-                <li><a class="nav-link" href="/Admin/Alamat">Alamat</a></li>
+                <li><a class="nav-link" href="/Admin/Pengguna">Pengguna</a></li>
+                <li class="active"><a class="nav-link" href="/Admin/Alamat">Alamat</a>
+                </li>
               </ul>
             </li>
             <li><a class="nav-link" href="/Admin/lapor-masalah"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a></li>
@@ -75,7 +76,7 @@
               <div style="font-size: 1rem;">
                 <i class="fa fa-users" style="padding:0.5rem 0.9rem"></i>
               </div>
-              <h1>Administrasi Pengguna</h1>
+              <h1>Administrasi Alamat</h1>
             </div>
           </div>
 
@@ -85,7 +86,7 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="card-header-action">
-                      <a href="/Admin/Registrasi" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Pengguna</a>
+                      <a href="/Admin/Registrasi" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Alamat</a>
                     </div>
                   </div>
                   <div class="card-body">
@@ -97,12 +98,10 @@
                               ID
                             </th>
                             <th>Nama</th>
-                            <th>Email</th>
-                            <th>No. Telp</th>
+                            <th>Kecamatan</th>
                             <th>Kelurahan</th>
                             <th>RW</th>
                             <th>RT</th>
-                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
