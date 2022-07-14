@@ -22,6 +22,13 @@
         .iconn{
             margin: 1.8rem 0;
         }
+        .btnTable{
+            margin: auto!important;
+            flex: 0 0 47%;
+            font-size: 15px;
+            font-style: bold;
+            padding: 0.55rem 1.5rem;
+        }
     </style>
 </head>
 
@@ -141,64 +148,62 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Last Request</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive table-invoice">
-                                            <table class="table table-striped" id="tableStatusPengangkutan">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">
-                                                            ID
-                                                        </th>
-                                                        <th>Nama</th>
-                                                        <th>Alamat</th>
-                                                        <th>Tanggal</th>
-                                                        <th>Waktu</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
-                                        </div>
-                                    </div>
+                        <div class="row mb-4">
+                            <a href="#tableOnProgress" class="btn btn-success btnTable">On Progress</a>
+                            <a href="#tableStatusPengangkutan" class="btn btn-success btnTable">Last Request</a>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>On Progress</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive table-invoice">
+                                    <table class="table table-striped" id="tableOnProgress">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    ID
+                                                </th>
+                                                <th>Nama</th>
+                                                <th>Alamat</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <!-- <tbody>
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td>Bapak Homo Sapiens</td>
+                                                <td>Jl. Bla</td>
+                                            </tr>
+                                        </tbody> -->
+                                    </table>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>On Progress</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive table-invoice">
-                                            <table class="table table-striped" id="tableOnProgress">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">
-                                                            ID
-                                                        </th>
-                                                        <th>Nama</th>
-                                                        <th>Alamat</th>
-                                                        <th>Tanggal</th>
-                                                        <th>Waktu</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <!-- <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>Bapak Homo Sapiens</td>
-                                                        <td>Jl. Bla</td>
-                                                    </tr>
-                                                </tbody> -->
-                                            </table>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Last Request</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive table-invoice">
+                                    <table class="table table-striped" id="tableStatusPengangkutan">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    ID
+                                                </th>
+                                                <th>Nama</th>
+                                                <th>Alamat</th>
+                                                <th>Tanggal</th>
+                                                <th>Waktu</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                             </div>
                         </div>
