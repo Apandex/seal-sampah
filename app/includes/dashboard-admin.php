@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body onload="tableStatusPengangkutan(), tableOnProgress()">
+<body onload="refresh()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -75,7 +75,7 @@
                             <div style="font-size: 1rem;">
                                 <i class="fa fa-user" style="padding:0.5rem 0.9rem"></i>
                             </div>
-                            <h1>Selamat Datang, Admin</h1>
+                            <h1 id="nameUser">Selamat Datang, Admin</h1>
                         </div>
                     </div>
                     <div class="section-body">
@@ -89,7 +89,7 @@
                                         <div class="card-header">
                                             <h4>Today Request</h4>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body" id="todayRequest">
                                             X
                                         </div>
                                     </div>
@@ -104,8 +104,8 @@
                                         <div class="card-header">
                                             <h4>On Progress</h4>
                                         </div>
-                                        <div class="card-body">
-                                            X
+                                        <div class="card-body" id="onProgress">
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +119,7 @@
                                         <div class="card-header">
                                             <h4>All Request</h4>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body" id="allRequest">
                                             X
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                         <div class="card-header">
                                             <h4>Request Success</h4>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body" id="requestSuccess">
                                             X
                                         </div>
                                     </div>
@@ -159,18 +159,9 @@
                                                         <th>Alamat</th>
                                                         <th>Tanggal</th>
                                                         <th>Waktu</th>
+                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <!-- <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>Bapak Homo Sapiens</td>
-                                                        <td>Jl. Bla</td>
-                                                    </tr> -->
-
-                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
