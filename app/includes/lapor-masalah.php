@@ -11,9 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/theme/duotone-dark.css">
+
   <link rel="stylesheet" href="../assets/css/selectric.css">
 
   <!-- Template CSS -->
@@ -86,7 +84,7 @@
                       <div class="form-group row mb-4">
                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi Masalah</label>
                         <div class="col-sm-12 col-md-7">
-                          <textarea id="laporan" class="summernote-simple col-sm-14 col-md-12"></textarea>
+                          <textarea id="laporan" class="form-control" style="height: 120px"></textarea>
                         </div>
                       </div>
                       <div class="form-group row mb-4">
@@ -120,9 +118,6 @@
   <script src="../assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
-  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/javascript/javascript.min.js"></script>
   <script src="../assets/js/jquery.selectric.min.js"></script>
 
   <!-- Template JS File -->

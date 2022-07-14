@@ -87,8 +87,9 @@
                         <thead>
                           <tr>
                             <th class="text-center">
-                              Nama
+                              ID
                             </th>
+                            <th>Tanggal</th>
                             <th>Laporan</th>
                             <th>Status</th>
                           </tr>

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="showDashboardStatusPengangkutan()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -101,7 +101,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped" id="table-1">
+                                    <table class="table table-striped" id="table-statuspengangkutan">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
@@ -114,40 +114,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>22 Februari 2020</td>
-                                                <td>12:00</td>
-                                                <td>
-                                                    <div class="badge badge-success">DIJADWALKAN</div>
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                                <!-- <td><a href="#" class="btn btn-danger">Jadwal Ulang</a></td> -->
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>22 Februari 2021</td>
-                                                <td>21:00</td>
-                                                <td>
-                                                    <div class="badge badge-success">DIJADWALKAN</div>
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    3
-                                                </td>
-                                                <td>31 Februari 2222</td>
-                                                <td>00:00</td>
-                                                <td>
-                                                    <div class="badge badge-warning">DIPROSES</div>
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -160,7 +126,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped" id="table-2">
+                                    <table class="table table-striped" id="table-statustolak">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
@@ -173,24 +139,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>22 Februari 2020</td>
-                                                <td>12:00</td>
-                                                <td>Bapak Homo Sapiens</td>
-                                                <td><button class="btn btn-danger">Ubah</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    2
-                                                </td>
-                                                <td>22 Februari 2021</td>
-                                                <td>21:00</td>
-                                                <td>Bapak Homo Sapiens</td>
-                                                <td><button class="btn btn-danger">Ubah</button></td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -228,6 +176,7 @@
     <!-- Page Specific JS File -->
     <script src="../assets/js/page/modules-datatables.js"></script>
     <script src="../assets/js/page/index-0.js"></script>
+    <script src="../assets/js/api-alsi.js"></script>
 </body>
 
 </html>

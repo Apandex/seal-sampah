@@ -82,7 +82,7 @@
                         <p class="section-lead">BLA</p> -->
 
                         <div class="row">
-                            <div class="col-sm-12 col-md-6" id="pesan">
+                            <div class="col-sm-12 col-md-12" id="pesan">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4>Pesan</h4>

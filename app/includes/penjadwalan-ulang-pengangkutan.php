@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body>
+<body onload="searchPesanan()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -87,23 +87,14 @@
                                         <h4>Order Lama</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form onsubmit="searchPesanan(); return false">
+                                        <form>
                                             <div class="form-group row mb-4">
-                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Cari ID</label>
+                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input id="id" type="text" class="form-control">
-                                                </div>
-                                                <div class="pull-right">
-                                                    <button type="submit" class="btn btn-info"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                    <input id="status" type="text" class="form-control" disabled>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row mb-4">
-                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">User ID</label>
-                                                <div class="col-sm-12 col-md-7">
-                                                    <input id="uid" type="text" class="form-control" disabled>
-                                                </div>
-                                            </div>
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
                                                 <div class="col-sm-12 col-md-7">
@@ -114,12 +105,6 @@
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
                                                 <div class="col-sm-12 col-md-7">
                                                     <input id="jam_angkut" type="text" class="form-control" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row mb-4">
-                                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
-                                                <div class="col-sm-12 col-md-7">
-                                                    <input id="status" type="text" class="form-control" disabled>
                                                 </div>
                                             </div>
 

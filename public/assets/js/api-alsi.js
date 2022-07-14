@@ -74,8 +74,8 @@ function logout() {
 }
 
 function tablePengangkutanUser() {
-    var myArray = [];
-    const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanuser";
+    const url =
+        "https://pepeseal.klubaderai.com/api/viewriwayatpengangkutanuser";
     $(document).ready(function () {
         $.ajax({
             method: "GET",
@@ -85,6 +85,7 @@ function tablePengangkutanUser() {
             },
             success: function (response) {
                 dataAPI = response.pengangkutan;
+                console.log(response);
                 $("#table-pengangkutanuser").DataTable({
                     data: dataAPI,
                     responsive: true,
@@ -97,15 +98,19 @@ function tablePengangkutanUser() {
                         },
                         {
                             data: "user.name",
+                            orderable: false,
                         },
                         {
                             data: "user.no_telp",
+                            orderable: false,
                         },
                         {
-                            data: "user.kodealamat",
+                            data: "user.kodealamat.Kelurahan",
+                            orderable: false,
                         },
                         {
                             data: "user.Alamat",
+                            orderable: false,
                         },
                         {
                             data: "Tanggal_angkut",
@@ -142,6 +147,7 @@ function tableLaporanUser() {
             },
             success: function (response) {
                 dataAPI = response.laporan;
+                console.log(response);
                 $("#table-laporanmasalahuser").DataTable({
                     data: dataAPI,
                     responsive: true,
@@ -150,8 +156,19 @@ function tableLaporanUser() {
                     order: [[0, "desc"]],
                     columns: [
                         {
-                            data: "user.name",
+                            data: "id",
                             orderable: false,
+                        },
+                        {
+                            data: null,
+                            orderable: false,
+                            render: function (data) {
+                                var date = new Date(
+                                    data.created_at
+                                ).toLocaleDateString();
+
+                                return date;
+                            },
                         },
                         {
                             data: "laporan",
@@ -194,7 +211,6 @@ function newPengangkutan() {
         .then((response) => response.text())
         .then((result) => {
             var data = JSON.parse(result);
-            console.log(data);
         })
         .catch((error) => console.log("error", error));
 }
@@ -218,73 +234,6 @@ function newLaporan() {
             var data = JSON.parse(result);
             console.log(data);
         })
-        .catch((error) => console.log("error", error));
-}
-
-function searchPesanan() {
-    var id = document.getElementById("id").value;
-
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
-
-    var requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
-    };
-
-    fetch(
-        "https://pepeseal.klubaderai.com/api/viewpengangkutanuser/" + id,
-        requestOptions
-    )
-        .then((response) => response.text())
-        .then((result) => {
-            var data = JSON.parse(result);
-            document.getElementById("id").disabled = true;
-
-            var uid = document.getElementById("uid");
-            var ta = document.getElementById("Tanggal_angkut");
-            var ja = document.getElementById("jam_angkut");
-            var s = document.getElementById("status");
-
-            uid.value = data.pengangkutan.id_user;
-            ta.value = data.pengangkutan.Tanggal_angkut;
-            ja.value = data.pengangkutan.jam_angkut;
-            s.value = data.pengangkutan.status.status;
-        })
-        .catch((error) => console.log("error", error));
-}
-
-function newReschedule() {
-    var id = document.getElementById("id").value;
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
-    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-
-    var urlencoded = new URLSearchParams();
-
-    urlencoded.append(
-        "Tanggal_angkut",
-        document.getElementById("Tanggal_angkut_baru").value
-    );
-    urlencoded.append(
-        "jam_angkut",
-        document.getElementById("jam_angkut_baru").value
-    );
-
-    var requestOptions = {
-        method: "PUT",
-        headers: myHeaders,
-        body: urlencoded,
-        redirect: "follow",
-    };
-
-    fetch(
-        "https://pepeseal.klubaderai.com/api/updatepengangkutan/" + id,
-        requestOptions
-    )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 }
 
@@ -379,6 +328,183 @@ function showPengguna() {
         .then((result) => {
             var data = JSON.parse(result);
             console.log(data);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function showDashboardStatusPengangkutan() {
+    const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanuser";
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                dataAPI = response.pengangkutan;
+                console.log(response);
+                $("#table-statuspengangkutan").DataTable({
+                    data: dataAPI,
+                    lengthChange: false,
+                    orderable: false,
+                    responsive: true,
+                    pageLength: 10,
+                    autoWidth: false,
+                    order: [[0, "desc"]],
+                    columns: [
+                        {
+                            data: "id",
+                        },
+                        {
+                            data: "Tanggal_angkut",
+                        },
+                        {
+                            data: "jam_angkut",
+                        },
+                        {
+                            data: "status.status",
+                        },
+                        {
+                            data: "user.name",
+                        },
+                    ],
+                });
+            },
+            error: function (response) {
+                hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                dataAPI = response.pengangkutan;
+
+                $("#table-statustolak").DataTable({
+                    data: dataAPI,
+                    // searching: false,
+
+                    responsive: true,
+                    pageLength: 10,
+                    autoWidth: false,
+                    order: [[0, "desc"]],
+                    columns: [
+                        {
+                            data: "id",
+                        },
+                        {
+                            data: "Tanggal_angkut",
+                            orderable: false,
+                        },
+                        {
+                            data: "jam_angkut",
+                            orderable: false,
+                        },
+
+                        {
+                            data: "user.name",
+                            orderable: false,
+                        },
+                        {
+                            render: function (id) {
+                                return '<button class="btn btn-warning" id="btnEditPesanan" onclick="editPesanan()">Ajukan Reschedule</i></button>';
+                            },
+                            orderable: false,
+                        },
+                        {
+                            data: "status.status",
+                            visible: false,
+                            orderable: false,
+                        },
+                    ],
+                });
+            },
+            error: function (response) {
+                hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function editPesanan() {
+    $("#table-statustolak").on("click", "#btnEditPesanan", function () {
+        var id = $(this).closest("tr").find("td:eq(0)").text();
+        sessionStorage.setItem("id-pesanan", id);
+        location.href = "/penjadwalan-ulang-pengangkutan";
+    });
+}
+
+function searchPesanan() {
+    var id = sessionStorage.getItem("id-pesanan");
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/viewpengangkutanuser/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => {
+            var data = JSON.parse(result);
+
+            var ta = document.getElementById("Tanggal_angkut");
+            var ja = document.getElementById("jam_angkut");
+            var s = document.getElementById("status");
+
+            ta.value = data.pengangkutan.Tanggal_angkut;
+            ja.value = data.pengangkutan.jam_angkut;
+            s.value = data.pengangkutan.status.status;
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function newReschedule() {
+    var id = sessionStorage.getItem("id-pesanan");
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+    myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+    var urlencoded = new URLSearchParams();
+
+    urlencoded.append(
+        "Tanggal_angkut",
+        document.getElementById("Tanggal_angkut_baru").value
+    );
+    urlencoded.append(
+        "jam_angkut",
+        document.getElementById("jam_angkut_baru").value
+    );
+
+    var requestOptions = {
+        method: "PUT",
+        headers: myHeaders,
+        body: urlencoded,
+        redirect: "follow",
+    };
+
+    fetch(
+        "https://pepeseal.klubaderai.com/api/updatepengangkutan/" + id,
+        requestOptions
+    )
+        .then((response) => response.text())
+        .then((result) => {
+            sessionStorage.removeItem("id-pesanan");
+            location.href = "/dashboard-user";
         })
         .catch((error) => console.log("error", error));
 }
