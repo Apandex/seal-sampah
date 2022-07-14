@@ -13,134 +13,7 @@ function refresh() {
                 Authorization: token,
             },
             success: function (response) {
-                // var dataAPI = response.pengangkutan;
-                
-                var dataAPI = [
-                        {
-                            "id": 1,
-                            "Tanggal_angkut": "2022-07-06",
-                            "jam_angkut": "17:44:14",
-                            "status": {
-                                "status": "Selesai"
-                            },
-                            "user": {
-                                "id": 1,
-                                "name": "Admin1",
-                                "email": "Admin1@pepes.com",
-                                "no_telp": "08382132421",
-                                "Alamat": null,
-                                "akses": "admin",
-                                "kodealamat": null
-                            }
-                        },
-                        {
-                            "id": 3,
-                            "Tanggal_angkut": "2022-07-07",
-                            "jam_angkut": "13:44:14",
-                            "status": {
-                                "status": "Selesai"
-                            },
-                            "user": {
-                                "id": 2,
-                                "name": "User1",
-                                "email": "1.1.SetuBabakan@pepessampah.com",
-                                "no_telp": "08382132421",
-                                "Alamat": null,
-                                "akses": "user",
-                                "kodealamat": {
-                                    "RT": "1",
-                                    "RW": "1",
-                                    "Kelurahan": "Setu Babakan",
-                                    "Kecamatan": "Jagakarsa"
-                                }
-                            }
-                        },
-                        {
-                            "id": 10,
-                            "Tanggal_angkut": "2022-07-15",
-                            "jam_angkut": "12:00:01",
-                            "status": {
-                                "status": "Selesai"
-                            },
-                            "user": {
-                                "id": 89,
-                                "name": "alsi",
-                                "email": "alsi@user.com",
-                                "no_telp": "085155154599",
-                                "Alamat": null,
-                                "akses": "user",
-                                "kodealamat": {
-                                    "RT": "1",
-                                    "RW": "1",
-                                    "Kelurahan": "Setu Babakan",
-                                    "Kecamatan": "Jagakarsa"
-                                }
-                            }
-                        },
-                        {
-                            "id": 5,
-                            "Tanggal_angkut": "2022-07-06",
-                            "jam_angkut": "17:44:14",
-                            "status": {
-                                "status": "Terima"
-                            },
-                            "user": {
-                                "id": 1,
-                                "name": "Admin1",
-                                "email": "Admin1@pepes.com",
-                                "no_telp": "08382132421",
-                                "Alamat": null,
-                                "akses": "admin",
-                                "kodealamat": null
-                            }
-                        },
-                        {
-                            "id": 4,
-                            "Tanggal_angkut": "2022-07-07",
-                            "jam_angkut": "13:44:14",
-                            "status": {
-                                "status": "Pending"
-                            },
-                            "user": {
-                                "id": 2,
-                                "name": "User1",
-                                "email": "1.1.SetuBabakan@pepessampah.com",
-                                "no_telp": "08382132421",
-                                "Alamat": null,
-                                "akses": "user",
-                                "kodealamat": {
-                                    "RT": "1",
-                                    "RW": "1",
-                                    "Kelurahan": "Setu Babakan",
-                                    "Kecamatan": "Jagakarsa"
-                                }
-                            }
-                        },
-                        {
-                            "id": 2,
-                            "Tanggal_angkut": "2022-07-15",
-                            "jam_angkut": "12:00:01",
-                            "status": {
-                                "status": "Reschedule"
-                            },
-                            "user": {
-                                "id": 89,
-                                "name": "alsi",
-                                "email": "alsi@user.com",
-                                "no_telp": "085155154599",
-                                "Alamat": null,
-                                "akses": "user",
-                                "kodealamat": {
-                                    "RT": "1",
-                                    "RW": "1",
-                                    "Kelurahan": "Setu Babakan",
-                                    "Kecamatan": "Jagakarsa"
-                                }
-                            }
-                        }
-                    ]
-                
-
+                var dataAPI = response.pengangkutan;
                 
                 //buat CARD yang DIATAS
                 document.getElementById('nameUser').innerHTML = "Selamat Datang, " + nameSession
@@ -165,6 +38,8 @@ function refresh() {
                 // Untuk Table LAST REQUESt
                 $("#tableStatusPengangkutan").DataTable({
                     data: dataAPI,
+                    lengthChange: false,
+                    searching: false,
                     responsive: true,
                     pageLength: 5,
                     autoWidth: false,
@@ -223,6 +98,8 @@ function refresh() {
                 // Untuk Table ON PROGRESS
                 $("#tableOnProgress").DataTable({
                     data: dataTerima,
+                    lengthChange: false,
+                    searching: false,
                     responsive: true,
                     pageLength: 5,
                     autoWidth: false,
