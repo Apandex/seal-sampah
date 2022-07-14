@@ -17,6 +17,11 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+    <style>
+        .iconn{
+            margin: 0.89rem 0;
+        }
+    </style>
 </head>
 
 <body onload="tablePengangkutanUser()">
@@ -24,7 +29,7 @@
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
             <nav class="navbar navbar-expand-lg main-navbar">
-                <form class="form-inline mr-auto">
+                <form class="form-inline mr-auto my-auto">
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
                     </ul>
@@ -76,14 +81,14 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="card card-statistic-2">
                                 <div class="card-icon shadow-success bg-success">
-                                    <i class="fas fa-check"></i>
+                                    <i class="fas fa-check iconn"></i>
                                 </div>
                                 <div class="card-wrap">
                                     <div class="card-header">
                                         <h4>Pengangkutan Berhasil</h4>
                                     </div>
                                     <div class="card-body" id="banyakBerhasil">
-
+                                        0
                                     </div>
                                 </div>
                             </div>
@@ -91,14 +96,14 @@
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="card card-statistic-2">
                                 <div class="card-icon shadow-danger bg-danger">
-                                    <i class="fas fa-times"></i>
+                                    <i class="fas fa-times iconn"></i>
                                 </div>
                                 <div class="card-wrap">
                                     <div class="card-header">
                                         <h4>Pengangkutan Dibatal</h4>
                                     </div>
                                     <div class="card-body" id="banyakBatal">
-
+                                        0
                                     </div>
                                 </div>
                             </div>

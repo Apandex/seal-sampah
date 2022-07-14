@@ -18,6 +18,11 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components.css">
+    <style>
+        .iconn{
+            margin: 1.8rem 0;
+        }
+    </style>
 </head>
 
 <body onload="tableStatusPengangkutan(), tableOnProgress()">
@@ -25,7 +30,7 @@
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
             <nav class="navbar navbar-expand-lg main-navbar">
-                <form class="form-inline mr-auto">
+                <form class="form-inline mr-auto my-auto">
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
                     </ul>
@@ -78,7 +83,7 @@
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                 <div class="card card-statistic-1">
                                     <div class="card-icon bg-dark">
-                                        <i class="fas fa-calendar"></i>
+                                        <i class="fas fa-calendar iconn"></i>
                                     </div>
                                     <div class="card-wrap">
                                         <div class="card-header">
@@ -93,7 +98,7 @@
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                 <div class="card card-statistic-1">
                                     <div class="card-icon bg-warning">
-                                        <i class="fas fa-play"></i>
+                                        <i class="fas fa-play iconn"></i>
                                     </div>
                                     <div class="card-wrap">
                                         <div class="card-header">
@@ -108,7 +113,7 @@
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                 <div class="card card-statistic-1">
                                     <div class="card-icon bg-info">
-                                        <i class="fas fa-tasks"></i>
+                                        <i class="fas fa-tasks iconn"></i>
                                     </div>
                                     <div class="card-wrap">
                                         <div class="card-header">
@@ -123,7 +128,7 @@
                             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                                 <div class="card card-statistic-1">
                                     <div class="card-icon bg-success">
-                                        <i class="fas fa-check"></i>
+                                        <i class="fas fa-check iconn"></i>
                                     </div>
                                     <div class="card-wrap">
                                         <div class="card-header">
