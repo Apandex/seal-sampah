@@ -1,5 +1,35 @@
 let tokenSession = sessionStorage.getItem("token");
 let token = "Bearer" + " " + tokenSession;
+let today = new Date();
+let resch = new Date();
+let datebaru = today.setDate(today.getDate() + 3);
+let datereschedule = today.setDate(resch.getDate() + 3);
+
+$("#Tanggal_angkut").datetimepicker({
+    timepicker: false,
+    format: "Y/m/d",
+    minDate: datebaru,
+});
+
+$("#jam_angkut").datetimepicker({
+    datepicker: false,
+    format: "H:i:s",
+    minTime: "08:00",
+    maxTime: "13:00",
+});
+
+$("#Tanggal_angkut_baru").datetimepicker({
+    timepicker: false,
+    format: "Y/m/d",
+    minDate: datereschedule,
+});
+
+$("#jam_angkut_baru").datetimepicker({
+    datepicker: false,
+    format: "H:i:s",
+    minTime: "08:00",
+    maxTime: "13:00",
+});
 
 function login() {
     var formdata = new FormData();
@@ -85,13 +115,28 @@ function tablePengangkutanUser() {
             },
             success: function (response) {
                 dataAPI = response.pengangkutan;
-                console.log(response);
+                document.getElementById("banyakBerhasil").innerHTML =
+                    response.selesai;
+                document.getElementById("banyakBatal").innerHTML =
+                    response.gagal;
                 $("#table-pengangkutanuser").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
                     order: [[0, "desc"]],
+                    columnDefs: [
+                        {
+                            targets: [7],
+                            render: function (data) {
+                                if (data.status == "Selesai") {
+                                    return '<div class="badge badge-success">Selesai</div>';
+                                } else {
+                                    return '<div class="badge badge-danger">Gagal</div>';
+                                }
+                            },
+                        },
+                    ],
                     columns: [
                         {
                             data: "id",
@@ -121,7 +166,7 @@ function tablePengangkutanUser() {
                             orderable: false,
                         },
                         {
-                            data: "status.status",
+                            data: "status",
                             orderable: false,
                         },
                     ],
@@ -147,13 +192,26 @@ function tableLaporanUser() {
             },
             success: function (response) {
                 dataAPI = response.laporan;
-                console.log(response);
                 $("#table-laporanmasalahuser").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
                     order: [[0, "desc"]],
+                    columnDefs: [
+                        {
+                            targets: [3],
+                            render: function (data) {
+                                if (data.status == "Selesai") {
+                                    return '<div class="badge badge-success">Selesai</div>';
+                                } else if (data.status == "Terima") {
+                                    return '<div class="badge badge-warning">Pending</div>';
+                                } else if (data.status == "Ditolak") {
+                                    return '<div class="badge badge-warning">Ditolak</div>';
+                                }
+                            },
+                        },
+                    ],
                     columns: [
                         {
                             data: "id",
@@ -175,7 +233,7 @@ function tableLaporanUser() {
                             orderable: false,
                         },
                         {
-                            data: "status.status",
+                            data: "status",
                             orderable: false,
                         },
                     ],
@@ -190,51 +248,79 @@ function tableLaporanUser() {
 }
 
 function newPengangkutan() {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
-
-    var formdata = new FormData();
-    formdata.append(
-        "Tanggal_angkut",
-        document.getElementById("Tanggal_angkut").value
-    );
-    formdata.append("jam_angkut", document.getElementById("jam_angkut").value);
-
-    var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: formdata,
-        redirect: "follow",
-    };
-
-    fetch("https://pepeseal.klubaderai.com/api/newpengangkutan", requestOptions)
-        .then((response) => response.text())
-        .then((result) => {
-            var data = JSON.parse(result);
-        })
-        .catch((error) => console.log("error", error));
+    swal({
+        title: "Apakah anda yakin?",
+        icon: "warning",
+        buttons: true,
+    }).then((postData) => {
+        if (postData) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", token);
+            var formdata = new FormData();
+            formdata.append(
+                "Tanggal_angkut",
+                document.getElementById("Tanggal_angkut").value
+            );
+            formdata.append(
+                "jam_angkut",
+                document.getElementById("jam_angkut").value
+            );
+            var requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: formdata,
+                redirect: "follow",
+            };
+            fetch(
+                "https://pepeseal.klubaderai.com/api/newpengangkutan",
+                requestOptions
+            )
+                .then((response) => response.text())
+                .then((result) => {
+                    var data = JSON.parse(result);
+                })
+                .catch((error) => console.log("error", error));
+        } else {
+            swal("Proses dibatalkan");
+        }
+    });
 }
 
 function newLaporan() {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
+    swal({
+        title: "Apakah anda yakin?",
+        icon: "warning",
+        buttons: true,
+    }).then((postLaporan) => {
+        if (postLaporan) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", token);
 
-    var formdata = new FormData();
-    formdata.append("laporan", document.getElementById("laporan").value);
-    var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: formdata,
-        redirect: "follow",
-    };
+            var formdata = new FormData();
+            formdata.append(
+                "laporan",
+                document.getElementById("laporan").value
+            );
+            var requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: formdata,
+                redirect: "follow",
+            };
 
-    fetch("https://pepeseal.klubaderai.com/api/newlaporan", requestOptions)
-        .then((response) => response.text())
-        .then((result) => {
-            var data = JSON.parse(result);
-            console.log(data);
-        })
-        .catch((error) => console.log("error", error));
+            fetch(
+                "https://pepeseal.klubaderai.com/api/newlaporan",
+                requestOptions
+            )
+                .then((response) => response.text())
+                .then((result) => {
+                    var data = JSON.parse(result);
+                })
+                .catch((error) => console.log("error", error));
+        } else {
+            swal("Proses dibatalkan");
+        }
+    });
 }
 
 function tablePengguna() {
@@ -249,7 +335,6 @@ function tablePengguna() {
             },
             success: function (response) {
                 dataAPI = response.data;
-                console.log(dataAPI);
                 // console.log(dataAPI);
                 $("#table-pengguna").DataTable({
                     data: dataAPI,
@@ -327,7 +412,6 @@ function showPengguna() {
         .then((response) => response.text())
         .then((result) => {
             var data = JSON.parse(result);
-            console.log(data);
         })
         .catch((error) => console.log("error", error));
 }
@@ -343,15 +427,44 @@ function showDashboardStatusPengangkutan() {
             },
             success: function (response) {
                 dataAPI = response.pengangkutan;
-                console.log(response);
+                var nama = sessionStorage.getItem("name");
+                var alert = response.pengangkutantolak.length;
+                document.getElementById("welc_name").innerHTML =
+                    "Selamat Datang, " + nama;
+                if (alert > 0) {
+                    document.getElementById("alert_tolak").style.display =
+                        "block";
+                    document.getElementById("alert_tolaknum").innerHTML =
+                        "Ada " +
+                        response.pengangkutantolak.length +
+                        " Permintaan Ditolak";
+                }
+
                 $("#table-statuspengangkutan").DataTable({
                     data: dataAPI,
-                    lengthChange: false,
                     orderable: false,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
                     order: [[0, "desc"]],
+                    columnDefs: [
+                        {
+                            targets: [3],
+                            render: function (data) {
+                                if (data.status == "Terima") {
+                                    return '<div class="badge badge-success">Terima</div>';
+                                } else if (data.status == "Reschedule") {
+                                    return '<div class="badge badge-success">Reschedule</div>';
+                                } else if (data.status == "Pending") {
+                                    return '<div class="badge badge-warning">Pending</div>';
+                                } else if (
+                                    data.status == "reschedule_pending"
+                                ) {
+                                    return '<div class="badge badge-warning">Reschedule Pending</div>';
+                                }
+                            },
+                        },
+                    ],
                     columns: [
                         {
                             data: "id",
@@ -363,10 +476,7 @@ function showDashboardStatusPengangkutan() {
                             data: "jam_angkut",
                         },
                         {
-                            data: "status.status",
-                        },
-                        {
-                            data: "user.name",
+                            data: "status",
                         },
                     ],
                 });
@@ -386,12 +496,10 @@ function showDashboardStatusPengangkutan() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutantolak;
 
                 $("#table-statustolak").DataTable({
                     data: dataAPI,
-                    // searching: false,
-
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
@@ -415,7 +523,7 @@ function showDashboardStatusPengangkutan() {
                         },
                         {
                             render: function (id) {
-                                return '<button class="btn btn-warning" id="btnEditPesanan" onclick="editPesanan()">Ajukan Reschedule</i></button>';
+                                return '<button class="btn btn-danger" id="btnEditPesanan" onclick="editPesanan()">Ajukan Reschedule</i></button>';
                             },
                             orderable: false,
                         },

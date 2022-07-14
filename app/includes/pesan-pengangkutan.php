@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/selectric.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -78,9 +79,6 @@
                     </div>
 
                     <div class="section-body">
-                        <!-- <h2 class="section-title">Pesan</h2>
-                        <p class="section-lead">BLA</p> -->
-
                         <div class="row">
                             <div class="col-sm-12 col-md-12" id="pesan">
                                 <div class="card">
@@ -102,14 +100,14 @@
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input id="Tanggal_angkut" type="date" class="form-control">
+                                                    <input id="Tanggal_angkut" type="text" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input id="jam_angkut" type="time" class="form-control">
+                                                    <input id="jam_angkut" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-4">
@@ -122,43 +120,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-sm-12 col-md-6" id="edit">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Reschedule</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Sampah</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <select class="form-control selectric" disabled>
-                                                    <option>Organik</option>
-                                                    <option>Anorganik</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <input type="text" class="form-control datepicker" disabled>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <input type="text" class="form-control timepicker" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row mb-4">
-                                            <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                            <div class="col-sm-12 col-md-7">
-                                                <button class="btn btn-primary" onclick="edit" disabled>Publish</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </section>
@@ -185,8 +146,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="../assets/js/jquery.selectric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     <!-- Template JS File -->
     <script src="../assets/js/scripts.js"></script>

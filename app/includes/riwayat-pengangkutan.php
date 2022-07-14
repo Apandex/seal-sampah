@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/components.css">
     <style>
-        .iconn{
+        .iconn {
             margin: 0.89rem 0;
         }
     </style>
@@ -88,7 +88,7 @@
                                         <h4>Pengangkutan Berhasil</h4>
                                     </div>
                                     <div class="card-body" id="banyakBerhasil">
-                                        0
+
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                         <h4>Pengangkutan Dibatal</h4>
                                     </div>
                                     <div class="card-body" id="banyakBatal">
-                                        0
+
                                     </div>
                                 </div>
                             </div>

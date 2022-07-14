@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../assets/css/selectric.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -50,7 +51,7 @@
                             <ul class="dropdown-menu ">
                                 <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat Pengangkutan</a></li>
                                 <li><a class="nav-link" href="/pesan-pengangkutan">Pesan Pengangkutan</a></li>
-                                <li class="active"><a class="nav-link" href="/penjadwalan-ulang">Penjadwalan Ulang</a></li>
+                                <li class="active"><a class="nav-link" href="/dashboard-user">Penjadwalan Ulang</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -123,14 +124,14 @@
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input id="Tanggal_angkut_baru" type="date" class="form-control">
+                                                    <input id="Tanggal_angkut_baru" type="text" class="form-control">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
                                                 <div class="col-sm-12 col-md-7">
-                                                    <input id="jam_angkut_baru" type="time" class="form-control">
+                                                    <input id="jam_angkut_baru" type="text" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-4">
@@ -170,6 +171,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.4.0/js/bootstrap-colorpicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="../assets/js/jquery.selectric.min.js"></script>
 

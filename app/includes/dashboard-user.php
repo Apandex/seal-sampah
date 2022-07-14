@@ -75,17 +75,17 @@
                             <div style="font-size: 1rem;">
                                 <i class="fa fa-home fa-lg" style="padding:0.5rem 0.9rem"></i>
                             </div>
-                            <h1>Selamat datang, x</h1>
+                            <h1 id="welc_name"></h1>
                         </div>
                     </div>
                     <div class="section-body">
-                        <div class="alert alert-danger alert-dismissible show faden">
+                        <div id="alert_tolak" style="display: none" class="alert alert-danger alert-dismissible show faden">
                             <div class="alert-body">
                                 <button class="close" data-dismiss="alert">
                                     <span>×</span>
                                 </button>
                                 <a href="#tolak_tbl">
-                                    <div class="alert-title">Ada 1 Permintaan Ditolak</div>
+                                    <div id="alert_tolaknum" class="alert-title"></div>
                                 </a>
                                 Silahkan ajukan ulang dengan mengganti tanggal dan waktu pengangkutan
                             </div>
@@ -110,7 +110,7 @@
                                                 <th>Tanggal Pengangkutan</th>
                                                 <th>Waktu</th>
                                                 <th>Status</th>
-                                                <th>Atas Nama</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
