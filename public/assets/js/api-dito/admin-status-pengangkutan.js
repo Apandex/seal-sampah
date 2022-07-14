@@ -42,7 +42,6 @@ function tableStatusPengangkutan() {
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
   const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanadmin"
-  console.log(token + url)
   $(document).ready(function () {
       $.ajax({
           method: "GET",
@@ -52,7 +51,6 @@ function tableStatusPengangkutan() {
           },
           success: function (response) {
               var dataAPI = response.pengangkutan;
-              console.log(dataAPI)
               dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak")
               $("#tableStatusPengangkutan").DataTable({
                   data: dataAPI,

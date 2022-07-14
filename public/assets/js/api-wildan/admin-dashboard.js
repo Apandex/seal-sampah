@@ -38,8 +38,10 @@ function refresh() {
                 // Untuk Table LAST REQUESt
                 $("#tableStatusPengangkutan").DataTable({
                     data: dataAPI,
+                    lengthChange: false,
+                    searching: false,
                     responsive: true,
-                    pageLength: 10,
+                    pageLength: 5,
                     autoWidth: false,
                     order: [[0, "desc"]],
                     columnDefs: [
@@ -96,8 +98,10 @@ function refresh() {
                 // Untuk Table ON PROGRESS
                 $("#tableOnProgress").DataTable({
                     data: dataTerima,
+                    lengthChange: false,
+                    searching: false,
                     responsive: true,
-                    pageLength: 10,
+                    pageLength: 5,
                     autoWidth: false,
                     order: [[0, "desc"]],
                     columnDefs: [

@@ -50,7 +50,6 @@ function tablePelaporanMasalah() {
           },
           success: function (response) {
               var dataAPI = response.laporan;
-              console.log(dataAPI)
               dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima")
               $("#tablePelaporanMasalah").DataTable({
                   data: dataAPI,
