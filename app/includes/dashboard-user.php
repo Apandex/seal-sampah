@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body onload="showDashboardStatusPengangkutan()">
+<body onload="showDashboardStatusPengangkutan(), refresh()">
     <div id="app">
         <div class="main-wrapper">
             <div class="navbar-bg"></div>
@@ -32,41 +32,7 @@
                     </ul>
                 </form>
             </nav>
-            <div class="main-sidebar sidebar-style-2">
-                <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="/dashboard-user">Pepes</a>
-                    </div>
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="/dashboard-user">P</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li class="menu-header">Dashboard</li>
-                        <li class="active"><a class="nav-link" href="/dashboard-user"><i class="fas fa-home "></i> <span>Homepage</span></a></li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-truck"></i> <span>Pengangkutan</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/riwayat-pengangkutan">Riwayat Pengangkutan</a></li>
-                                <li><a class="nav-link" href="/pesan-pengangkutan">Pesan Pengangkutan</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-comments"></i> <span>Laporan Masalah</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/riwayat-lapor">Riwayat Lapor</a></li>
-                                <li><a class="nav-link" href="/lapor-masalah">Lapor Masalah</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-
-
-                    <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-                        <a href="/logout" class="btn btn-danger btn-lg btn-block btn-icon-split">
-                            <i class="fas fa-rocket"></i> Keluar
-                        </a>
-                    </div>
-                </aside>
-            </div>
+            <?php include "sidebar-user.php" ?>
             <!-- Main Content -->
             <div class="main-content">
                 <section class="section">
@@ -177,6 +143,7 @@
     <script src="../assets/js/page/modules-datatables.js"></script>
     <script src="../assets/js/page/index-0.js"></script>
     <script src="../assets/js/api-alsi.js"></script>
+    <script src="../assets/js/api-dito/dashboard-user.js"></script>
 </body>
 
 </html>
