@@ -1,6 +1,8 @@
 "use strict";
 
 function refresh() {
+    document.getElementById('sideHomepage').classList.add("active")
+
     let tokenSession = sessionStorage.getItem("token");
     let nameSession = sessionStorage.getItem("name");
     let token = "Bearer" + " " + tokenSession;
