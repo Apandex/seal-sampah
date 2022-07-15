@@ -38,6 +38,9 @@ function selesai_btn(){
 }
 
 function tablePelaporanMasalah() {
+  
+  document.getElementById('sideLaporan').classList.add("active")
+
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
   const url = "https://pepeseal.klubaderai.com/api/getlaporanmasalahadmin"

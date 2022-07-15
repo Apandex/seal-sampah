@@ -76,6 +76,10 @@ function tolak_btn(){
 
 
 function tablePermintaanPengangkutan() {
+  
+  document.getElementById('sideDropdownPengangkutan').classList.add("active")
+  document.getElementById('sidePermintaanP').classList.add("active")
+
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
   const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanadmin"
