@@ -96,7 +96,7 @@
                   Penjadwalan
                 </h2>
                 <p class="font-weight-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde iure aspernatur repellat nam animi non ducimus, labore fugit facere ipsa enim est, culpa libero, impedit aperiam eum minus natus.
+                 Lakukan permintaan pengangkutan sampah dan pendjawalan yang nanti akan direspon oleh tim DLH kecamatan kami.
                 </p>
               </div>
               <div class="col-md-4">
@@ -112,7 +112,7 @@
                   Jadwal Pengangkutan
                 </h2>
                 <p class="font-weight-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde iure aspernatur repellat nam animi non ducimus, labore fugit facere ipsa enim est, culpa libero, impedit aperiam eum minus natus.
+                  Jadwal Pengangkutan yang akan bisa kalian request ke kami dan kami akan mengatur semuanya dengan baik dan fleksibel.
                 </p>
               </div>
               <div class="col-md-4">
@@ -128,7 +128,7 @@
                   Riwayat Pengangkutan
                 </h2>
                 <p class="font-weight-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque unde iure aspernatur repellat nam animi non ducimus, labore fugit facere ipsa enim est, culpa libero, impedit aperiam eum minus natus.
+                  Anda juga bisa melihat dan cek Riwayat Pengangkutan anda dengan detail agar anda bisa mengetahui riwayat pengangkutan sampah di daerah anda.
                 </p>
               </div>
               <div class="col-md-4">
@@ -149,14 +149,14 @@
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Collapsible Group Item #1
+                      Pendjawalan pengangkutan sampah ini jadwalnya dari jam berapa sampai jam berapa?
                     </button>
                   </h5>
                 </div>
             
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    Jadwal pengangkutan sampah sesuai dengan jadwal jam kerja kami yaitu dari jam 08:00-14:00
                   </div>
                 </div>
               </div>
@@ -164,13 +164,13 @@
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Collapsible Group Item #2
+                     Apakah ada batas maksimal dalam penjemputan sampah?
                     </button>
                   </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    Tentu ada batas maksimal dalam penjemputan sampah yaitu untuk kami adalah seukuran truk kami yaitu 5 ton.
                   </div>
                 </div>
               </div>
@@ -178,13 +178,13 @@
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Collapsible Group Item #3
+                      Bagaimana cara cek status penjemputan sampah saya?
                     </button>
                   </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                   <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    Anda bisa cek langsung di page status pengangkutan disana ada detail penjelasan penjemputan sampah anda dari di proses, reschedule, atau gagal.
                   </div>
                 </div>
               </div>
