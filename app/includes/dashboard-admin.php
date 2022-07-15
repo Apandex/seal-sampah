@@ -24,7 +24,7 @@
         }
         .btnTable{
             margin: auto!important;
-            flex: 0 0 47%;
+            flex: 0 0 48%;
             font-size: 15px;
             font-style: bold;
             padding: 0.55rem 1.5rem;
@@ -120,13 +120,18 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row mb-4">
-                            <a href="#tableOnProgress" class="btn btn-success btnTable">On Progress</a>
-                            <a href="#tableStatusPengangkutan" class="btn btn-success btnTable">Last Request</a>
+                        <div class="mb-4 col-12">
+                            <div class="row">
+                                <a href="#tableOnProgress" class="btn btn-success btnTable">On Progress</a>
+                                <a href="#tableStatusPengangkutan" class="btn btn-warning btnTable">Last Request</a>
+                            </div>
                         </div>
                         <div class="card">
                             <div class="card-header">
                                 <h4>On Progress</h4>
+                                <div class="card-header-action">
+                                    <a href="/Admin/Status-Pengangkutan" class="btn btn-success">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive table-invoice">
@@ -143,22 +148,16 @@
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody>
-                                            <tr>
-                                                <td>
-                                                    1
-                                                </td>
-                                                <td>Bapak Homo Sapiens</td>
-                                                <td>Jl. Bla</td>
-                                            </tr>
-                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h4>Last Request</h4>
+                                <h4 class="text-warning">Last Request</h4>
+                                <div class="card-header-action">
+                                    <a href="/Admin/Permintaan-Pengangkutan" class="btn btn-warning">Selengkapnya <i class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive table-invoice">

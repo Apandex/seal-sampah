@@ -17,6 +17,15 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <style>
+        .btnTable{
+            margin: auto!important;
+            flex: 0 0 48%;
+            font-size: 15px;
+            font-style: bold;
+            padding: 0.55rem 1.5rem;
+        }
+    </style>
 </head>
 
 <body onload="tablePelaporanMasalah()">
@@ -39,39 +48,68 @@
             <h1>Laporan Masalah</h1>
           </div>
           <div class="section-body">
+            
+          <div class="mb-4 col-12">
             <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="card-header-action">
-                      <h4>Laporan</h4>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table class="table table-striped" id="tablePelaporanMasalah">
-                        <thead>
-                          <tr>
-                            <th class="text-center">
-                              ID
-                            </th>
-                            <th>Tanggal</th>
-                            <th>Nama</th>
-                            <th>No. Telp</th>
-                            <th>Kelurahan</th>
-                            <th>Alamat</th>
-                            <th>Masalah</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
-                          </tr>
-                        </thead>
-                      </table>
-                    </div>
-                  </div>
-                </div>
+              <a href="#tablePelaporanMasalah" class="btn btn-warning btnTable">Laporan Baru</a>
+              <a href="#tablePelaporanMasalahSelesai" class="btn btn-success btnTable">Laporan Selesai</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-action">
+                <h4 class="text-warning">Laporan Baru</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped" id="tablePelaporanMasalah">
+                  <thead>
+                    <tr>
+                      <th class="text-center">
+                        ID
+                      </th>
+                      <th>Tanggal</th>
+                      <th>Nama</th>
+                      <th>No. Telp</th>
+                      <th>Kelurahan</th>
+                      <th>Alamat</th>
+                      <th>Masalah</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                </table>
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-header-action">
+                <h4>Laporan Selesai</h4>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped" id="tablePelaporanMasalahSelesai">
+                  <thead>
+                    <tr>
+                      <th class="text-center">
+                        ID
+                      </th>
+                      <th>Tanggal</th>
+                      <th>Nama</th>
+                      <th>No. Telp</th>
+                      <th>Kelurahan</th>
+                      <th>Alamat</th>
+                      <th>Masalah</th>
+                      <th>Aksi</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

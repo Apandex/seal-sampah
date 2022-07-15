@@ -24,6 +24,7 @@ function terima_btn(){
               swal('Pengangkutan akan dilaksanakan', {
                 icon: 'success',
               });
+
           },
           error: function (response) {
               var hasil = response.responseJSON.message;
@@ -91,8 +92,7 @@ function tablePermintaanPengangkutan() {
               Authorization: token,
           },
           success: function (response) {
-              var dataAPI = response.pengangkutan;
-              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Pending" || dataAPI.status.status == "reschedule_pending")
+              var dataAPI = response.pengangkutan_pending;
               $("#tablePermintaanPengangkutan").DataTable({
                   data: dataAPI,
                   responsive: true,
