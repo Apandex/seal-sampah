@@ -16,9 +16,10 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/components.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="getKelurahan()">
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -32,64 +33,62 @@
               <div class="card-header">
                 <h4>Registrasi User</h4>
                 <div class="card-header-action">
-                  <a href="/Admin/Pengguna" class="btn btn-danger"><i class="fas fa-times"></i></a>
+                  <a href="/Admin/Pengguna" class="btn btn-secondary"><i class="fas fa-times"></i></a>
                 </div>
               </div>
 
               <div class="card-body">
-                <!-- <form method="POST"> -->
-                <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input id="nama" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="no_telp">No. Telp</label>
-                  <input id="number" type="number" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="kelurahan">Kelurahan</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>Tebet Barat</option>
-                    <option>Tebet Timur</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="rw">RW</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
+                <form method="POST">
+                  <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input id="nama" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_telp">No. Telp</label>
+                    <input id="number" type="number" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="kelurahan">Kelurahan</label>
+                    <div id="kelurahan">
 
-                <div class="form-group">
-                  <label for="rt">RT</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="alamat">Alamat</label>
-                  <input id="alamat" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="kata_sandi">Kata Sandi</label>
-                  <input id="password" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
-                  <input id="repassword" type="text" class="form-control">
-                </div>
+                    </div>
 
-                <div class="form-group">
-                  <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
-                    Register
-                  </button>
-                </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="rw">RW</label>
+                    <select class="form-control selectric">
+                      <option>-</option>
+                      <option>01</option>
+                      <option>02</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="rt">RT</label>
+                    <select class="form-control selectric">
+                      <option>-</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input id="alamat" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="kata_sandi">Kata Sandi</label>
+                    <input id="password" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
+                    <input id="repassword" type="text" class="form-control">
+                  </div>
+
+                  <div class="form-group">
+                    <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
+                      Register
+                    </button>
+                  </div>
                 </form>
+
               </div>
             </div>
             <div class="simple-footer">
@@ -100,6 +99,7 @@
       </div>
     </section>
   </div>
+
 
   <!-- General JS Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -114,12 +114,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>"
   <script src="../assets/js/jquery.selectric.min.js"></script>
 
+
   <!-- Template JS File -->
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
 
   <!-- Page Specific JS File -->
   <script src="../assets/js/page/auth-register.js"></script>
+  <script src="../assets/js/api-alsi.js"></script>
 </body>
 
 </html>

@@ -99,10 +99,6 @@
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No. Telp</th>
-                            <th>Kelurahan</th>
-                            <th>RW</th>
-                            <th>RT</th>
-                            <th></th>
                           </tr>
                         </thead>
                         <tbody>

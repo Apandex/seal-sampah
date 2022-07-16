@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../assets/css/components.css">
 </head>
 
-<body onload="showPengguna()">
+<body onload="showEditPengguna()">
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -27,7 +27,6 @@
             <div class="login-brand">
               <img src="../assets/img/logo-pepes.png" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>
-
             <div class="card card-primary">
               <div class="card-header">
                 <h4>Edit Data User</h4>
@@ -37,58 +36,28 @@
               </div>
 
               <div class="card-body">
-                <!-- <form method="POST"> -->
-                <div class="form-group">
-                  <label for="nama">Nama</label>
-                  <input id="nama" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="no_telp">No. Telp</label>
-                  <input id="number" type="number" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="kelurahan">Kelurahan</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>Tebet Barat</option>
-                    <option>Tebet Timur</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="rw">RW</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="rt">RT</label>
-                  <select class="form-control selectric">
-                    <option>-</option>
-                    <option>01</option>
-                    <option>02</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="alamat">Alamat</label>
-                  <input id="alamat" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="kata_sandi">Kata Sandi</label>
-                  <input id="password" type="text" class="form-control">
-                </div>
-                <div class="form-group">
-                  <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
-                  <input id="repassword" type="text" class="form-control">
-                </div>
-
-                <div class="form-group">
-                  <button type="submit" id="confirmEditUser" class="btn btn-primary btn-lg btn-block">
-                    Confirm
-                  </button>
-                </div>
+                <form onsubmit="submitEditPengguna(); return false">
+                  <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input id="nama" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_telp">No. Telp</label>
+                    <input id="no_telp" type="number" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="kata_sandi">Kata Sandi</label>
+                    <input id="password" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
+                    <input id="repassword" type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" id="editPengguna" class="btn btn-primary btn-lg btn-block">
+                      Confirm
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>
