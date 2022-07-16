@@ -85,6 +85,11 @@ Route::get('/Admin/Registrasi', function () {
     return view('admin/registrasi-pengguna');
 });
 
+//admin regis alamat
+Route::get('/Admin/Tambah-Alamat', function () {
+    return view('admin/registrasi-alamat');
+});
+
 //Admin regis user
 Route::get('/Admin/Edit-User', function () {
     return view('admin/edit-pengguna');

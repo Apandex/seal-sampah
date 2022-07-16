@@ -49,7 +49,7 @@
                 <div class="card">
                   <div class="card-header">
                     <div class="card-header-action">
-                      <a href="/Admin/Registrasi" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Alamat</a>
+                      <a href="/Admin/Tambah-Alamat" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Alamat</a>
                     </div>
                   </div>
                   <div class="card-body">
