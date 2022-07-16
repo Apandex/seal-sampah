@@ -38,49 +38,55 @@
               </div>
 
               <div class="card-body">
-                <form method="POST">
+                <form onsubmit="newUser(); return false">
                   <div class="form-group">
                     <label for="nama">Nama</label>
                     <input id="nama" type="text" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="no_telp">No. Telp</label>
-                    <input id="number" type="number" class="form-control">
+                    <input id="no_telp" type="number" class="form-control">
                   </div>
                   <div class="form-group">
                     <label for="kelurahan">Kelurahan</label>
                     <div id="kelurahan">
-
+                      <select id="selectKelurahanfalse" name="rt" class="form-control selectric" disabled>
+                        <option>-</option>
+                      </select>
                     </div>
 
                   </div>
                   <div class="form-group">
                     <label for="rw">RW</label>
-                    <select class="form-control selectric">
-                      <option>-</option>
-                      <option>01</option>
-                      <option>02</option>
-                    </select>
+                    <div id="rw">
+                      <select id="selectRWfalse" name="rt" class="form-control selectric" disabled>
+                        <option>-</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div class="form-group">
                     <label for="rt">RT</label>
-                    <select class="form-control selectric">
-                      <option>-</option>
-                    </select>
+                    <div id="rt">
+                      <select id="selectRTfalse" name="rt" class="form-control selectric" disabled>
+                        <option>-</option>
+                      </select>
+                    </div>
+
                   </div>
+
                   <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <input id="alamat" type="text" class="form-control">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="kata_sandi">Kata Sandi</label>
                     <input id="password" type="text" class="form-control">
-                  </div>
-                  <div class="form-group">
+                  </div> -->
+                  <!-- <div class="form-group">
                     <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
                     <input id="repassword" type="text" class="form-control">
-                  </div>
+                  </div> -->
 
                   <div class="form-group">
                     <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
