@@ -54,7 +54,7 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table class="table table-striped" id="table-pengguna">
+                      <table class="table table-striped" id="table-alamat">
                         <thead>
                           <tr>
                             <th class="text-center">

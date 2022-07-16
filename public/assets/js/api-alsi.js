@@ -335,7 +335,6 @@ function tablePengguna() {
             },
             success: function (response) {
                 dataAPI = response.data;
-                // console.log(dataAPI);
                 $("#table-pengguna").DataTable({
                     data: dataAPI,
                     responsive: true,
@@ -359,22 +358,66 @@ function tablePengguna() {
                             data: "no_telp",
                             orderable: false,
                         },
+                    ],
+                });
+            },
+            error: function (response) {
+                hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function tableAlamat() {
+    var myArray = [];
+    const url = "https://pepeseal.klubaderai.com/api/alamat";
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                dataAPI = response.alamat;
+                console.log(dataAPI);
+                $("#table-alamat").DataTable({
+                    data: dataAPI,
+                    responsive: true,
+                    pageLength: 10,
+                    autoWidth: false,
+                    order: [[0, "asc"]],
+                    columns: [
                         {
-                            data: "kodealamat.Kelurahan",
+                            data: "id",
                             orderable: false,
                         },
                         {
-                            data: "kodealamat.RW",
+                            data: "user.name",
                             orderable: false,
-                        },
-                        {
-                            data: "kodealamat.RT",
-                            orderable: false,
-                        },
-                        {
-                            render: function (id) {
-                                return '<button class="btn btn-warning" id="btnEditPengguna" onclick="editPengguna()"><i class="fa fa-pencil-alt" aria-hidden="true"></i></button>';
+                            render: function (data) {
+                                if (!data) {
+                                    return "-";
+                                } else {
+                                    return data;
+                                }
                             },
+                        },
+                        {
+                            data: "Kecamatan",
+                            orderable: false,
+                        },
+                        {
+                            data: "Kelurahan",
+                            orderable: false,
+                        },
+                        {
+                            data: "RW",
+                            orderable: false,
+                        },
+                        {
+                            data: "RT",
                             orderable: false,
                         },
                     ],
@@ -388,33 +431,114 @@ function tablePengguna() {
     });
 }
 
-function editPengguna() {
-    $("#table-pengguna").on("click", "#btnEditPengguna", function () {
-        var id = $(this).closest("tr").find("td:eq(0)").text();
-        sessionStorage.setItem("id-pengguna", id);
-        location.href = "/Admin/Edit-User";
+function getKelurahan() {
+    var dropKelurahan = document.getElementById("Kelurahan");
+    var myArray = [];
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: "https://pepeseal.klubaderai.com/api/kelurahan",
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                data = response;
+
+                var select = $(
+                    '<select id="selectKelurahan" onchange="getRW()" name="kelurahan" class="form-control selectric" ><option>-</option</select>'
+                );
+                // const select = document.querySelector('#Kelurahan')
+                $.each(data.kelurahan, function (i, kelurahan) {
+                    var option = $("<option></option>");
+                    option.attr("kelurahan.kelurahan", kelurahan.kelurahan);
+                    option.text(kelurahan.kelurahan);
+                    select.append(option);
+                });
+                $("#kelurahan").empty().append(select);
+            },
+        });
     });
 }
-
-function showPengguna() {
-    sessionStorage.getItem("id-pengguna");
-
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
-
-    var requestOptions = {
-        method: "GET",
-        headers: myHeaders,
-        redirect: "follow",
+function getRW() {
+    var form = new FormData();
+    form.append("Kelurahan", document.getElementById("selectKelurahan").value);
+    var settings = {
+        url: "https://pepeseal.klubaderai.com/api/RW",
+        method: "POST",
+        timeout: 0,
+        headers: {
+            Authorization: token,
+        },
+        processData: false,
+        mimeType: "multipart/form-data",
+        contentType: false,
+        data: form,
     };
-
-    fetch("https://pepeseal.klubaderai.com/api/users/89", requestOptions)
-        .then((response) => response.text())
-        .then((result) => {
-            var data = JSON.parse(result);
-        })
-        .catch((error) => console.log("error", error));
+    $.ajax(settings).done(function (response) {
+        var data = JSON.parse(response);
+        console.log(data);
+    });
 }
+function getRT() {}
+
+// function editPengguna() {
+//     $("#table-pengguna").on("click", "#btnEditPengguna", function () {
+//         var id = $(this).closest("tr").find("td:eq(0)").text();
+//         sessionStorage.setItem("id-pengguna", id);
+//         location.href = "/Admin/Edit-User";
+//     });
+// }
+
+// function showEditPengguna() {
+//     var id = sessionStorage.getItem("id-pengguna");
+//     var myHeaders = new Headers();
+//     myHeaders.append("Authorization", token);
+
+//     var requestOptions = {
+//         method: "GET",
+//         headers: myHeaders,
+//         redirect: "follow",
+//     };
+
+//     fetch("https://pepeseal.klubaderai.com/api/users/" + id, requestOptions)
+//         .then((response) => response.text())
+//         .then((result) => {
+//             var du = "data user"
+//             var data = JSON.parse(result);
+//             console.log(data);
+
+//              var nama = document.getElementById("nama");
+//              var notelp = document.getElementById("no_telp");
+//              var pass = document.getElementById("password");
+//              var repass = document.getElementById("repassword");
+
+//              nama.value = data.name;
+//              notelp.value = data.no_telp;
+//              pass.value = data.password;
+//              repass.value = data.re;
+//         })
+//         .catch((error) => console.log("error", error));
+// }
+
+// function showPengguna() {
+//     sessionStorage.getItem("id-pengguna");
+
+//     var myHeaders = new Headers();
+//     myHeaders.append("Authorization", token);
+
+//     var requestOptions = {
+//         method: "GET",
+//         headers: myHeaders,
+//         redirect: "follow",
+//     };
+
+//     fetch("https://pepeseal.klubaderai.com/api/users/89", requestOptions)
+//         .then((response) => response.text())
+//         .then((result) => {
+//             var data = JSON.parse(result);
+//         })
+//         .catch((error) => console.log("error", error));
+// }
 
 function showDashboardStatusPengangkutan() {
     const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanuser";
