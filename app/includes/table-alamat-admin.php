@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
 </head>
 
-<body onload="refresh()">
+<body onload="refresh(); tableAlamat()">
   <div id="app">
     <div class="main-wrapper">
       <div class="navbar-bg"></div>

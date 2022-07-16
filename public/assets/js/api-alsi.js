@@ -32,53 +32,81 @@ $("#jam_angkut_baru").datetimepicker({
 });
 
 function login() {
-    var formdata = new FormData();
-    formdata.append("email", document.getElementById("login_email").value);
-    formdata.append(
-        "password",
-        document.getElementById("login_password").value
-    );
+    var inputEmail = document.getElementById("login_email").value;
+    var inputPassword = document.getElementById("login_password").value;
+    var validP, validE;
+    let regexEmail = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
 
-    var requestOptions = {
-        method: "POST",
-        body: formdata,
-        redirect: "follow",
-    };
+    if (regexEmail.test(inputEmail)) {
+        validE = true;
+        document.getElementById("invalidEmail").style.display = "none";
+        document.getElementById("login_email").style.borderColor = "#e4e6fc";
+    } else {
+        validE = false;
+        document.getElementById("invalidEmail").style.display = "block";
+        document.getElementById("login_email").style.borderColor = "red";
+    }
 
-    fetch("https://pepeseal.klubaderai.com/api/login", requestOptions)
-        .then((response) => response.text())
-        .then((result) => {
-            var data = JSON.parse(result);
-            var user_data = data.data_user;
-            var token = data.token;
+    if (inputPassword.length > 7) {
+        validP = true;
+        document.getElementById("invalidPass").style.display = "none";
+        document.getElementById("login_password").style.borderColor = "#e4e6fc";
+    } else {
+        validP = false;
+        document.getElementById("invalidPass").style.display = "block";
+        document.getElementById("login_password").style.border =
+            "solid red 1px";
+    }
 
-            var alamat = user_data.alamat;
-            var kode_alamat = user_data.kode_alamat;
-            var akses = user_data.akses;
-            var email = user_data.email;
-            var id = user_data.id;
-            var name = user_data.name;
-            var no_telp = user_data.no_telp;
+    if (validP == true && validE == true) {
+        var formdata = new FormData();
+        formdata.append("email", document.getElementById("login_email").value);
+        formdata.append(
+            "password",
+            document.getElementById("login_password").value
+        );
 
-            sessionStorage.setItem("token", token);
-            sessionStorage.setItem("alamat", alamat);
-            sessionStorage.setItem("kode_alamat", kode_alamat);
-            sessionStorage.setItem("akses", akses);
-            sessionStorage.setItem("email", email);
-            sessionStorage.setItem("id", id);
-            sessionStorage.setItem("name", name);
-            sessionStorage.setItem("no_telp", no_telp);
+        var requestOptions = {
+            method: "POST",
+            body: formdata,
+            redirect: "follow",
+        };
 
-            switch (akses) {
-                case "admin":
-                    location.href = "/Admin";
-                    break;
-                case "user":
-                    location.href = "/dashboard-user";
-                    break;
-            }
-        })
-        .catch((error) => console.log("error", error));
+        fetch("https://pepeseal.klubaderai.com/api/login", requestOptions)
+            .then((response) => response.text())
+            .then((result) => {
+                var data = JSON.parse(result);
+                var user_data = data.data_user;
+                var token = data.token;
+
+                var alamat = user_data.alamat;
+                var kode_alamat = user_data.kode_alamat;
+                var akses = user_data.akses;
+                var email = user_data.email;
+                var id = user_data.id;
+                var name = user_data.name;
+                var no_telp = user_data.no_telp;
+
+                sessionStorage.setItem("token", token);
+                sessionStorage.setItem("alamat", alamat);
+                sessionStorage.setItem("kode_alamat", kode_alamat);
+                sessionStorage.setItem("akses", akses);
+                sessionStorage.setItem("email", email);
+                sessionStorage.setItem("id", id);
+                sessionStorage.setItem("name", name);
+                sessionStorage.setItem("no_telp", no_telp);
+
+                switch (akses) {
+                    case "admin":
+                        location.href = "/Admin";
+                        break;
+                    case "user":
+                        location.href = "/dashboard-user";
+                        break;
+                }
+            })
+            .catch((error) => console.log("error", error));
+    }
 }
 
 function logout() {
@@ -278,9 +306,9 @@ function newPengangkutan() {
                 .then((response) => response.text())
                 .then((result) => {
                     var data = JSON.parse(result);
-                    swal('Permintaan terkirim', {
-                        icon: 'success',
-                    })
+                    swal("Permintaan terkirim", {
+                        icon: "success",
+                    });
                 })
                 .catch((error) => console.log("error", error));
         } else {
@@ -318,9 +346,9 @@ function newLaporan() {
                 .then((response) => response.text())
                 .then((result) => {
                     var data = JSON.parse(result);
-                    swal('Pelaporan terkirim', {
-                        icon: 'success',
-                    })
+                    swal("Pelaporan terkirim", {
+                        icon: "success",
+                    });
                 })
                 .catch((error) => console.log("error", error));
         } else {
@@ -387,7 +415,6 @@ function tableAlamat() {
             },
             success: function (response) {
                 dataAPI = response.alamat;
-                console.log(dataAPI);
                 $("#table-alamat").DataTable({
                     data: dataAPI,
                     responsive: true,
@@ -514,7 +541,7 @@ function getRT() {
     $.ajax(settings).done(function (response) {
         var data = JSON.parse(response);
         var select = $(
-            '<select id="selectRT" class="form-control"><option>-</option></select>'
+            '<select id="selectRT" onchange="getKodealamat()" class="form-control"><option>-</option></select>'
         );
         $.each(data.RT, function (i, RT) {
             var option = $("<option></option>");
@@ -526,11 +553,17 @@ function getRT() {
     });
 }
 
-function newUser() {
+function getKodealamat() {
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
 
     var formdata = new FormData();
+    formdata.append(
+        "Kelurahan",
+        document.getElementById("selectKelurahan").value
+    );
+    formdata.append("RW", document.getElementById("selectRW").value);
+    formdata.append("RT", document.getElementById("selectRT").value);
 
     var requestOptions = {
         method: "POST",
@@ -539,10 +572,25 @@ function newUser() {
         redirect: "follow",
     };
 
-    fetch("https://pepeseal.klubaderai.com/api/add-user", requestOptions)
+    fetch("https://pepeseal.klubaderai.com/api/kodealamat", requestOptions)
         .then((response) => response.text())
         .then((result) => {
             var data = JSON.parse(result);
+            // console.log(data.kodealamat.id);
+            sessionStorage.setItem("kodealamat", data.kodealamat.id);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function newUser() {
+    swal({
+        title: "Apakah anda yakin?",
+        icon: "warning",
+        buttons: true,
+    }).then((postUser) => {
+        if (postUser) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", token);
             var formdata = new FormData();
             formdata.append("name", document.getElementById("nama").value);
             formdata.append(
@@ -550,18 +598,90 @@ function newUser() {
                 document.getElementById("password").value
             );
             formdata.append(
+                "password_confirmation",
+                document.getElementById("password_confirmation").value
+            );
+            formdata.append(
                 "no_telp",
                 document.getElementById("no_telp").value
             );
             formdata.append(
                 "kode_alamat",
-                sessionStorage.getItem("kode-alamat")
+                sessionStorage.getItem("kodealamat")
             );
-        })
-        .catch((error) => console.log("error", error));
+            var requestOptions = {
+                method: "POST",
+                headers: myHeaders,
+                body: formdata,
+                redirect: "follow",
+            };
+            fetch(
+                "https://pepeseal.klubaderai.com/api/add-user",
+                requestOptions
+            )
+                .then((response) => response.text())
+                .then((result) => {
+                    var data = JSON.parse(result);
+                    console.log(data);
+                })
+                .catch((error) => console.log("error", error));
+        } else {
+            swal("Proses dibatalkan");
+        }
+    });
+    // var myHeaders = new Headers();
+    // myHeaders.append("Authorization", token);
+
+    // var formdata = new FormData();
+    // formdata.append("name", document.getElementById("nama").value);
+    // formdata.append("password", document.getElementById("password").value);
+    // formdata.append(
+    //     "password_confirmation",
+    //     document.getElementById("password_confirmation").value
+    // );
+    // formdata.append("no_telp", document.getElementById("no_telp").value);
+    // formdata.append("kode_alamat", sessionStorage.getItem("kodealamat"));
+
+    // var requestOptions = {
+    //     method: "POST",
+    //     headers: myHeaders,
+    //     body: formdata,
+    //     redirect: "follow",
+    // };
+
+    // fetch("https://pepeseal.klubaderai.com/api/add-user", requestOptions)
+    //     .then((response) => response.text())
+    //     .then((result) => {
+    //         var data = JSON.parse(result);
+    //         console.log(data);
+    //     })
+    //     .catch((error) => console.log("error", error));
 }
 
-function newAlamat() {}
+function newAlamat() {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", token);
+
+    var formdata = new FormData();
+    formdata.append(
+        "Kelurahan",
+        document.getElementById("selectKelurahan").value
+    );
+    formdata.append("RW", document.getElementById("rw").value);
+    formdata.append("RT", document.getElementById("rt").value);
+
+    var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: formdata,
+        redirect: "follow",
+    };
+
+    fetch("https://pepeseal.klubaderai.com/api/alamat", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+}
 
 function showDashboardStatusPengangkutan() {
     const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanuser";

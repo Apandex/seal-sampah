@@ -32,13 +32,13 @@
               <div class="card-header">
                 <h4>Registrasi Alamat</h4>
                 <div class="card-header-action">
-                  <a href="/Admin/Alamat" ><i class="fas fa-times"></i></a>
+                  <a href="/Admin/Alamat"><i class="fas fa-times"></i></a>
                 </div>
               </div>
 
               <div class="card-body">
                 <form onsubmit="newAlamat(); return false">
-                  
+
                   <div class="form-group">
                     <label for="nama">Kecamatan</label>
                     <div id="kelurahan">
@@ -57,23 +57,34 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="rw">RW</label>
                     <div id="rw">
                       <select id="selectRW" name="rt" class="form-control selectric" onchange="getRT()" disabled>
                         <option disabled selected hidden>~Pilih RW~</option>
                       </select>
                     </div>
-                  </div>
-
+                  </div> -->
+                  <!-- 
                   <div class="form-group">
                     <label for="rt">RT</label>
                     <div id="rt">
                       <select id="selectRT" name="rt" class="form-control selectric" disabled>
-                      <option disabled selected hidden>~Pilih RT~</option>
-                    </select>
+                        <option disabled selected hidden>~Pilih RT~</option>
+                      </select>
                     </div>
+                  </div> -->
+
+                  <div class="form-group">
+                    <label for="rw">RW</label>
+                    <input id="rw" type="number" min="1" max="20" class="form-control">
                   </div>
+
+                  <div class="form-group">
+                    <label for="rw">RT</label>
+                    <input id="rt" type="number" min="1" max="20" class="form-control">
+                  </div>
+
                   <div class="form-group">
                     <button type="submit" id="confirmRegisAlamat" class="btn btn-primary btn-lg btn-block">
                       Daftar

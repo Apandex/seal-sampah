@@ -75,18 +75,18 @@
 
                   </div>
 
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="alamat">Alamat</label>
                     <input id="alamat" type="text" class="form-control">
-                  </div>
-                  <!-- <div class="form-group">
-                    <label for="kata_sandi">Kata Sandi</label>
+                  </div> -->
+                  <div class="form-group">
+                    <label for="password">Kata Sandi</label>
                     <input id="password" type="text" class="form-control">
-                  </div> -->
-                  <!-- <div class="form-group">
-                    <label for="ulangi_kata_sandi">Ulang Kata Sandi</label>
-                    <input id="repassword" type="text" class="form-control">
-                  </div> -->
+                  </div>
+                  <div class="form-group">
+                    <label for="password_confirmation">Ulang Kata Sandi</label>
+                    <input id="password_confirmation" type="text" class="form-control">
+                  </div>
 
                   <div class="form-group">
                     <button type="submit" id="confirmRegisUser" class="btn btn-primary btn-lg btn-block">
