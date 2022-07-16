@@ -35,12 +35,12 @@
               </div>
 
               <div class="card-body">
-                <form id="form_login" enctype="multipart/form-data" onsubmit="login();return false" action="#" class="needs-validation" novalidate="">
+                <form id="form_login" enctype="multipart/form-data" onsubmit="login();return false" action="#" novalidate="">
                   <div class="form-group">
                     <label for="email">ID</label>
                     <input id="login_email" type="input" class="form-control" name="email" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Please fill in your ID
+                    <div class="invalid-feedback" id="invalidEmail">
+                      Pastikan anda memasukkan email dengan benar
                     </div>
                   </div>
 
@@ -49,8 +49,8 @@
                       <label for="password" class="control-label">Password</label>
                     </div>
                     <input id="login_password" type="password" class="form-control" name="password" tabindex="2" required>
-                    <div class="invalid-feedback">
-                      please fill in your password
+                    <div class="invalid-feedback" id="invalidPass">
+                      Pastikan anda memasukkan password dengan benar
                     </div>
                   </div>
 
@@ -86,7 +86,7 @@
   <script src="../assets/js/scripts.js"></script>
   <script src="../assets/js/custom.js"></script>
   <script src="../assets/js/api-alsi.js"></script>
-
+  <!-- <script src="../assets/js/api-dito/pending.js"></script> -->
 
   <!-- Page Specific JS File -->
 </body>
