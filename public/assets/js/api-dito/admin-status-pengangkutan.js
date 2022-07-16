@@ -89,6 +89,7 @@ function tableStatusPengangkutan() {
                         if (data.status == "Terima") {
                           return '<button class="btn btn-success" id="btnSelesai" onclick="selesai_btn()">Selesai</button>'
                         }
+                        return ''
                       }
                     }],
                   columns: [
@@ -112,7 +113,6 @@ function tableStatusPengangkutan() {
                       },
                       {
                           data: "status",
-                          orderable: false,
                       },
                       {
                         data: "status",

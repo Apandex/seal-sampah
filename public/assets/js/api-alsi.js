@@ -278,6 +278,9 @@ function newPengangkutan() {
                 .then((response) => response.text())
                 .then((result) => {
                     var data = JSON.parse(result);
+                    swal('Permintaan terkirim', {
+                        icon: 'success',
+                    })
                 })
                 .catch((error) => console.log("error", error));
         } else {
@@ -315,6 +318,9 @@ function newLaporan() {
                 .then((response) => response.text())
                 .then((result) => {
                     var data = JSON.parse(result);
+                    swal('Pelaporan terkirim', {
+                        icon: 'success',
+                    })
                 })
                 .catch((error) => console.log("error", error));
         } else {
