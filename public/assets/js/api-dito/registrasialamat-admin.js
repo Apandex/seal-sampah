@@ -94,13 +94,39 @@ function getRT() {
             },
             success: function (response) {
                 var dataRT = response.RT;
+                dataRT = dataRT.sort((a, b) => (a.RT - b.RT))
                 console.log(dataRT)
                 $("#selectRT").removeAttr("disabled").selectric('refresh');
+                
+                var dataAllRT = [
+                    {RT:1},
+                    {RT:2},
+                    {RT:3},
+                    {RT:4},
+                    {RT:5},
+                    {RT:6},
+                    {RT:7},
+                    {RT:8},
+                    {RT:9},
+                    {RT:10},
+                ]
+                
+                for (var i = 0; i < dataRT.length; i++) {                        
 
-                for (var i = 0; i < dataRT.length; i++) {
-                    $('#selectRT').append('<option>' + dataRT[i].RT + '</option>');
-                    $('#selectRT').selectric('refresh');
-                }
+                    for (var a = 0; a < dataAllRT.length; a++) {
+                        if (dataAllRT[a].RT != dataRT[i].RT) {
+                            console.log(dataAllRT[a].RT)
+                            console.log(dataRT[i].RT)
+
+
+                            $('#selectRT').append('<option>' + dataAllRT[a].RT + '</option>');
+                            $('#selectRT').selectric('refresh');
+                        } else {
+                            i++
+                        }
+
+                    }
+                } 
             },
             error: function (response) {
                 var hasil = response.responseJSON.message;
