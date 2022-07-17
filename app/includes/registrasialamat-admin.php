@@ -57,15 +57,15 @@
                     </div>
                   </div>
 
-                  <!-- <div class="form-group">
+                  <div class="form-group">
                     <label for="rw">RW</label>
                     <div id="rw">
                       <select id="selectRW" name="rt" class="form-control selectric" onchange="getRT()" disabled>
                         <option disabled selected hidden>~Pilih RW~</option>
                       </select>
                     </div>
-                  </div> -->
-                  <!-- 
+                  </div>
+
                   <div class="form-group">
                     <label for="rt">RT</label>
                     <div id="rt">
@@ -73,18 +73,7 @@
                         <option disabled selected hidden>~Pilih RT~</option>
                       </select>
                     </div>
-                  </div> -->
-
-                  <div class="form-group">
-                    <label for="rw">RW</label>
-                    <input id="rw" type="number" min="1" max="20" class="form-control">
                   </div>
-
-                  <div class="form-group">
-                    <label for="rw">RT</label>
-                    <input id="rt" type="number" min="1" max="20" class="form-control">
-                  </div>
-
                   <div class="form-group">
                     <button type="submit" id="confirmRegisAlamat" class="btn btn-primary btn-lg btn-block">
                       Daftar
