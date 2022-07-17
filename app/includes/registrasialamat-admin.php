@@ -19,7 +19,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body onload="getKelurahan()">
+<body onload="getKelurahan();">
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -51,13 +51,24 @@
                   <div class="form-group">
                     <label for="kelurahan">Kelurahan</label>
                     <div id="kelurahan">
-                      <select id="selectKelurahan" name="rt" class="form-control selectric" onchange="getRW()" disabled required>
+                      <select id="selectKelurahan" name="rt" class="form-control selectric" disabled required>
                         <option disabled selected hidden>~Pilih Kelurahan~</option>
                       </select>
                     </div>
                   </div>
 
                   <div class="form-group">
+                    <label for="rw">RW</label>
+                    <input required id="rwnumber" type="number" min="1" max="25" class="form-control">
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="rt">RT</label>
+                    <input required id="rtnumber" type="number" min="1" max="25" class="form-control">
+                  </div>
+
+                  <!-- <div class="form-group">
                     <label for="rw">RW</label>
                     <div id="rw">
                       <select id="selectRW" name="rt" class="form-control selectric" onchange="getRT()" disabled>
@@ -73,7 +84,8 @@
                         <option disabled selected hidden>~Pilih RT~</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
+
                   <div class="form-group">
                     <button type="submit" id="confirmRegisAlamat" class="btn btn-primary btn-lg btn-block">
                       Daftar

@@ -1,7 +1,7 @@
 function getKelurahan() {
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/kelurahan"
+    const url = "https://pepeseal.klubaderai.com/api/kelurahan";
     $(document).ready(function () {
         $.ajax({
             method: "GET",
@@ -11,12 +11,15 @@ function getKelurahan() {
             },
             success: function (response) {
                 var dataKel = response.kelurahan;
-                console.log(dataKel)
-                $("#selectKelurahan").removeAttr("disabled").selectric('refresh');
+                $("#selectKelurahan")
+                    .removeAttr("disabled")
+                    .selectric("refresh");
 
                 for (var i = 0; i < dataKel.length; i++) {
-                    $('#selectKelurahan').append('<option>' + dataKel[i].kelurahan + '</option>');
-                    $('#selectKelurahan').selectric('refresh');
+                    $("#selectKelurahan").append(
+                        "<option>" + dataKel[i].kelurahan + "</option>"
+                    );
+                    $("#selectKelurahan").selectric("refresh");
                 }
             },
             error: function (response) {
@@ -29,37 +32,41 @@ function getKelurahan() {
 
 function getRW() {
     $("#selectRW").empty();
-    $('#selectRW').append('<option disabled selected hidden>~Pilih RW~</option>');
-    $("#selectRW").removeAttr("disabled").selectric('refresh');
-
+    $("#selectRW").append(
+        "<option disabled selected hidden>~Pilih RW~</option>"
+    );
+    $("#selectRW").removeAttr("disabled").selectric("refresh");
 
     $("#selectRT").empty();
-    $('#selectRT').append('<option disabled selected hidden>~Pilih RT~</option>');
-    $("#selectRT").attr("disabled", "disabled").selectric('refresh');
+    $("#selectRT").append(
+        "<option disabled selected hidden>~Pilih RT~</option>"
+    );
+    $("#selectRT").attr("disabled", "disabled").selectric("refresh");
 
-
-    var kel = $('#selectKelurahan').val()
+    var kel = $("#selectKelurahan").val();
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/RW"
+    const url = "https://pepeseal.klubaderai.com/api/RW";
     $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: url,
             data: {
-                'Kelurahan': kel,
+                Kelurahan: kel,
             },
             headers: {
                 Authorization: token,
             },
             success: function (response) {
                 var dataRW = response.RW;
-                console.log(dataRW)
-                $("#selectRW").removeAttr("disabled").selectric('refresh');
+                console.log(dataRW);
+                $("#selectRW").removeAttr("disabled").selectric("refresh");
 
                 for (var i = 0; i < dataRW.length; i++) {
-                    $('#selectRW').append('<option>' + dataRW[i].RW + '</option>');
-                    $('#selectRW').selectric('refresh');
+                    $("#selectRW").append(
+                        "<option>" + dataRW[i].RW + "</option>"
+                    );
+                    $("#selectRW").selectric("refresh");
                 }
             },
             error: function (response) {
@@ -71,62 +78,63 @@ function getRW() {
 }
 
 function getRT() {
-    $("#selectRT").removeAttr("disabled").selectric('refresh');
+    $("#selectRT").removeAttr("disabled").selectric("refresh");
 
     $("#selectRT").empty();
-    $('#selectRT').append('<option disabled selected hidden>~Pilih RT~</option>');
+    $("#selectRT").append(
+        "<option disabled selected hidden>~Pilih RT~</option>"
+    );
 
-    var kel = $('#selectKelurahan').val()
-    var rw = $('#selectRW').val()
+    var kel = $("#selectKelurahan").val();
+    var rw = $("#selectRW").val();
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/RT"
+    const url = "https://pepeseal.klubaderai.com/api/RT";
     $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: url,
             data: {
-                'Kelurahan': kel,
-                'RW': rw,
+                Kelurahan: kel,
+                RW: rw,
             },
             headers: {
                 Authorization: token,
             },
             success: function (response) {
                 var dataRT = response.RT;
-                dataRT = dataRT.sort((a, b) => (a.RT - b.RT))
-                console.log(dataRT)
-                $("#selectRT").removeAttr("disabled").selectric('refresh');
-                
-                var dataAllRT = [
-                    {RT:1},
-                    {RT:2},
-                    {RT:3},
-                    {RT:4},
-                    {RT:5},
-                    {RT:6},
-                    {RT:7},
-                    {RT:8},
-                    {RT:9},
-                    {RT:10},
-                ]
-                
-                for (var i = 0; i < dataRT.length; i++) {                        
+                dataRT = dataRT.sort((a, b) => a.RT - b.RT);
+                console.log(dataRT);
+                $("#selectRT").removeAttr("disabled").selectric("refresh");
 
+                var dataAllRT = [
+                    { RT: 1 },
+                    { RT: 2 },
+                    { RT: 3 },
+                    { RT: 4 },
+                    { RT: 5 },
+                    { RT: 6 },
+                    { RT: 7 },
+                    { RT: 8 },
+                    { RT: 9 },
+                    { RT: 10 },
+                ];
+
+                for (var i = 0; i < dataRT.length; i++) {
                     for (var a = 0; a < dataAllRT.length; a++) {
                         if (dataAllRT[a].RT != dataRT[i].RT) {
-                            console.log(dataAllRT[a].RT)
-                            console.log(dataRT[i].RT)
+                            console.log(dataAllRT[a].RT);
+                            console.log(dataRT[i].RT);
 
-
-                            $('#selectRT').append('<option>' + dataAllRT[a].RT + '</option>');
-                            $('#selectRT').selectric('refresh');
+                            $("#selectRT").append(
+                                "<option>" + dataAllRT[a].RT + "</option>"
+                            );
+                            $("#selectRT").selectric("refresh");
                         } else {
-                            i++
+                            i++;
                         }
-
                     }
-                } 
+                }
             },
             error: function (response) {
                 var hasil = response.responseJSON.message;
@@ -137,36 +145,38 @@ function getRT() {
 }
 
 function newAlamat() {
-    var kel = $('#selectKelurahan').val()
-    var rw = $('#selectRW').val()
-    var rt = $('#selectRT').val()
+    var kel = $("#selectKelurahan").val();
+    // var rw = $("#selectRW").val();
+    // var rt = $("#selectRT").val();
+    var rw = document.getElementById("rwnumber").value;
+    var rt = document.getElementById("rtnumber").value;
 
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/alamat"
+    const url = "https://pepeseal.klubaderai.com/api/alamat";
 
     $(document).ready(function () {
         $.ajax({
             method: "POST",
             url: url,
             data: {
-                'Kelurahan': kel,
-                'RW': rw,
-                'RT': rt,
+                Kelurahan: kel,
+                RW: rw,
+                RT: rt,
             },
             headers: {
                 Authorization: token,
             },
             success: function (response) {
-                swal('Penambahan Berhasil', {
-                icon: 'success',
-                })
+                swal("Penambahan Berhasil", {
+                    icon: "success",
+                });
             },
             error: function (response) {
                 var hasil = response.responseJSON.message;
-                swal(hasil,{
-                    icon: 'warning'
-                })
+                swal(hasil, {
+                    icon: "warning",
+                });
             },
         });
     });

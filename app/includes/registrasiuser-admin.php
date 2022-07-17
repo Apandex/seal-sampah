@@ -19,7 +19,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body onload="getKelurahan()">
+<body onload="getReKelurahan()">
   <div id="app">
     <section class="section">
       <div class="container mt-5">
@@ -47,15 +47,15 @@
                     <label for="no_telp">No. Telp</label>
                     <input id="no_telp" type="number" class="form-control">
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="kelurahan">Kelurahan</label>
                     <div id="kelurahan">
                       <select id="selectKelurahanfalse" name="rt" class="form-control selectric" disabled>
                         <option>-</option>
                       </select>
                     </div>
-
                   </div>
+                  
                   <div class="form-group">
                     <label for="rw">RW</label>
                     <div id="rw">
@@ -72,7 +72,27 @@
                         <option>-</option>
                       </select>
                     </div>
+                  </div> -->
 
+                  <div class="form-group">
+                    <label for="kelurahan">Kelurahan</label>
+                    <select id="selectKelurahan" name="kelurahan" class="form-control selectric" onchange="getReRW()" disabled>
+                      <option disabled selected hidden>~Pilih Kelurahan~</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="rw">RW</label>
+                    <select id="selectRW" name="rw" class="form-control selectric" onchange="getReRT()" disabled>
+                      <option disabled selected hidden>~Pilih RW~</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="rt">RT</label>
+                    <select id="selectRT" name="rt" class="form-control selectric" onchange="getKodealamat()" disabled>
+                      <option disabled selected hidden>~Pilih RT~</option>
+                    </select>
                   </div>
 
                   <!-- <div class="form-group">

@@ -554,16 +554,17 @@ function getRT() {
 }
 
 function getKodealamat() {
+    var kel = $("#selectKelurahan").val();
+    var rw = $("#selectRW").val();
+    var rt = $("#selectRT").val();
+
     var myHeaders = new Headers();
     myHeaders.append("Authorization", token);
 
     var formdata = new FormData();
-    formdata.append(
-        "Kelurahan",
-        document.getElementById("selectKelurahan").value
-    );
-    formdata.append("RW", document.getElementById("selectRW").value);
-    formdata.append("RT", document.getElementById("selectRT").value);
+    formdata.append("Kelurahan", kel);
+    formdata.append("RW", rw);
+    formdata.append("RT", rt);
 
     var requestOptions = {
         method: "POST",
@@ -576,10 +577,136 @@ function getKodealamat() {
         .then((response) => response.text())
         .then((result) => {
             var data = JSON.parse(result);
-            // console.log(data.kodealamat.id);
+            // console.log(data);
             sessionStorage.setItem("kodealamat", data.kodealamat.id);
         })
         .catch((error) => console.log("error", error));
+}
+
+function getReKelurahan() {
+    let tokenSession = sessionStorage.getItem("token");
+    let token = "Bearer" + " " + tokenSession;
+    const url = "https://pepeseal.klubaderai.com/api/kelurahan";
+    $(document).ready(function () {
+        $.ajax({
+            method: "GET",
+            url: url,
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                var dataKel = response.kelurahan;
+                $("#selectKelurahan")
+                    .removeAttr("disabled")
+                    .selectric("refresh");
+
+                for (var i = 0; i < dataKel.length; i++) {
+                    $("#selectKelurahan").append(
+                        "<option>" + dataKel[i].kelurahan + "</option>"
+                    );
+                    $("#selectKelurahan").selectric("refresh");
+                }
+            },
+            error: function (response) {
+                var hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function getReRW() {
+    $("#selectRW").empty();
+    $("#selectRW").append(
+        "<option disabled selected hidden>~Pilih RW~</option>"
+    );
+    $("#selectRW").removeAttr("disabled").selectric("refresh");
+
+    $("#selectRT").empty();
+    $("#selectRT").append(
+        "<option disabled selected hidden>~Pilih RT~</option>"
+    );
+    $("#selectRT").attr("disabled", "disabled").selectric("refresh");
+
+    var kel = $("#selectKelurahan").val();
+    let tokenSession = sessionStorage.getItem("token");
+    let token = "Bearer" + " " + tokenSession;
+    const url = "https://pepeseal.klubaderai.com/api/RW";
+    $(document).ready(function () {
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: {
+                Kelurahan: kel,
+            },
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                var dataRW = response.RW;
+                $("#selectRW").removeAttr("disabled").selectric("refresh");
+
+                for (var i = 0; i < dataRW.length; i++) {
+                    $("#selectRW").append(
+                        "<option>" + dataRW[i].RW + "</option>"
+                    );
+                    $("#selectRW").selectric("refresh");
+                }
+            },
+            error: function (response) {
+                var hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
+}
+
+function getReRT() {
+    $("#selectRT").empty();
+    $("#selectRT").append(
+        "<option disabled selected hidden>~Pilih RW~</option>"
+    );
+    $("#selectRT").removeAttr("disabled").selectric("refresh");
+
+    $("#selectRT").empty();
+    $("#selectRT").append(
+        "<option disabled selected hidden>~Pilih RT~</option>"
+    );
+    $("#selectRT").attr("disabled", "disabled").selectric("refresh");
+
+    var kel = $("#selectKelurahan").val();
+    var rw = $("#selectRW").val();
+    let tokenSession = sessionStorage.getItem("token");
+    let token = "Bearer" + " " + tokenSession;
+    const url = "https://pepeseal.klubaderai.com/api/RT";
+    $(document).ready(function () {
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: {
+                Kelurahan: kel,
+                RW: rw,
+            },
+            headers: {
+                Authorization: token,
+            },
+            success: function (response) {
+                var dataRT = response.RT;
+                $("#selectRT").removeAttr("disabled").selectric("refresh");
+
+                for (var i = 0; i < dataRT.length; i++) {
+                    $("#selectRT").append(
+                        "<option>" + dataRT[i].RT + "</option>"
+                    );
+                    $("#selectRT").selectric("refresh");
+                }
+            },
+            error: function (response) {
+                var hasil = response.responseJSON.message;
+                alert(hasil);
+            },
+        });
+    });
 }
 
 function newUser() {
@@ -622,66 +749,39 @@ function newUser() {
                 .then((response) => response.text())
                 .then((result) => {
                     var data = JSON.parse(result);
-                    console.log(data);
+                    location.href = "/Admin/Pengguna";
                 })
                 .catch((error) => console.log("error", error));
         } else {
             swal("Proses dibatalkan");
         }
     });
-    // var myHeaders = new Headers();
-    // myHeaders.append("Authorization", token);
-
-    // var formdata = new FormData();
-    // formdata.append("name", document.getElementById("nama").value);
-    // formdata.append("password", document.getElementById("password").value);
-    // formdata.append(
-    //     "password_confirmation",
-    //     document.getElementById("password_confirmation").value
-    // );
-    // formdata.append("no_telp", document.getElementById("no_telp").value);
-    // formdata.append("kode_alamat", sessionStorage.getItem("kodealamat"));
-
-    // var requestOptions = {
-    //     method: "POST",
-    //     headers: myHeaders,
-    //     body: formdata,
-    //     redirect: "follow",
-    // };
-
-    // fetch("https://pepeseal.klubaderai.com/api/add-user", requestOptions)
-    //     .then((response) => response.text())
-    //     .then((result) => {
-    //         var data = JSON.parse(result);
-    //         console.log(data);
-    //     })
-    //     .catch((error) => console.log("error", error));
 }
 
-function newAlamat() {
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", token);
+// function newAlamat() {
+//     var myHeaders = new Headers();
+//     myHeaders.append("Authorization", token);
 
-    var formdata = new FormData();
-    formdata.append(
-        "Kelurahan",
-        document.getElementById("selectKelurahan").value
-    );
-    formdata.append("RW", document.getElementById("rw").value);
-    formdata.append("RT", document.getElementById("rt").value);
+//     var formdata = new FormData();
+//     formdata.append(
+//         "Kelurahan",
+//         document.getElementById("selectKelurahan").value
+//     );
+//     formdata.append("RW", document.getElementById("rw").value);
+//     formdata.append("RT", document.getElementById("rt").value);
 
-    var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: formdata,
-        redirect: "follow",
-    };
+//     var requestOptions = {
+//         method: "POST",
+//         headers: myHeaders,
+//         body: formdata,
+//         redirect: "follow",
+//     };
 
-    fetch("https://pepeseal.klubaderai.com/api/alamat", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
-}
+//     fetch("https://pepeseal.klubaderai.com/api/alamat", requestOptions)
+//         .then((response) => response.text())
+//         .then((result) => console.log(result))
+//         .catch((error) => console.log("error", error));
+// }
 
 function showDashboardStatusPengangkutan() {
     const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanuser";
