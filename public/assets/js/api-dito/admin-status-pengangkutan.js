@@ -23,6 +23,8 @@ function selesai_btn(){
           success: function (response){
               swal('Pengangkutan telah selesai', {
                 icon: 'success',
+              }).then((value) => {
+                location.reload();
               });
           },
           error: function (response) {
@@ -55,7 +57,7 @@ function tableStatusPengangkutan() {
           },
           success: function (response) {
               var dataAPI = response.pengangkutan;
-              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak")
+              dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak"|| dataAPI.status.status == "Gagal")
               $("#tableStatusPengangkutan").DataTable({
                   data: dataAPI,
                   responsive: true,

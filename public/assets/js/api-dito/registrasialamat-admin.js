@@ -170,7 +170,9 @@ function newAlamat() {
             success: function (response) {
                 swal("Penambahan Berhasil", {
                     icon: "success",
-                });
+                }).then((value) => {
+                    location.href = "/Admin/Alamat";
+                  });;
             },
             error: function (response) {
                 var hasil = response.responseJSON.message;

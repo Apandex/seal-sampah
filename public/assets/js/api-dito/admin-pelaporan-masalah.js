@@ -23,7 +23,9 @@ function selesai_btn(){
           success: function (response){
               swal('Pengangkutan akan dilaksanakan', {
                 icon: 'success',
-              });
+              }).then((value) => {
+                location.reload();
+              });;
           },
           error: function (response) {
               var hasil = response.responseJSON.message;
@@ -72,38 +74,6 @@ function detail_btn(n){
         });
     });
     })
-
-    // swal({
-    //   title: 'Apakah anda yakin?',
-    //   text: 'Proses ini tidak bisa diubah kembali seperti awal',
-    //   icon: 'warning',
-    //   buttons: true,
-    // })
-    // .then((willDelete) => {
-    //   if (willDelete) {
-    //     let tokenSession = sessionStorage.getItem("token");
-    //     let token = "Bearer" + " " + tokenSession;
-    //     const url = "https://pepeseal.klubaderai.com/api/adminselesailaporan/"+id
-    //     $.ajax({
-    //       method: "PUT",
-    //       url: url,
-    //       headers: {
-    //           Authorization: token,
-    //       },
-    //       success: function (response){
-    //           swal('Pengangkutan akan dilaksanakan', {
-    //             icon: 'success',
-    //           });
-    //       },
-    //       error: function (response) {
-    //           var hasil = response.responseJSON.message;
-    //           alert(hasil);
-    //       },
-    //   });
-    //   } else {
-    //   swal('Proses dibatalkan');
-    //   }
-    // });
 }
 
 function tablePelaporanMasalah() {

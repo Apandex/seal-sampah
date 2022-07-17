@@ -23,8 +23,9 @@ function terima_btn(){
           success: function (response){
               swal('Pengangkutan akan dilaksanakan', {
                 icon: 'success',
+              }).then((value) => {
+                location.reload();
               });
-
           },
           error: function (response) {
               var hasil = response.responseJSON.message;
@@ -61,6 +62,8 @@ function tolak_btn(){
           success: function (response){
               swal('Penolakan Berhasil', {
                 icon: 'success',
+              }).then((value) => {
+                location.reload();
               });
           },
           error: function (response) {
