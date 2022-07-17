@@ -122,11 +122,11 @@
                         </div>
                         <div class="mb-4 col-12">
                             <div class="row">
-                                <a href="#tableOnProgress" class="btn btn-success btnTable">On Progress</a>
-                                <a href="#tableStatusPengangkutan" class="btn btn-warning btnTable">Last Request</a>
+                                <a href="#cardOnProgress" class="btn btn-success btnTable">On Progress</a>
+                                <a href="#cardStatusPengangkutan" class="btn btn-warning btnTable">Last Request</a>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" id="cardOnProgress">
                             <div class="card-header">
                                 <h4>On Progress</h4>
                                 <div class="card-header-action">
@@ -152,7 +152,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card" id="cardStatusPengangkutan">
                             <div class="card-header">
                                 <h4 class="text-warning">Last Request</h4>
                                 <div class="card-header-action">

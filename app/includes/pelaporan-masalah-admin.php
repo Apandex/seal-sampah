@@ -51,14 +51,14 @@
             
           <div class="mb-4 col-12">
             <div class="row">
-              <a href="#tablePelaporanMasalah" class="btn btn-warning btnTable">Laporan Baru</a>
-              <a href="#tablePelaporanMasalahSelesai" class="btn btn-success btnTable">Laporan Selesai</a>
+              <a href="#cardPelaporanMasalah" class="btn btn-success btnTable">Laporan Baru</a>
+              <a href="#cardPelaporanMasalahSelesai" class="btn btn-info btnTable">Laporan Selesai</a>
             </div>
           </div>
-          <div class="card">
+          <div class="card" id="cardPelaporanMasalah">
             <div class="card-header">
               <div class="card-header-action">
-                <h4 class="text-warning">Laporan Baru</h4>
+                <h4 class="text-success">Laporan Baru</h4>
               </div>
             </div>
             <div class="card-body">
@@ -82,10 +82,10 @@
               </div>
             </div>
           </div>
-          <div class="card">
+          <div class="card" id="cardPelaporanMasalahSelesai">
             <div class="card-header">
               <div class="card-header-action">
-                <h4>Laporan Selesai</h4>
+                <h4 class="text-info">Laporan Selesai</h4>
               </div>
             </div>
             <div class="card-body">
