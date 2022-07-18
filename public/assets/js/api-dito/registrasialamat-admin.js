@@ -146,8 +146,6 @@ function getRT() {
 
 function newAlamat() {
     var kel = $("#selectKelurahan").val();
-    // var rw = $("#selectRW").val();
-    // var rt = $("#selectRT").val();
     var rw = document.getElementById("rwnumber").value;
     var rt = document.getElementById("rtnumber").value;
 

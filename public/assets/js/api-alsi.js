@@ -105,7 +105,7 @@ function login() {
                 }
             })
             .catch((error) => {
-                console.log("error", error)
+                // console.log("error", error)
                 document.getElementById("invalidEmail").style.display = "block";
                 document.getElementById("login_email").style.borderColor = "red";
                 document.getElementById("invalidPass").style.display = "block";
@@ -293,85 +293,121 @@ function tableLaporanUser() {
 }
 
 function newPengangkutan() {
-    swal({
-        title: "Apakah anda yakin?",
-        icon: "warning",
-        buttons: true,
-    }).then((postData) => {
-        if (postData) {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", token);
-            var formdata = new FormData();
-            formdata.append(
-                "Tanggal_angkut",
-                document.getElementById("Tanggal_angkut").value
-            );
-            formdata.append(
-                "jam_angkut",
-                document.getElementById("jam_angkut").value
-            );
-            var requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: formdata,
-                redirect: "follow",
-            };
-            fetch(
-                "https://pepeseal.klubaderai.com/api/newpengangkutan",
-                requestOptions
-            )
-                .then((response) => response.text())
-                .then((result) => {
-                    var data = JSON.parse(result);
-                    swal("Permintaan terkirim", {
-                        icon: "success",
-                    });
-                })
-                .catch((error) => console.log("error", error));
-        } else {
-            swal("Proses dibatalkan");
-        }
-    });
+    var inputTanggal = document.getElementById("Tanggal_angkut").value;
+    var inputWaktu = document.getElementById("jam_angkut").value;
+    var validT, validW;
+
+    if (inputTanggal != "") {
+        validT = true
+        document.getElementById("invalidTanggal").style.display = "none";
+        document.getElementById("Tanggal_angkut").style.borderColor = "#e4e6fc";
+
+    } else {
+        validT = false
+        document.getElementById("invalidTanggal").style.display = "block";
+        document.getElementById("Tanggal_angkut").style.border = "solid red 1px";
+    }
+    if (inputWaktu != "") {
+        validW = true 
+        document.getElementById("invalidWaktu").style.display = "none";
+        document.getElementById("jam_angkut").style.borderColor = "#e4e6fc";
+    } else {
+        validW = false 
+        document.getElementById("invalidWaktu").style.display = "block";
+        document.getElementById("jam_angkut").style.border = "solid red 1px";
+    }
+
+    if (validT == true && validW == true) {
+        swal({
+            title: "Apakah anda yakin?",
+            icon: "warning",
+            buttons: true,
+        }).then((postData) => {
+            if (postData) {
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", token);
+                var formdata = new FormData();
+                formdata.append(
+                    "Tanggal_angkut",
+                    inputTanggal
+                );
+                formdata.append(
+                    "jam_angkut", inputWaktu
+                );
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: "follow",
+                };
+                fetch(
+                    "https://pepeseal.klubaderai.com/api/newpengangkutan",
+                    requestOptions
+                )
+                    .then((response) => response.text())
+                    .then((result) => {
+                        var data = JSON.parse(result);
+                        swal("Permintaan terkirim", {
+                            icon: "success",
+                        }).then((value) => {
+                            location.reload();
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
+            } else {
+                swal("Proses dibatalkan");
+            }
+        });
+    }
 }
 
 function newLaporan() {
-    swal({
-        title: "Apakah anda yakin?",
-        icon: "warning",
-        buttons: true,
-    }).then((postLaporan) => {
-        if (postLaporan) {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", token);
+    var laporan = document.getElementById("laporan").value.trim();
+    if (laporan == "") {
+        document.getElementById("invalidText").style.display = "block";
+        document.getElementById("laporan").style.borderColor = "red";
+    } else {
+        document.getElementById("invalidText").style.display = "none";
+        document.getElementById("laporan").style.borderColor = "#e4e6fc";
+    
+        swal({
+            title: "Apakah anda yakin?",
+            icon: "warning",
+            buttons: true,
+        }).then((postLaporan) => {
+            if (postLaporan) {
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", token);
 
-            var formdata = new FormData();
-            formdata.append(
-                "laporan",
-                document.getElementById("laporan").value
-            );
-            var requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: formdata,
-                redirect: "follow",
-            };
+                var formdata = new FormData();
+                formdata.append(
+                    "laporan", laporan
+                );
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: "follow",
+                };
 
-            fetch(
-                "https://pepeseal.klubaderai.com/api/newlaporan",
-                requestOptions
-            )
-                .then((response) => response.text())
-                .then((result) => {
-                    var data = JSON.parse(result);
-                    swal("Pelaporan terkirim", {
-                        icon: "success",
-                    });
-                })
-                .catch((error) => console.log("error", error));
-        } else {
-            swal("Proses dibatalkan");
-        }
-    });
+                fetch(
+                    "https://pepeseal.klubaderai.com/api/newlaporan",
+                    requestOptions
+                )
+                    .then((response) => response.text())
+                    .then((result) => {
+                        var data = JSON.parse(result);
+                        swal("Pelaporan terkirim", {
+                            icon: "success",
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
+            } else {
+                swal("Proses dibatalkan");
+            }
+        });
+    }
+
 }
 
 function tablePengguna() {
