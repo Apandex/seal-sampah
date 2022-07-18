@@ -160,7 +160,7 @@ function tablePengangkutanUser() {
                     order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [7],
+                            targets: [8],
                             render: function (data) {
                                 if (data.status == "Selesai") {
                                     return '<div class="badge badge-success">Selesai</div>';
