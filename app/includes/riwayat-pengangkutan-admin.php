@@ -48,6 +48,7 @@
                                     <table class="table table-striped" id="tablepengangkutanadmin">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th class="text-center">
                                                     ID
                                                 </th>
@@ -55,6 +56,7 @@
                                                 <th>Alamat</th>
                                                 <th>Tanggal Pengangkutan</th>
                                                 <th>Waktu Pengangkutan</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>

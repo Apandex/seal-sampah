@@ -91,30 +91,30 @@ function tablePelaporanMasalah() {
               Authorization: token,
           },
           success: function (response) {
-              var dataTerima = response.laporan_terima;
-              var dataSelesai = response.laporan_selesai
+              var dataTerima = response.laporan_terima.reverse();
+              var dataSelesai = response.laporan_selesai.reverse()
               $("#tablePelaporanMasalah").DataTable({
                   data: dataTerima,
                   responsive: true,
                   pageLength: 10,
                   autoWidth: false,
-                  order: [[0, "desc"]],
+                  order: [[1, "desc"]],
                   columnDefs: [
                     {
-                      targets:[1],
+                      targets:[2],
                       render: function (data) {;
                         var date = new Date(data)
                         return date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear()
                       }
                     },
                     {
-                      targets:[4],
+                      targets:[5],
                       render: function (data) {
                         return data.kodealamat.Kelurahan
                       }
                     },
                     {
-                      targets: [5],
+                      targets: [6],
                       render: function (data) {
                         if (!data.Alamat) {
                           return "-"
@@ -124,7 +124,7 @@ function tablePelaporanMasalah() {
                       }
                     },
                     {
-                      targets:[7],
+                      targets:[8],
                       render: function () {
                           const btnSelesai = '<button class="btn btn-success mx-1 mb-2" id="btnSelesai" onclick="selesai_btn()">Selesai</button>'
                           const btnDetail = '<button class="btn btn-info mx-1 mb-2" id="btnDetail" onclick="detail_btn(1)">Detail</button>' 
@@ -132,6 +132,12 @@ function tablePelaporanMasalah() {
                       }
                     }],
                   columns: [
+                      {
+                          data: null,
+                          render: function (data, type, full, meta) {
+                            return meta.row + 1;
+                        }
+                      },
                       {
                           data: "id",
                       },
@@ -164,23 +170,23 @@ function tablePelaporanMasalah() {
                 responsive: true,
                 pageLength: 10,
                 autoWidth: false,
-                order: [[0, "desc"]],
+                order: [[1, "desc"]],
                 columnDefs: [
                   {
-                    targets:[1],
+                    targets:[2],
                     render: function (data) {;
                       var date = new Date(data)
                       return date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear()
                     }
                   },
                   {
-                    targets:[4],
+                    targets:[5],
                     render: function (data) {
                       return data.kodealamat.Kelurahan
                     }
                   },
                   {
-                    targets: [5],
+                    targets: [6],
                     render: function (data) {
                       if (!data.Alamat) {
                         return "-"
@@ -190,13 +196,19 @@ function tablePelaporanMasalah() {
                     }
                   },
                   {
-                    targets:[7],
+                    targets:[8],
                     render: function () {
                       const btnDetail = '<button class="btn btn-info mx-1" id="btnDetail" onclick="detail_btn(2)">Detail</button>' 
                       return btnDetail
                     }
                   }],
                 columns: [
+                    {
+                        data: null,
+                        render: function (data, type, full, meta) {
+                          return meta.row + 1;
+                        }
+                    },
                     {
                         data: "id",
                     },

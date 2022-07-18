@@ -138,7 +138,8 @@
                                     <table class="table table-striped" id="tableOnProgress">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">
+                                                <th>#</th>
+                                                <th>
                                                     ID
                                                 </th>
                                                 <th>Nama</th>
@@ -164,9 +165,8 @@
                                     <table class="table table-striped" id="tableStatusPengangkutan">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">
-                                                    ID
-                                                </th>
+                                                <th>#</th>
+                                                <th>ID</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>
                                                 <th>Tanggal</th>

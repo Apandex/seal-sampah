@@ -15,9 +15,9 @@ function refresh() {
             },
             success: function (response) {
                 var dataAngkut = response.pengangkutan;
-                var dataPending = response.pengangkutan_pending
+                var dataPending = response.pengangkutan_pending.reverse()
 
-                var dataTerima = dataAngkut.filter(dataAPI => dataAPI.status.status == "Terima")
+                var dataTerima = dataAngkut.filter(dataAPI => dataAPI.status.status == "Terima").reverse()
 
 
                 //buat CARD yang DIATAS
@@ -47,10 +47,10 @@ function refresh() {
                     responsive: true,
                     pageLength: 5,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [2],
+                            targets: [3],
                             render: function (data) {
                                 if (!data.Alamat) {
                                 return "-"
@@ -60,7 +60,7 @@ function refresh() {
                             }
                         },
                         {
-                            targets:[5],
+                            targets:[6],
                             render: function (data) {
                             if (data.status == "Pending" || data.status == "reschedule_pending") {
                                 return '<div class="badge badge-warning">Menunggu Konfirmasi</div>'
@@ -68,6 +68,12 @@ function refresh() {
                             }
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -101,10 +107,10 @@ function refresh() {
                     responsive: true,
                     pageLength: 5,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [2],
+                            targets: [3],
                             render: function (data) {
                                 if (!data.Alamat) {
                                 return "-"
@@ -114,12 +120,18 @@ function refresh() {
                             }
                         },
                         {
-                            targets:[5],
+                            targets:[6],
                             render: function (data) {
                                 return '<div class="badge badge-success">Akan Diangkut</div>'
                             }
                         },],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row+1
+                            }
+                        },
                         {
                             data: "id",
                         },

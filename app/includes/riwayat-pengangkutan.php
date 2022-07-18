@@ -85,7 +85,8 @@
                                     <table class="table table-striped tabelRiwayat" id="table-pengangkutanuser">
                                         <thead>
                                             <tr>
-                                                <th class="text-center no">
+                                                <th>#</th>
+                                                <th>
                                                     ID
                                                 </th>
                                                 <th>Nama</th>

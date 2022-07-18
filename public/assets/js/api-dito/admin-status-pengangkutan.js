@@ -56,17 +56,17 @@ function tableStatusPengangkutan() {
               Authorization: token,
           },
           success: function (response) {
-              var dataAPI = response.pengangkutan;
+              var dataAPI = response.pengangkutan.reverse();
               dataAPI = dataAPI.filter(dataAPI => dataAPI.status.status == "Terima" || dataAPI.status.status == "Tolak"|| dataAPI.status.status == "Gagal")
               $("#tableStatusPengangkutan").DataTable({
                   data: dataAPI,
                   responsive: true,
                   pageLength: 10,
                   autoWidth: false,
-                  order: [[0, "desc"]],
+                  order: [[1, "desc"]],
                   columnDefs: [
                     {
-                      targets:[2],
+                      targets:[3],
                       render: function (data) {
                         if (!data.Alamat) {
                           return "-"
@@ -76,7 +76,7 @@ function tableStatusPengangkutan() {
                       }
                     },
                     {
-                      targets:[5],
+                      targets:[6],
                       render: function (data) {
                         if (data.status == "Terima") {
                           return '<div class="badge badge-success">Akan Diangkut</div>'
@@ -86,7 +86,7 @@ function tableStatusPengangkutan() {
                       }
                     },
                     {
-                      targets:[6],
+                      targets:[7],
                       render: function(data){
                         if (data.status == "Terima") {
                           return '<button class="btn btn-success" id="btnSelesai" onclick="selesai_btn()">Selesai</button>'
@@ -95,6 +95,12 @@ function tableStatusPengangkutan() {
                       }
                     }],
                   columns: [
+                      {
+                          data:null,
+                          render: function (data, type, full, meta) {
+                            return meta.row + 1
+                          }
+                      },
                       {
                           data: "id",
                       },

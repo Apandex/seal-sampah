@@ -54,8 +54,7 @@ function login() {
     } else {
         validP = false;
         document.getElementById("invalidPass").style.display = "block";
-        document.getElementById("login_password").style.border =
-            "solid red 1px";
+        document.getElementById("login_password").style.border ="solid red 1px";
     }
 
     if (validP == true && validE == true) {
@@ -105,7 +104,13 @@ function login() {
                         break;
                 }
             })
-            .catch((error) => console.log("error", error));
+            .catch((error) => {
+                console.log("error", error)
+                document.getElementById("invalidEmail").style.display = "block";
+                document.getElementById("login_email").style.borderColor = "red";
+                document.getElementById("invalidPass").style.display = "block";
+                document.getElementById("login_password").style.border ="solid red 1px";
+            });
     }
 }
 
@@ -142,7 +147,7 @@ function tablePengangkutanUser() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutan.reverse();
                 document.getElementById("banyakBerhasil").innerHTML =
                     response.selesai;
                 document.getElementById("banyakBatal").innerHTML =
@@ -152,7 +157,7 @@ function tablePengangkutanUser() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
                             targets: [7],
@@ -166,6 +171,12 @@ function tablePengangkutanUser() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -219,16 +230,16 @@ function tableLaporanUser() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.laporan;
+                dataAPI = response.laporan.reverse();
                 $("#table-laporanmasalahuser").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [3],
+                            targets: [4],
                             render: function (data) {
                                 if (data.status == "Selesai") {
                                     return '<div class="badge badge-success">Selesai</div>';
@@ -241,6 +252,12 @@ function tableLaporanUser() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -374,8 +391,14 @@ function tablePengguna() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "asc"]],
+                    order: [[1, "asc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -420,8 +443,14 @@ function tableAlamat() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "asc"]],
+                    order: [[1, "asc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -793,7 +822,7 @@ function showDashboardStatusPengangkutan() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutan.reverse();
                 var nama = sessionStorage.getItem("name");
                 var alert = response.pengangkutantolak.length;
                 document.getElementById("welc_name").innerHTML =
@@ -813,10 +842,10 @@ function showDashboardStatusPengangkutan() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [3],
+                            targets: [4],
                             render: function (data) {
                                 if (data.status == "Terima") {
                                     return '<div class="badge badge-success">Terima</div>';
@@ -833,6 +862,12 @@ function showDashboardStatusPengangkutan() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -863,15 +898,21 @@ function showDashboardStatusPengangkutan() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutantolak;
+                dataAPI = response.pengangkutantolak.reverse();
 
                 $("#table-statustolak").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },

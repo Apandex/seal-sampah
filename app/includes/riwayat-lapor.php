@@ -52,7 +52,8 @@
                       <table class="table table-striped" id="table-laporanmasalahuser">
                         <thead>
                           <tr>
-                            <th class="text-center">
+                            <th>#</th>
+                            <th>
                               ID
                             </th>
                             <th>Tanggal</th>

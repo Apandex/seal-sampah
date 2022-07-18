@@ -48,6 +48,7 @@
                                     <table class="table table-striped" id="tableStatusPengangkutan">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>ID</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>
@@ -57,44 +58,6 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <!-- <tbody>
-                                            <tr>
-                                                <td>131231</td>
-                                                <td>Adi Budi</td>
-                                                <td>Jl. Jalan ke Mangga Dua</td>
-                                                <td>12 Februari 2022</td>
-                                                <td>07:00</td>
-                                                <td>
-                                                    <div class="badge badge-success">Sedang Diambil</div>
-                                                </td>
-                                                <td><button class="btn btn-success" onclick="terima_btn()">Selesai</button></td>
-                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Undur</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>131231</td>
-                                                <td>Adi Budi</td>
-                                                <td>Jl. Jalan ke Mangga Dua</td>
-                                                <td>12 Februari 2022</td>
-                                                <td>07:00</td>
-                                                <td>
-                                                    <div class="badge badge-success">Sedang Diambil</div>
-                                                </td>
-                                                <td><button class="btn btn-success" onclick="terima_btn()">Selesai</button></td>
-                                                <td><button class="btn btn-danger" onclick="tolak_btn()">Undur</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td>131231</td>
-                                                <td>Adi Budi</td>
-                                                <td>Jl. Jalan ke Mangga Dua</td>
-                                                <td>12 Februari 2022</td>
-                                                <td>07:00</td>
-                                                <td>
-                                                    <div class="badge badge-warning">Penjadwalan Ulang</div>
-                                                </td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                        </tbody> -->
                                     </table>
                                 </div>
                             </div>

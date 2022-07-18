@@ -47,6 +47,7 @@
                                     <table class="table table-striped" id="tablePermintaanPengangkutan">
                                         <thead>
                                             <tr>
+                                                <th>#</th>
                                                 <th>ID</th>
                                                 <th>Nama</th>
                                                 <th>Alamat</th>

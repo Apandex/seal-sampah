@@ -67,8 +67,9 @@
                   <thead>
                     <tr>
                       <th class="text-center">
-                        ID
+                        #
                       </th>
+                      <th>ID</th>
                       <th>Tanggal</th>
                       <th>Nama</th>
                       <th>No. Telp</th>
@@ -94,8 +95,9 @@
                   <thead>
                     <tr>
                       <th class="text-center">
-                        ID
+                        #
                       </th>
+                      <th>ID</th>
                       <th>Tanggal</th>
                       <th>Nama</th>
                       <th>No. Telp</th>

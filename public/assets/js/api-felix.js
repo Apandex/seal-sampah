@@ -12,14 +12,21 @@ function tablePengangkutanUser() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutan.reverse();
+                var dataSelesai = dataAPI.filter(dataAPI => dataAPI.status.status == "Selesai")
                 $("#tablepengangkutanadmin").DataTable({
-                    data: dataAPI,
+                    data: dataSelesai,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "asc"]],
+                    order: [[1, "desc"]],
                     columns: [
+                        {
+                            data:null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -39,6 +46,12 @@ function tablePengangkutanUser() {
                             data: "jam_angkut",
                             orderable: false,
                         },
+                        {
+                            data: "status",
+                            render: function (data, type, full, meta) {
+                                return '<div class="badge badge-success">Selesai</div>'
+                            },
+                        }
                         
                     ],
                 });
