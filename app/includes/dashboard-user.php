@@ -70,9 +70,8 @@
                                     <table class="table table-striped" id="table-statuspengangkutan">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">
-                                                    #
-                                                </th>
+                                                <th>#</th>
+                                                <th>ID</th>
                                                 <th>Tanggal Pengangkutan</th>
                                                 <th>Waktu</th>
                                                 <th>Status</th>
@@ -95,9 +94,8 @@
                                     <table class="table table-striped" id="table-statustolak">
                                         <thead>
                                             <tr>
-                                                <th class="text-center">
-                                                    #
-                                                </th>
+                                                <th>#</th>
+                                                <th>ID</th>
                                                 <th>Tanggal</th>
                                                 <th>Waktu</th>
                                                 <th>Atas Nama</th>

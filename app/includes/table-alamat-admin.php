@@ -57,9 +57,8 @@
                       <table class="table table-striped" id="table-alamat">
                         <thead>
                           <tr>
-                            <th class="text-center">
-                              ID
-                            </th>
+                            <th>#</th>
+                            <th>ID</th>
                             <th>Nama</th>
                             <th>Kecamatan</th>
                             <th>Kelurahan</th>

@@ -52,7 +52,7 @@
                                         <h4>Pesan</h4>
                                     </div>
                                     <div class="card-body">
-                                        <form enctype="multipart/form-data" onsubmit="newPengangkutan();return false">
+                                        <form autocomplete="off" enctype="multipart/form-data" onsubmit="newPengangkutan();return false">
                                             <div class="form-group row mb-4">
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Sampah</label>
                                                 <div class="col-sm-12 col-md-7">
@@ -67,6 +67,9 @@
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tanggal</label>
                                                 <div class="col-sm-12 col-md-7">
                                                     <input id="Tanggal_angkut" type="text" class="form-control">
+                                                    <div class="invalid-feedback" id="invalidTanggal">
+                                                        Silahkan anda memilih tanggal untuk pengangkutan
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -74,6 +77,9 @@
                                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Waktu</label>
                                                 <div class="col-sm-12 col-md-7">
                                                     <input id="jam_angkut" type="text" class="form-control">
+                                                    <div class="invalid-feedback" id="invalidWaktu">
+                                                        Silahkan anda memilih tanggal untuk pengangkutan
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row mb-4">
