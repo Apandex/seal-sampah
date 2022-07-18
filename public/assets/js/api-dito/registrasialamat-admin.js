@@ -148,36 +148,80 @@ function newAlamat() {
     var kel = $("#selectKelurahan").val();
     var rw = document.getElementById("rwnumber").value;
     var rt = document.getElementById("rtnumber").value;
+    var validKel, validRW, validRT
 
-    let tokenSession = sessionStorage.getItem("token");
-    let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/alamat";
+    if (kel != null) {
+        validKel = true
+        document.getElementById("invalidKelurahan").style.display = "none";
+        $('#kelurahan .selectric').css("border-color", "#e4e6fc")
+    } else {
+        validKel = false
+        document.getElementById("invalidKelurahan").style.display = "block";
+        $('#kelurahan .selectric').css("border", "solid red 1px")
+    }
 
-    $(document).ready(function () {
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: {
-                Kelurahan: kel,
-                RW: rw,
-                RT: rt,
-            },
-            headers: {
-                Authorization: token,
-            },
-            success: function (response) {
-                swal("Penambahan Berhasil", {
-                    icon: "success",
-                }).then((value) => {
-                    location.href = "/Admin/Alamat";
-                  });;
-            },
-            error: function (response) {
-                var hasil = response.responseJSON.message;
-                swal(hasil, {
-                    icon: "warning",
-                });
-            },
+    if (rw != "") {
+        validRW = true
+        document.getElementById("invalidRW").style.display = "none";
+        document.getElementById("rwnumber").style.borderColor = "#e4e6fc";
+    } else {
+        validRW = false
+        document.getElementById("invalidRW").style.display = "block";
+        document.getElementById("rwnumber").style.border = "solid red 1px";
+    }
+    if (rt != "") {
+        validRT = true
+        document.getElementById("invalidRT").style.display = "none";
+        document.getElementById("rtnumber").style.borderColor = "#e4e6fc";
+    } else {
+        validRT = false
+        document.getElementById("invalidRT").style.display = "block";
+        document.getElementById("rtnumber").style.border = "solid red 1px";
+    }
+
+    alert(validKel)
+    alert(validRW)
+    alert(validRT)
+    if (validKel == true && validRT == true && validRW == true) {
+        
+    
+        let tokenSession = sessionStorage.getItem("token");
+        let token = "Bearer" + " " + tokenSession;
+        const url = "https://pepeseal.klubaderai.com/api/alamat";
+        alert(token)
+        $(document).ready(function () {
+            alert('gasss')
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: {
+                    Kelurahan: kel,
+                    RW: rw,
+                    RT: rt,
+                },
+                headers: {
+                    Authorization: token,
+                },
+                success: function (response) {
+                    swal("Penambahan Berhasil", {
+                        icon: "success",
+                    }).then((value) => {
+                        location.href = "/Admin/Alamat";
+                      });;
+                },
+                error: function (response) {
+                    var hasil = response.responseJSON.message;
+                    swal(hasil, {
+                        icon: "warning",
+                    });
+                    document.getElementById("invalidKelurahan").style.display = "block";
+                    $('#kelurahan .selectric').css("border", "solid red 1px")
+                    document.getElementById("invalidRW").style.display = "block";
+                    document.getElementById("rwnumber").style.border = "solid red 1px";
+                    document.getElementById("invalidRT").style.display = "block";
+                    document.getElementById("rtnumber").style.border = "solid red 1px";            
+                },
+            });
         });
-    });
+    }
 }

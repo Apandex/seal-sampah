@@ -41,7 +41,7 @@
 
                   <div class="form-group">
                     <label for="nama">Kecamatan</label>
-                    <div id="kelurahan">
+                    <div id="kecamatan">
                       <select id="selectKecamatanfalse" name="rt" class="form-control selectric" disabled>
                         <option>Jagakarsa</option>
                       </select>
@@ -51,21 +51,30 @@
                   <div class="form-group">
                     <label for="kelurahan">Kelurahan</label>
                     <div id="kelurahan">
-                      <select id="selectKelurahan" name="rt" class="form-control selectric" disabled required>
+                      <select id="selectKelurahan" name="rt" class="form-control selectric" disabled>
                         <option disabled selected hidden>~Pilih Kelurahan~</option>
                       </select>
+                      <div class="invalid-feedback" id="invalidKelurahan">
+                        Silahkan anda memilih Kelurahan
+                      </div>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label for="rw">RW</label>
-                    <input required id="rwnumber" type="number" min="1" max="25" class="form-control">
+                    <input id="rwnumber" type="number" min="1" max="25" class="form-control">
+                    <div class="invalid-feedback" id="invalidRW">
+                      Silahkan anda memilih RW
+                    </div>
                   </div>
 
 
                   <div class="form-group">
                     <label for="rt">RT</label>
-                    <input required id="rtnumber" type="number" min="1" max="25" class="form-control">
+                    <input id="rtnumber" type="number" min="1" max="25" class="form-control">
+                    <div class="invalid-feedback" id="invalidRT">
+                      Silahkan anda memilih RT
+                    </div>
                   </div>
 
                   <!-- <div class="form-group">
@@ -92,7 +101,6 @@
                     </button>
                   </div>
                 </form>
-
               </div>
             </div>
             <div class="simple-footer">
