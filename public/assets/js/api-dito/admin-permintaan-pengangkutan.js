@@ -1,5 +1,7 @@
 "use strict";
 
+const { functions } = require("lodash");
+
 function terima_btn(){
   $("#tablePermintaanPengangkutan").on('click', '#btnTerima', function() {
     var id = $(this).closest("tr").find("td:eq(0)").text();
@@ -95,16 +97,16 @@ function tablePermintaanPengangkutan() {
               Authorization: token,
           },
           success: function (response) {
-              var dataAPI = response.pengangkutan_pending;
+              var dataAPI = response.pengangkutan_pending.reverse();
               $("#tablePermintaanPengangkutan").DataTable({
                   data: dataAPI,
                   responsive: true,
                   pageLength: 10,
                   autoWidth: false,
-                  order: [[0, "desc"]],
+                  order: [[1, "desc"]],
                   columnDefs: [
                     {
-                      targets:[2],
+                      targets:[3],
                       render: function (data) {
                         if (!data.Alamat) {
                           return "-"
@@ -114,7 +116,7 @@ function tablePermintaanPengangkutan() {
                       }
                     },
                     {
-                      targets:[5],
+                      targets:[6],
                       render: function(){
                           const btnTerima = '<button class="btn btn-success mx-1" id="btnTerima" onclick="terima_btn()">Terima</button>'
                           const btnTolak = '<button class="btn btn-danger mx-1" id="btnTolak" onclick="tolak_btn()">Tolak</button>'   
@@ -122,6 +124,12 @@ function tablePermintaanPengangkutan() {
                       }
                     },],
                   columns: [
+                      {
+                          data: null,
+                          render: function (data, type, full, meta) {
+                            return meta.row + 1;
+                          }
+                      },
                       {
                           data: "id",
                       },

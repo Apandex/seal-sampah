@@ -54,8 +54,7 @@ function login() {
     } else {
         validP = false;
         document.getElementById("invalidPass").style.display = "block";
-        document.getElementById("login_password").style.border =
-            "solid red 1px";
+        document.getElementById("login_password").style.border ="solid red 1px";
     }
 
     if (validP == true && validE == true) {
@@ -105,7 +104,13 @@ function login() {
                         break;
                 }
             })
-            .catch((error) => console.log("error", error));
+            .catch((error) => {
+                // console.log("error", error)
+                document.getElementById("invalidEmail").style.display = "block";
+                document.getElementById("login_email").style.borderColor = "red";
+                document.getElementById("invalidPass").style.display = "block";
+                document.getElementById("login_password").style.border ="solid red 1px";
+            });
     }
 }
 
@@ -142,7 +147,7 @@ function tablePengangkutanUser() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutan.reverse();
                 document.getElementById("banyakBerhasil").innerHTML =
                     response.selesai;
                 document.getElementById("banyakBatal").innerHTML =
@@ -152,10 +157,10 @@ function tablePengangkutanUser() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [7],
+                            targets: [8],
                             render: function (data) {
                                 if (data.status == "Selesai") {
                                     return '<div class="badge badge-success">Selesai</div>';
@@ -166,6 +171,12 @@ function tablePengangkutanUser() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -219,16 +230,16 @@ function tableLaporanUser() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.laporan;
+                dataAPI = response.laporan.reverse();
                 $("#table-laporanmasalahuser").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [3],
+                            targets: [4],
                             render: function (data) {
                                 if (data.status == "Selesai") {
                                     return '<div class="badge badge-success">Selesai</div>';
@@ -241,6 +252,12 @@ function tableLaporanUser() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -276,85 +293,121 @@ function tableLaporanUser() {
 }
 
 function newPengangkutan() {
-    swal({
-        title: "Apakah anda yakin?",
-        icon: "warning",
-        buttons: true,
-    }).then((postData) => {
-        if (postData) {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", token);
-            var formdata = new FormData();
-            formdata.append(
-                "Tanggal_angkut",
-                document.getElementById("Tanggal_angkut").value
-            );
-            formdata.append(
-                "jam_angkut",
-                document.getElementById("jam_angkut").value
-            );
-            var requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: formdata,
-                redirect: "follow",
-            };
-            fetch(
-                "https://pepeseal.klubaderai.com/api/newpengangkutan",
-                requestOptions
-            )
-                .then((response) => response.text())
-                .then((result) => {
-                    var data = JSON.parse(result);
-                    swal("Permintaan terkirim", {
-                        icon: "success",
-                    });
-                })
-                .catch((error) => console.log("error", error));
-        } else {
-            swal("Proses dibatalkan");
-        }
-    });
+    var inputTanggal = document.getElementById("Tanggal_angkut").value;
+    var inputWaktu = document.getElementById("jam_angkut").value;
+    var validT, validW;
+
+    if (inputTanggal != "") {
+        validT = true
+        document.getElementById("invalidTanggal").style.display = "none";
+        document.getElementById("Tanggal_angkut").style.borderColor = "#e4e6fc";
+
+    } else {
+        validT = false
+        document.getElementById("invalidTanggal").style.display = "block";
+        document.getElementById("Tanggal_angkut").style.border = "solid red 1px";
+    }
+    if (inputWaktu != "") {
+        validW = true 
+        document.getElementById("invalidWaktu").style.display = "none";
+        document.getElementById("jam_angkut").style.borderColor = "#e4e6fc";
+    } else {
+        validW = false 
+        document.getElementById("invalidWaktu").style.display = "block";
+        document.getElementById("jam_angkut").style.border = "solid red 1px";
+    }
+
+    if (validT == true && validW == true) {
+        swal({
+            title: "Apakah anda yakin?",
+            icon: "warning",
+            buttons: true,
+        }).then((postData) => {
+            if (postData) {
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", token);
+                var formdata = new FormData();
+                formdata.append(
+                    "Tanggal_angkut",
+                    inputTanggal
+                );
+                formdata.append(
+                    "jam_angkut", inputWaktu
+                );
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: "follow",
+                };
+                fetch(
+                    "https://pepeseal.klubaderai.com/api/newpengangkutan",
+                    requestOptions
+                )
+                    .then((response) => response.text())
+                    .then((result) => {
+                        var data = JSON.parse(result);
+                        swal("Permintaan terkirim", {
+                            icon: "success",
+                        }).then((value) => {
+                            location.reload();
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
+            } else {
+                swal("Proses dibatalkan");
+            }
+        });
+    }
 }
 
 function newLaporan() {
-    swal({
-        title: "Apakah anda yakin?",
-        icon: "warning",
-        buttons: true,
-    }).then((postLaporan) => {
-        if (postLaporan) {
-            var myHeaders = new Headers();
-            myHeaders.append("Authorization", token);
+    var laporan = document.getElementById("laporan").value.trim();
+    if (laporan == "") {
+        document.getElementById("invalidText").style.display = "block";
+        document.getElementById("laporan").style.borderColor = "red";
+    } else {
+        document.getElementById("invalidText").style.display = "none";
+        document.getElementById("laporan").style.borderColor = "#e4e6fc";
+    
+        swal({
+            title: "Apakah anda yakin?",
+            icon: "warning",
+            buttons: true,
+        }).then((postLaporan) => {
+            if (postLaporan) {
+                var myHeaders = new Headers();
+                myHeaders.append("Authorization", token);
 
-            var formdata = new FormData();
-            formdata.append(
-                "laporan",
-                document.getElementById("laporan").value
-            );
-            var requestOptions = {
-                method: "POST",
-                headers: myHeaders,
-                body: formdata,
-                redirect: "follow",
-            };
+                var formdata = new FormData();
+                formdata.append(
+                    "laporan", laporan
+                );
+                var requestOptions = {
+                    method: "POST",
+                    headers: myHeaders,
+                    body: formdata,
+                    redirect: "follow",
+                };
 
-            fetch(
-                "https://pepeseal.klubaderai.com/api/newlaporan",
-                requestOptions
-            )
-                .then((response) => response.text())
-                .then((result) => {
-                    var data = JSON.parse(result);
-                    swal("Pelaporan terkirim", {
-                        icon: "success",
-                    });
-                })
-                .catch((error) => console.log("error", error));
-        } else {
-            swal("Proses dibatalkan");
-        }
-    });
+                fetch(
+                    "https://pepeseal.klubaderai.com/api/newlaporan",
+                    requestOptions
+                )
+                    .then((response) => response.text())
+                    .then((result) => {
+                        var data = JSON.parse(result);
+                        swal("Pelaporan terkirim", {
+                            icon: "success",
+                        });
+                    })
+                    .catch((error) => console.log("error", error));
+            } else {
+                swal("Proses dibatalkan");
+            }
+        });
+    }
+
 }
 
 function tablePengguna() {
@@ -374,8 +427,14 @@ function tablePengguna() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "asc"]],
+                    order: [[1, "asc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -420,8 +479,14 @@ function tableAlamat() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "asc"]],
+                    order: [[1, "asc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                             orderable: false,
@@ -793,7 +858,7 @@ function showDashboardStatusPengangkutan() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutan;
+                dataAPI = response.pengangkutan.reverse();
                 var nama = sessionStorage.getItem("name");
                 var alert = response.pengangkutantolak.length;
                 document.getElementById("welc_name").innerHTML =
@@ -813,10 +878,10 @@ function showDashboardStatusPengangkutan() {
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columnDefs: [
                         {
-                            targets: [3],
+                            targets: [4],
                             render: function (data) {
                                 if (data.status == "Terima") {
                                     return '<div class="badge badge-success">Terima</div>';
@@ -833,6 +898,12 @@ function showDashboardStatusPengangkutan() {
                         },
                     ],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },
@@ -863,15 +934,21 @@ function showDashboardStatusPengangkutan() {
                 Authorization: token,
             },
             success: function (response) {
-                dataAPI = response.pengangkutantolak;
+                dataAPI = response.pengangkutantolak.reverse();
 
                 $("#table-statustolak").DataTable({
                     data: dataAPI,
                     responsive: true,
                     pageLength: 10,
                     autoWidth: false,
-                    order: [[0, "desc"]],
+                    order: [[1, "desc"]],
                     columns: [
+                        {
+                            data: null,
+                            render: function (data, type, full, meta) {
+                                return meta.row + 1;
+                            }
+                        },
                         {
                             data: "id",
                         },

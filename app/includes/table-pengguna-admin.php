@@ -57,9 +57,8 @@
                       <table class="table table-striped" id="table-pengguna">
                         <thead>
                           <tr>
-                            <th class="text-center">
-                              ID
-                            </th>
+                            <th>#</th>
+                            <th>ID</th>
                             <th>Nama</th>
                             <th>Email</th>
                             <th>No. Telp</th>
