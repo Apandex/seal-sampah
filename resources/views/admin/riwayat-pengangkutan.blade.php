@@ -3,4 +3,4 @@
     if (akses !== "admin") {
         location.href = "/login";
     }
-</script><?php include(app_path() . '../includes/riwayat-pengangkutan-admin.php');
+</script><?php include(app_path() . '/includes/riwayat-pengangkutan-admin.php');

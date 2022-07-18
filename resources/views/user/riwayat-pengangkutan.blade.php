@@ -4,4 +4,4 @@
         location.href = "/login";
     }
 </script>
-<?php include(app_path() . '../includes/riwayat-pengangkutan.php');
+<?php include(app_path() . '/includes/riwayat-pengangkutan.php');
