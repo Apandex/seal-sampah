@@ -56,8 +56,8 @@
         <!-- Main Content -->
       <div class="container-fluid">
       <section class="section">
-          <div class="bd-example mt-5 mx-auto" style="max-width: 1140px;">  
-              <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-ride="carousel">
+          <div class="bd-example mt-5 mx-auto" style="max-width: 1440px; max-height:790px;">  
+              <!-- <div id="carouselExampleIndicators" class="carousel slide mx-auto" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
@@ -66,15 +66,12 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <img src="assets/img/photo2.png" class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover; object-position: center" width="400" height="400" alt="" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em" data-holder-rendered="true">First slide</text></svg> -->
                 </div>
                 <div class="carousel-item carousel-item-next carousel-item">
                   <img src="assets/img/photo1.png" class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover; object-position: center" width="400" height="400" alt="" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#666"></rect><text x="50%" y="50%" fill="#444" dy=".3em" data-holder-rendered="true">Second slide</text></svg> -->
                 </div>
                 <div class="carousel-item">
                   <img src="assets/img/photo3.png" class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" style="object-fit: cover; object-position: center" width="400" height="400" alt="" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#555"></rect><text x="50%" y="50%" fill="#333" dy=".3em" data-holder-rendered="true">Third slide</text></svg> -->
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -85,106 +82,170 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
-            </div>
+            </div> -->
+            <img src="assets/img/Banner.png" class="container-fluid" alt="">
           </div>
   
           <!-- Card -->
-          <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;" id="Eksplorasi">
-            <div class="card-body row g-0 align-items-start">
-              <div class="col-md-8 my-auto">
-                <h2 class="text-black-50 header-card">
-                  Penjadwalan
-                </h2>
-                <p class="font-weight-normal">
-                 Lakukan permintaan pengangkutan sampah dan pendjawalan yang nanti akan direspon oleh tim DLH kecamatan kami.
-                </p>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid" width="300" height="300" src="assets/img/penjadwalan.svg" alt="">
+          <div class="card mx-auto mt-5" style="max-width: full; background-color:white">
+            <div class="card-body text-center" style="background-color:white; margin-top:94px">
+              <h1 class="font-weight-bold">
+                Solusi untuk setiap kebutuhan.
+              </h1>
+              <p class="mt-3 font-weight-400" style="font-size: 16px; color: #426666">
+              Tingkatkan ke pengalaman pemesanan pengangkutan sampah yang <br>mudah, terjadwal, dan dapat dipantau.
+              </p>
+            </div>
+            <div class="card-lp mt-5 mx-auto rounded" style="max-width: 1280px;" id="Eksplorasi">
+              <div class="card-body row justify-content-between" style="margin-top:94px">
+                <div class="align-items-start col-6">
+                  <h3 class="text-lg text-black font-weight-600" style="font-size: 30px;">
+                    Penjadwalan Pengangkutan
+                  </h3>
+                  <p class="font-weight-normal text-gray text-content" style="margin-top: 14px; font-size:16px; margin-right:57px;">
+                    Lakukan pemesanan pengangkutan sampah dengan mudah dan sesuaikan dengan jadwal pengangkutan yang diinginkan.
+                  </p>
+                </div>
+                <div class="">
+                  <img class="img-fluid" width="300" height="300" src="assets/img/penjadwalan.svg" alt="">
+                </div>
               </div>
             </div>
-          </div>
-  
-          <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
-            <div class="card-body row g-0 align-items-start">
-              <div class="col-md-8 my-auto">
-                <h2 class="text-black-50 header-card">
-                  Jadwal Pengangkutan
-                </h2>
-                <p class="font-weight-normal">
-                  Jadwal Pengangkutan yang akan bisa kalian request ke kami dan kami akan mengatur semuanya dengan baik dan fleksibel.
-                </p>
-              </div>
+
+            <div class="card-lp mt-5 mx-auto rounded" style="max-width: 1280px;">
+              <div class="card-body row justify-content-around" style="margin-top:94px">
               <div class="col-md-4">
-                <img class="img-fluid" width="300" height="300" src="assets/img/Jadwal.svg" alt="">
+                  <img class="img-fluid" width="300" height="300" src="assets/img/status_riwayat.svg" alt="">
+                </div>
+                <div class="align-items-start col-6">
+                  <h3 class="text-black font-weight-600" style="font-size: 30px;">
+                    Status dan Riwayat Pengangkutan
+                  </h3>
+                  <p class="font-weight-normal text-content text-grey" style="margin-top: 14px; font-size:16px;">
+                    Pantau status pemesanan pengangkutan sampah dan riwayat pengangkutan untuk memonitor jadwal pengangkutan sampah.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-  
-          <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
-            <div class="card-body row g-0 align-items-start">
-              <div class="col-md-8 my-auto">
-                <h2 class="text-black-50 header-card">
-                  Riwayat Pengangkutan
-                </h2>
-                <p class="font-weight-normal">
-                  Anda juga bisa melihat dan cek Riwayat Pengangkutan anda dengan detail agar anda bisa mengetahui riwayat pengangkutan sampah di daerah anda.
-                </p>
-              </div>
-              <div class="col-md-4">
-                <img class="img-fluid" width="300" height="300" src="assets/img/Riwayat.svg" alt="">
+    
+            <div class="card-lp mt-5 mx-auto rounded" style="max-width: 1280px;">
+              <div class="card-body row justify-content-around" style="margin-top:94px">
+                <div class="align-items-start col-6">
+                  <h3 class="text-black font-weight-600" style="font-size: 30px;">
+                    Pelaporan Masalah
+                  </h3>
+                  <p class="font-weight-normal text-content text-grey" style="margin-top: 14px; font-size:16px; margin-right:57px;">
+                    Lakukan pelaporan masalah dengan mudah dan pantau tindak lanjut masalahmu.
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <img class="img-fluid" width="300" height="300" src="assets/img/pelaporan_masalah.svg" alt="">
+                </div>
               </div>
             </div>
+    
           </div>
           <!-- End Card -->
         </section>
           <!-- Accordion -->
         <section>
-        <div class="mt-5 mx-auto" style="max-width: 1300px;" id="FAQ">
-            <h2 class="mx-auto text-center text-success">
+        <div class="mx-auto" style="max-width: 1300px; margin-top: 167px;" id="FAQ">
+            <h2 class="mx-auto text-center text-black font-weight-600" style="font-size: 40px;">
               FAQ
-            </h5>
+            </h2>
+            <p class="mx-auto text-center text-gray font-weight-400" style="font-size: 16px; font-family: Inter; margin-top:10px;">
+              Temukan jawaban dari pertanyaan yang sering diajukan.
+            </p>
             <div id="accordion">
+
               <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Pendjawalan pengangkutan sampah ini jadwalnya dari jam berapa sampai jam berapa?
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Apa itu Pepes?
                     </button>
                   </h5>
                 </div>
             
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    Jadwal pengangkutan sampah sesuai dengan jadwal jam kerja kami yaitu dari jam 08:00-14:00
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                  Pepes adalah sistem yang digunakan untuk Penjadwalan Pemesanan Sampah dari perwakilan masyarakat (RT) kepada Satuan Pelaksana Lingkungan Hidup Kecamatan.
                   </div>
                 </div>
               </div>
+
               <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                     Apakah ada batas maksimal dalam penjemputan sampah?
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Siapa yang dapat menggunakan Pepes?
                     </button>
                   </h5>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card-body">
-                    Tentu ada batas maksimal dalam penjemputan sampah yaitu untuk kami adalah seukuran truk kami yaitu 5 ton.
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                  Yang dapat menggunakan web pepes ini adalah pengurus RT yang berada di daerah Jakarta Selatan.
                   </div>
                 </div>
               </div>
+
               <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
                 <div class="card-header" id="headingThree">
                   <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Bagaimana cara cek status penjemputan sampah saya?
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Darimana saya bisa mendapatkan akun?
                     </button>
                   </h5>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
-                    Anda bisa cek langsung di page status pengangkutan disana ada detail penjelasan penjemputan sampah anda dari di proses, reschedule, atau gagal.
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                  Jika ingin menggunakan web pepes ini anda harus mendaftarkan sendiri ke Kecamatan terdekat.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
+                <div class="card-header" id="headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Bagaimana cara melakukan pemesanan pengangkutan sampah?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                  Jika ingin melakukan penjadwalan pengangkutan sampah anda dapat menggunakan fitur <span>Pesan pengangkutan</span>.
+                  Nanti nya dari pihak kecamatan akan memproses permintaan anda dan sampah akan segera diangkut sesuai tanggal permintaan.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
+                <div class="card-header" id="headingFive">
+                  <h5 class="mb-0">
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Apa yang harus dilakukan jika pemesanan pengangkutan sampah ditolak?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                    Anda harus melakukan pemilihan jadwal pengangkutan kembali sampai permintaan anda diterima.
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-5 rounded mx-auto" style="max-width: 1140px;">
+                <div class="card-header" id="headingSix">
+                  <h5 class="mb-0">
+                    <button class="btn font-weight-600" style="font-size: 25px; color: #1B5E20; font-family:Inter; margin-left:0px;" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Bagaimana jika terdapat masalah pada pengangkutan sampah?
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                  <div class="card-body font-weight-400 font-italic" style="font-size: 20px; font-family:Inter; color:#5A5365;">
+                  Anda dapat melaporkan nya di menu pelaporan masalah. Nanti masalah tersebut akan diproses oleh pihak Kecamatan untuk ditindaklanjuti.
                   </div>
                 </div>
               </div>
@@ -195,7 +256,7 @@
       </div>
       <footer>  
         <div class="simple-footer">
-          Copyright &copy; 2022 <div class="bullet"></div> All Rights Reserved
+          <!-- Copyright &copy; 2022 <div class="bullet"></div> All Rights Reserved -->
         </div>
       </footer>
     </div>
