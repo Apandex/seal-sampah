@@ -76,7 +76,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fas,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .far,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fal,
 a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
-    margin-left: 4px;
+    margin-left: 0px;
 }
 
 .bg-primary {
@@ -123,6 +123,22 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .text-secondary-all *:before,
 .text-secondary-all *:after {
     color: #cdd3d8 !important;
+}
+
+.text-gray,
+.text-gray-all *,
+.text-gray-all *:before,
+.text-gray-all *:after {
+    color: #426666 !important;
+}
+
+.text-content {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.01em;
+    text-align: left;
 }
 
 .text-success,
@@ -784,11 +800,26 @@ select.form-control:not([size]):not([multiple]) {
     position: relative;
     margin-bottom: 30px;
 }
+
+.card-lp {
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+    background-color: #fff;
+    border-radius: 3px;
+    border: none;
+    position: relative;
+    margin-top: 94px;
+    margin-bottom: 30px;
+}
+
 .card .card-header,
 .card .card-body,
 .card .card-footer {
     background-color: transparent;
     padding: 20px 25px;
+}
+.card .card-body-lp{
+    background-color: transparent;
+    padding-top: 20px;
 }
 .card .navbar {
     position: static;
@@ -2751,7 +2782,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     font-family: "Nunito", "Segoe UI", arial;
-    color: #6c757d;
+    color: #1F1F26;
 }
 
 a.bb {
