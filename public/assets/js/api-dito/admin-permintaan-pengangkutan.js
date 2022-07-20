@@ -16,7 +16,6 @@ function terima_btn(){
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
         const url = "https://pepeseal.klubaderai.com/api/adminterimaorder/"+id
-        alert(url)
         $.ajax({
           method: "PUT",
           url: url,
