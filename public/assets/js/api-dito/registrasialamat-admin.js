@@ -59,7 +59,6 @@ function getRW() {
             },
             success: function (response) {
                 var dataRW = response.RW;
-                console.log(dataRW);
                 $("#selectRW").removeAttr("disabled").selectric("refresh");
 
                 for (var i = 0; i < dataRW.length; i++) {
@@ -104,7 +103,6 @@ function getRT() {
             success: function (response) {
                 var dataRT = response.RT;
                 dataRT = dataRT.sort((a, b) => a.RT - b.RT);
-                console.log(dataRT);
                 $("#selectRT").removeAttr("disabled").selectric("refresh");
 
                 var dataAllRT = [
@@ -123,9 +121,6 @@ function getRT() {
                 for (var i = 0; i < dataRT.length; i++) {
                     for (var a = 0; a < dataAllRT.length; a++) {
                         if (dataAllRT[a].RT != dataRT[i].RT) {
-                            console.log(dataAllRT[a].RT);
-                            console.log(dataRT[i].RT);
-
                             $("#selectRT").append(
                                 "<option>" + dataAllRT[a].RT + "</option>"
                             );
@@ -138,7 +133,7 @@ function getRT() {
             },
             error: function (response) {
                 var hasil = response.responseJSON.message;
-                alert(hasil);
+                console.log(hasil);
             },
         });
     });
@@ -178,19 +173,13 @@ function newAlamat() {
         document.getElementById("invalidRT").style.display = "block";
         document.getElementById("rtnumber").style.border = "solid red 1px";
     }
-
-    alert(validKel)
-    alert(validRW)
-    alert(validRT)
     if (validKel == true && validRT == true && validRW == true) {
         
     
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
         const url = "https://pepeseal.klubaderai.com/api/alamat";
-        alert(token)
         $(document).ready(function () {
-            alert('gasss')
             $.ajax({
                 method: "POST",
                 url: url,
