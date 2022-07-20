@@ -4,7 +4,7 @@ const { functions } = require("lodash");
 
 function terima_btn(){
   $("#tablePermintaanPengangkutan").on('click', '#btnTerima', function() {
-    var id = $(this).closest("tr").find("td:eq(0)").text();
+    var id = $(this).closest("tr").find("td:eq(1)").text();
     swal({
       title: 'Apakah anda yakin?',
       text: 'Proses ini tidak bisa diubah kembali seperti awal',
@@ -16,6 +16,7 @@ function terima_btn(){
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
         const url = "https://pepeseal.klubaderai.com/api/adminterimaorder/"+id
+        alert(url)
         $.ajax({
           method: "PUT",
           url: url,
@@ -43,7 +44,7 @@ function terima_btn(){
 
 function tolak_btn(){
   $("#tablePermintaanPengangkutan").on('click', '#btnTolak', function() {
-    var id = $(this).closest("tr").find("td:eq(0)").text();
+    var id = $(this).closest("tr").find("td:eq(1)").text();
     swal({
       title: 'Apakah anda yakin?',
       text: 'Proses ini tidak bisa diubah kembali seperti awal',

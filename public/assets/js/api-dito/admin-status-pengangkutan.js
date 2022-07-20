@@ -2,7 +2,7 @@
 
 function selesai_btn(){
   $("#tableStatusPengangkutan").on('click', '#btnSelesai', function() {
-    var id = $(this).closest("tr").find("td:eq(0)").text();
+    var id = $(this).closest("tr").find("td:eq(1)").text();
     swal({
       title: 'Apakah anda yakin?',
       text: 'Proses ini tidak bisa diubah kembali seperti awal',
