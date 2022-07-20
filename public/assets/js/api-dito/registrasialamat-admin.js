@@ -1,7 +1,7 @@
 function getKelurahan() {
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/kelurahan";
+    const url = "https://35.89.28.120/api/kelurahan";
     $(document).ready(function () {
         $.ajax({
             method: "GET",
@@ -46,7 +46,7 @@ function getRW() {
     var kel = $("#selectKelurahan").val();
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/RW";
+    const url = "https://35.89.28.120/api/RW";
     $(document).ready(function () {
         $.ajax({
             method: "POST",
@@ -88,7 +88,7 @@ function getRT() {
     var rw = $("#selectRW").val();
     let tokenSession = sessionStorage.getItem("token");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/RT";
+    const url = "https://35.89.28.120/api/RT";
     $(document).ready(function () {
         $.ajax({
             method: "POST",
@@ -178,7 +178,7 @@ function newAlamat() {
     
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/alamat";
+        const url = "https://35.89.28.120/api/alamat";
         $(document).ready(function () {
             $.ajax({
                 method: "POST",

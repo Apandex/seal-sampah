@@ -15,7 +15,7 @@ function terima_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/adminterimaorder/"+id
+        const url = "https://35.89.28.120/api/adminterimaorder/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -54,7 +54,7 @@ function tolak_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/batalpengangkutan/"+id
+        const url = "https://35.89.28.120/api/batalpengangkutan/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -88,7 +88,7 @@ function tablePermintaanPengangkutan() {
 
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
-  const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanadmin"
+  const url = "https://35.89.28.120/api/viewpengangkutanadmin"
   $(document).ready(function () {
       $.ajax({
           method: "GET",

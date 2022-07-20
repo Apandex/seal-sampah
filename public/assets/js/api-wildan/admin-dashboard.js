@@ -5,7 +5,7 @@ function refresh() {
     let tokenSession = sessionStorage.getItem("token");
     let nameSession = sessionStorage.getItem("name");
     let token = "Bearer" + " " + tokenSession;
-    const url = "https://pepeseal.klubaderai.com/api/viewpengangkutanadmin"
+    const url = "https://35.89.28.120/api/viewpengangkutanadmin"
     $(document).ready(function () {
         $.ajax({
             method: "GET",

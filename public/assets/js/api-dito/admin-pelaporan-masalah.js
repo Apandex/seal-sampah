@@ -13,7 +13,7 @@ function selesai_btn(){
       if (willDelete) {
         let tokenSession = sessionStorage.getItem("token");
         let token = "Bearer" + " " + tokenSession;
-        const url = "https://pepeseal.klubaderai.com/api/adminselesailaporan/"+id
+        const url = "https://35.89.28.120/api/adminselesailaporan/"+id
         $.ajax({
           method: "PUT",
           url: url,
@@ -52,7 +52,7 @@ function detail_btn(n){
     }
     $(a).on('click', '#btnDetail', function() {
       var id = $(this).closest("tr").find("td:eq(1)").text();
-      const url = "https://pepeseal.klubaderai.com/api/getlaporanmasalahuser/" + id
+      const url = "https://35.89.28.120/api/getlaporanmasalahuser/" + id
       $(document).ready(function () {
         $.ajax({
             method: "GET",
@@ -82,7 +82,7 @@ function tablePelaporanMasalah() {
 
   let tokenSession = sessionStorage.getItem("token");
   let token = "Bearer" + " " + tokenSession;
-  const url = "https://pepeseal.klubaderai.com/api/getlaporanmasalahadmin"
+  const url = "https://35.89.28.120/api/getlaporanmasalahadmin"
   $(document).ready(function () {
       $.ajax({
           method: "GET",
